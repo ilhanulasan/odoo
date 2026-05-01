@@ -717,12 +717,12 @@ export class Thread extends Component {
             }
         }
         if (this.props.thread.channel_type === "channel") {
-            return _t("This is the start of the #%(channelName)s channel", {
+            return _t("This is the start of the 1012 #%(channelName)s channel", {
                 channelName: this.props.thread.name,
             });
         }
         if (this.props.thread.channel_type === "group") {
-            return _t("This is the start of %(conversationName)s group", {
+            return _t("This is the start of 13 %(conversationName)s group", {
                 conversationName: this.props.thread.displayName,
             });
         }

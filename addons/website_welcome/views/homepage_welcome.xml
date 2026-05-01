@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="homepage_welcome" name="Homepage Welcome Message"
+              inherit_id="website.homepage">
+        <xpath expr="//div[@id='wrap']" position="inside">
+            <section class="s_text_block pt80 pb80" data-snippet="s_text_block">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8 text-center">
+                            <h1 class="display-4 fw-bold mb-4">
+                                Welcome to Our Website!
+                            </h1>
+                            <p class="lead text-muted mb-5">
+                                We are glad to have you here. Explore our products and
+                                services, and feel free to reach out if you need any help.
+                            </p>
+                            <a href="/shop" class="btn btn-primary btn-lg me-2">
+                                Browse Products
+                            </a>
+                            <a href="/contactus" class="btn btn-outline-secondary btn-lg">
+                                Contact Us
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </xpath>
+    </template>
+</odoo>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- Simplified list view: Number + Customer only -->
+    <record id="view_quotation_simple_list" model="ir.ui.view">
+        <field name="name">sale.order.simple.list</field>
+        <field name="model">sale.order</field>
+        <field name="arch" type="xml">
+            <list string="Quotations (Simple)">
+                <field name="name" string="Number"/>
+                <field name="partner_id" string="Customer"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Window action pointing to the simple list -->
+    <record id="action_quotations_simple" model="ir.actions.act_window">
+        <field name="name">Quotations (Simple)</field>
+        <field name="res_model">sale.order</field>
+        <field name="view_mode">list,form</field>
+        <field name="domain">[('state', 'in', ('draft', 'sent'))]</field>
+        <field name="context">{'search_default_my_quotation': 1}</field>
+    </record>
+
+    <!-- Force the simple list as the default list view for this action -->
+    <record id="action_quotations_simple_list_view" model="ir.actions.act_window.view">
+        <field name="sequence" eval="1"/>
+        <field name="view_mode">list</field>
+        <field name="view_id" ref="view_quotation_simple_list"/>
+        <field name="act_window_id" ref="action_quotations_simple"/>
+    </record>
+
+    <!-- Menu item under Sales > Orders -->
+    <menuitem id="menu_sale_quotations_simple"
+        name="Quotations (Simple)"
+        parent="sale.sale_order_menu"
+        action="action_quotations_simple"
+        groups="sales_team.group_sale_salesman"
+        sequence="15"/>
+
+</odoo>

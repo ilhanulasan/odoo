@@ -1341,7 +1341,7 @@ msgstr ""
 
 #. module: portal
 #: model_terms:ir.ui.view,arch_db:portal.portal_contact
-msgid "Your contact"
+msgid "-Your contact-"
 msgstr ""
 
 #. module: portal

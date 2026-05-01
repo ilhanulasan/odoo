@@ -11647,7 +11647,7 @@ msgstr "Đây là khởi đầu của kênh nhóm %(conversationName)s"
 #. module: mail
 #. odoo-javascript
 #: code:addons/mail/static/src/core/common/thread.js:0
-msgid "This is the start of the #%(channelName)s channel"
+msgid "This is the start of the 10#%(channelName)s channel"
 msgstr ""
 
 #. module: mail

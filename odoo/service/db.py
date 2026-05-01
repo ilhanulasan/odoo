@@ -3,6 +3,7 @@ import functools
 import json
 import logging
 import os
+import platform
 import shutil
 import subprocess
 import tempfile
@@ -139,11 +140,20 @@ def _create_empty_database(name):
             cr.rollback()
             cr._cnx.autocommit = True
 
-            # 'C' collate is only safe with template0, but provides more useful indexes
+            # 'C' collate is only safe with template0, but provides more useful indexes.
+            # On Windows, PostgreSQL does not support the POSIX 'C' locale name, so we
+            # fall back to the Windows-compatible equivalent.
+            if chosen_template == 'template0':
+                if platform.system() == 'Windows':
+                    collate_sql = SQL("LC_COLLATE 'English_United States.1252' LC_CTYPE 'English_United States.1252'")
+                else:
+                    collate_sql = SQL("LC_COLLATE 'C'")
+            else:
+                collate_sql = SQL("")
             cr.execute(SQL(
                 "CREATE DATABASE %s ENCODING 'unicode' %s TEMPLATE %s",
                 database_identifier(cr, name),
-                SQL("LC_COLLATE 'C'") if chosen_template == 'template0' else SQL(""),
+                collate_sql,
                 database_identifier(cr, chosen_template),
             ))
 
@@ -461,19 +471,30 @@ def list_db_incompatible(databases):
     incompatible_databases = []
     server_version = '.'.join(str(v) for v in version_info[:2])
     for database_name in databases:
-        with closing(db_connect(database_name).cursor()) as cr:
-            if odoo.tools.sql.table_exists(cr, 'ir_module_module'):
-                cr.execute("SELECT latest_version FROM ir_module_module WHERE name=%s", ('base',))
-                base_version = cr.fetchone()
-                if not base_version or not base_version[0]:
-                    incompatible_databases.append(database_name)
-                else:
-                    # e.g. 10.saas~15
-                    local_version = '.'.join(base_version[0].split('.')[:2])
-                    if local_version != server_version:
+        try:
+            with closing(db_connect(database_name).cursor()) as cr:
+                if odoo.tools.sql.table_exists(cr, 'ir_module_module'):
+                    cr.execute("SELECT latest_version FROM ir_module_module WHERE name=%s", ('base',))
+                    base_version = cr.fetchone()
+                    if not base_version or not base_version[0]:
                         incompatible_databases.append(database_name)
+                    else:
+                        # e.g. 10.saas~15
+                        local_version = '.'.join(base_version[0].split('.')[:2])
+                        if local_version != server_version:
+                            incompatible_databases.append(database_name)
+                else:
+                    incompatible_databases.append(database_name)
+        except Exception as e:
+            if 'collations with different collate and ctype' in str(e):
+                _logger.warning(
+                    'Database %r has mismatched LC_COLLATE/LC_CTYPE values and cannot be '
+                    'opened on this platform. To fix it, run the following SQL as a superuser:\n'
+                    '  UPDATE pg_database SET datcollate = datctype WHERE datname = %r;',
+                    database_name, database_name,
+                )
             else:
-                incompatible_databases.append(database_name)
+                _logger.warning('Could not check compatibility of database %r: %s', database_name, e)
     for database_name in incompatible_databases:
         # release connection
         odoo.sql_db.close_db(database_name)

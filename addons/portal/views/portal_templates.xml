@@ -64,13 +64,13 @@
     </template>
 
     <!-- Added by another template so that it can be disabled if needed -->
-    <template id="footer_language_selector" inherit_id="portal.frontend_layout" name="Footer Language Selector">
+   <!--  <template id="footer_language_selector" inherit_id="portal.frontend_layout" name="Footer Language Selector">
         <xpath expr="//*[hasclass('o_footer_copyright_name')]" position="after">
             <t id="language_selector_call"
                 t-call="portal.language_selector"
                 _div_classes="(_div_classes or '') + ' dropup'"/>
         </xpath>
-    </template>
+    </template> -->
 
     <template id="language_selector" name="Language Selector">
         <t t-set="language_selector_visible" t-value="len(frontend_languages) &gt; 1"/>
@@ -397,7 +397,7 @@
 
     <template id="portal_contact" name="Contact">
         <div class="o_portal_contact_details mb-5">
-            <h5>Your contact</h5>
+            <h5>-Your contact-</h5>
             <hr class="mt-1"/>
             <h6 t-esc="sales_user.name"/>
             <div t-if="sales_user.email_normalized" class="d-flex align-items-baseline mb-1">
@@ -415,7 +415,7 @@
         </div>
     </template>
 
-    <template id="portal_my_contact">
+<!--     <template id="portal_my_contact">
         <div t-attf-class="o_portal_contact_details d-flex flex-column gap-2 #{_spacingClass}">
             <div class="d-flex gap-2">
                 <img class="o_avatar rounded" t-att-src="_contactAvatar" alt="Contact"/>
@@ -426,7 +426,7 @@
             </div>
             <t t-out="0"/>
         </div>
-    </template>
+    </template> -->
 
     <template id="portal_my_security">
         <t t-call="portal.portal_layout"><div class="o_portal_security_body w-md-75 w-lg-50 pb-5">

@@ -11562,7 +11562,7 @@ msgstr "%(conversationName)s 그룹의 시작입니다."
 #. module: mail
 #. odoo-javascript
 #: code:addons/mail/static/src/core/common/thread.js:0
-msgid "This is the start of the #%(channelName)s channel"
+msgid "This is the start of the 10#%(channelName)s channel"
 msgstr ""
 
 #. module: mail

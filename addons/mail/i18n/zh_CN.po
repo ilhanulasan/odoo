@@ -11410,7 +11410,7 @@ msgstr "这是 %(conversationName)s 群组的开端"
 #. module: mail
 #. odoo-javascript
 #: code:addons/mail/static/src/core/common/thread.js:0
-msgid "This is the start of the #%(channelName)s channel"
+msgid "This is the start of the 10#%(channelName)s channel"
 msgstr ""
 
 #. module: mail
