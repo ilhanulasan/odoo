@@ -68,6 +68,10 @@ class ProjectCustomerPortal(CustomerPortal):
 
     @http.route(['/my/projects', '/my/projects/page/<int:page>'], type='http', auth="user", website=True)
     def portal_my_projects(self, page=1, date_begin=None, date_end=None, sortby=None, **kw):
+        # Debug helper: add ?pydebug=1 to trigger a breakpoint when debugger is attached.
+        if request.httprequest.args.get('pydebug') == '1':
+            import debugpy
+            debugpy.breakpoint()
         values = self._prepare_portal_layout_values()
         Project = request.env['project.project']
         domain = self._prepare_project_domain()
@@ -95,10 +99,38 @@ class ProjectCustomerPortal(CustomerPortal):
         projects = Project.search(domain, order=order, limit=self._items_per_page, offset=pager['offset'])
         request.session['my_projects_history'] = projects.ids[:100]
 
+        # Fetch a small task preview per project (like /my/projects/<id>, but condensed).
+        # We apply record rules manually on a sudo() search, similar to _prepare_tasks_values.
+        tasks_limit_per_project = 5
+        project_tasks_map = {project.id: request.env['project.task'] for project in projects}
+        if projects and request.env['project.task'].has_access('read'):
+            Task = request.env['project.task']
+            task_domain = Domain.AND([
+                [('project_id', 'in', projects.ids)],
+                [('has_template_ancestor', '=', False)],
+                [('is_template', '=', False)],
+                request.env['ir.rule']._compute_domain(Task._name, 'read'),
+            ])
+            # Pull enough rows to fill each card, then split in Python.
+            # Order makes the split stable while still showing recent tasks first.
+            tasks = Task.sudo().search(
+                task_domain,
+                order='project_id, stage_id, id desc',
+                limit=tasks_limit_per_project * len(projects),
+            )
+            counts = {project.id: 0 for project in projects}
+            for task in tasks:
+                pid = task.project_id.id
+                if pid in counts and counts[pid] < tasks_limit_per_project:
+                    project_tasks_map[pid] |= task
+                    counts[pid] += 1
+
         values.update({
             'date': date_begin,
             'date_end': date_end,
             'projects': projects,
+            'project_tasks_map': project_tasks_map,
+            'tasks_limit_per_project': tasks_limit_per_project,
             'page_name': 'project',
             'default_url': '/my/projects',
             'pager': pager,
