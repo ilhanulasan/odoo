@@ -20632,3 +20632,591 @@ Stack (most recent call last):
 2026-05-03 14:54:37,539 32200 INFO v21 odoo.addons.base.models.res_device: GC device logs delete 0 entries 
 2026-05-03 14:54:37,549 32200 INFO v21 odoo.addons.api_doc.models.ir_attachment: GC'd 0 /doc cached index 
 2026-05-03 14:54:37,571 32200 INFO v21 odoo.addons.base.models.ir_cron: Job 'Base: Auto-vacuum internal data' (1) fully done (#loop 1; done 148; remaining 0; duration 0.50s) 
+2026-05-03 15:05:59,694 32200 INFO v21 werkzeug: 127.0.0.1 - - [03/May/2026 15:05:59] "POST /web/action/load HTTP/1.1" 200 - 6 0.002 0.008
+2026-05-03 15:05:59,953 32200 INFO v21 werkzeug: 127.0.0.1 - - [03/May/2026 15:05:59] "POST /web/dataset/call_kw/website/web_search_read#website.web_search_read HTTP/1.1" 200 - 6 0.006 0.007
+2026-05-03 15:06:00,060 32200 INFO v21 werkzeug: 127.0.0.1 - - [03/May/2026 15:06:00] "POST /web/dataset/call_kw/res.users/has_group#res.users.has_group HTTP/1.1" 200 - 1 0.002 0.039
+2026-05-03 15:06:00,214 32200 INFO v21 werkzeug: 127.0.0.1 - - [03/May/2026 15:06:00] "POST /web/dataset/call_kw/website/get_current_website#website.get_current_website HTTP/1.1" 200 - 1 0.002 0.188
+2026-05-03 15:06:00,215 32200 INFO v21 werkzeug: 127.0.0.1 - - [03/May/2026 15:06:00] "POST /web/dataset/call_kw/res.users/has_group#res.users.has_group HTTP/1.1" 200 - 1 0.004 0.190
+2026-05-03 15:06:00,220 32200 INFO v21 werkzeug: 127.0.0.1 - - [03/May/2026 15:06:00] "POST /web/dataset/call_kw/res.users/has_group#res.users.has_group HTTP/1.1" 200 - 1 0.005 0.192
+2026-05-03 15:06:00,246 32200 INFO v21 werkzeug: 127.0.0.1 - - [03/May/2026 15:06:00] "GET /website/force/1?path=/ HTTP/1.1" 303 - 3 0.002 0.007
+2026-05-03 15:06:00,591 32200 INFO v21 werkzeug: 127.0.0.1 - - [03/May/2026 15:06:00] "GET /website/iframefallback HTTP/1.1" 303 - 3 0.005 0.028
+2026-05-03 15:06:00,593 32200 INFO v21 werkzeug: 127.0.0.1 - - [03/May/2026 15:06:00] "GET / HTTP/1.1" 303 - 3 0.007 0.029
+2026-05-03 15:06:00,713 32200 INFO v21 werkzeug: 127.0.0.1 - - [03/May/2026 15:06:00] "GET /web/bundle/website.website_builder_assets?lang=tr_TR&debug=assets HTTP/1.1" 200 - 13 0.016 0.142
+2026-05-03 15:06:00,913 32200 INFO v21 werkzeug: 127.0.0.1 - - [03/May/2026 15:06:00] "GET /tr/ HTTP/1.1" 301 - 3 0.003 0.005
+2026-05-03 15:06:01,011 32200 INFO v21 werkzeug: 127.0.0.1 - - [03/May/2026 15:06:01] "GET /tr/website/iframefallback HTTP/1.1" 200 - 22 0.023 0.084
+2026-05-03 15:06:01,036 32200 INFO v21 werkzeug: 127.0.0.1 - - [03/May/2026 15:06:01] "GET /web/assets/1/debug/website.website_builder_assets.css HTTP/1.1" 304 - 11 0.007 0.011
+2026-05-03 15:06:01,254 32200 INFO v21 werkzeug: 127.0.0.1 - - [03/May/2026 15:06:01] "GET /web/assets/1/debug/web.assets_frontend.css HTTP/1.1" 304 - 11 0.008 0.024
+2026-05-03 15:06:01,384 32200 INFO v21 werkzeug: 127.0.0.1 - - [03/May/2026 15:06:01] "GET /web/assets/1/debug/website.assets_wysiwyg.css HTTP/1.1" 304 - 11 0.010 0.033
+2026-05-03 15:06:01,412 32200 INFO v21 werkzeug: 127.0.0.1 - - [03/May/2026 15:06:01] "GET /web/assets/1/debug/website.website_builder_assets.js HTTP/1.1" 304 - 5 0.013 0.054
+2026-05-03 15:06:01,447 32200 INFO v21 werkzeug: 127.0.0.1 - - [03/May/2026 15:06:01] "GET /tr HTTP/1.1" 200 - 62 0.104 0.324
+2026-05-03 15:06:01,758 32200 INFO v21 werkzeug: 127.0.0.1 - - [03/May/2026 15:06:01] "GET /web/assets/1/debug/web.assets_frontend.css HTTP/1.1" 304 - 11 0.010 0.015
+2026-05-03 15:06:01,765 32200 INFO ? werkzeug: 127.0.0.1 - - [03/May/2026 15:06:01] "GET /web/static/src/libs/fontawesome/fonts/fontawesome-webfont.woff2?v=4.7.0 HTTP/1.1" 304 - 0 0.000 0.001
+2026-05-03 15:06:02,076 32200 INFO ? werkzeug: 127.0.0.1 - - [03/May/2026 15:06:02] "GET /web/static/lib/odoo_ui_icons/fonts/odoo_ui_icons.woff2 HTTP/1.1" 304 - 0 0.000 0.003
+2026-05-03 15:06:02,099 32200 INFO v21 werkzeug: 127.0.0.1 - - [03/May/2026 15:06:02] "GET /web/assets/1/debug/web.assets_frontend_minimal.js HTTP/1.1" 304 - 5 0.004 0.013
+2026-05-03 15:06:02,112 32200 INFO ? werkzeug: 127.0.0.1 - - [03/May/2026 15:06:02] "GET /web/static/img/odoo_logo_tiny.png HTTP/1.1" 304 - 0 0.000 0.007
+2026-05-03 15:06:02,131 32200 INFO v21 werkzeug: 127.0.0.1 - - [03/May/2026 15:06:02] "GET /web/image/website.s_cover_default_image HTTP/1.1" 304 - 9 0.015 0.015
+2026-05-03 15:06:02,134 32200 INFO v21 werkzeug: 127.0.0.1 - - [03/May/2026 15:06:02] "GET /web/image/website.s_text_image_default_image HTTP/1.1" 304 - 8 0.018 0.015
+2026-05-03 15:06:02,501 32200 INFO v21 werkzeug: 127.0.0.1 - - [03/May/2026 15:06:02] "GET /web/assets/1/debug/web.assets_frontend_lazy.js HTTP/1.1" 304 - 5 0.010 0.047
+2026-05-03 15:06:02,878 32200 INFO v21 werkzeug: 127.0.0.1 - - [03/May/2026 15:06:02] "GET /website/translations?hash=0285ba175826154a5b54584f937c0d377089ba76&lang=tr_TR HTTP/1.1" 303 - 3 0.002 0.005
+2026-05-03 15:06:02,883 32200 INFO v21 werkzeug: 127.0.0.1 - - [03/May/2026 15:06:02] "GET /web/bundle/web.chartjs_lib?lang=tr_TR&debug=assets&website_id=1 HTTP/1.1" 200 - 3 0.006 0.005
+2026-05-03 15:06:03,029 32200 INFO v21 werkzeug: 127.0.0.1 - - [03/May/2026 15:06:03] "POST /web/dataset/call_kw/ir.ui.view/render_public_asset#ir.ui.view.render_public_asset HTTP/1.1" 200 - 234 0.284 0.984
+2026-05-03 15:06:03,194 32200 INFO v21 werkzeug: 127.0.0.1 - - [03/May/2026 15:06:03] "GET /tr/website/translations?hash=0285ba175826154a5b54584f937c0d377089ba76&lang=tr_TR HTTP/1.1" 200 - 6 0.003 0.005
+2026-05-03 15:06:03,201 32200 INFO v21 werkzeug: 127.0.0.1 - - [03/May/2026 15:06:03] "GET /web/assets/1/debug/web.chartjs_lib.js HTTP/1.1" 304 - 5 0.002 0.003
+2026-05-03 15:06:08,659 32200 INFO v21 werkzeug: 127.0.0.1 - - [03/May/2026 15:06:08] "POST /web/dataset/call_kw/website/web_search_read#website.web_search_read HTTP/1.1" 200 - 6 0.002 0.004
+2026-05-03 15:06:08,660 32200 INFO v21 werkzeug: 127.0.0.1 - - [03/May/2026 15:06:08] "POST /web/dataset/call_kw/website/get_current_website#website.get_current_website HTTP/1.1" 200 - 4 0.002 0.003
+2026-05-03 15:06:08,907 32200 INFO v21 werkzeug: 127.0.0.1 - - [03/May/2026 15:06:08] "GET /website/force/1?path=/ HTTP/1.1" 303 - 6 0.002 0.006
+2026-05-03 15:06:08,993 32200 INFO v21 werkzeug: 127.0.0.1 - - [03/May/2026 15:06:08] "GET / HTTP/1.1" 303 - 3 0.002 0.003
+2026-05-03 15:06:09,011 32200 INFO v21 werkzeug: 127.0.0.1 - - [03/May/2026 15:06:09] "GET /website/iframefallback HTTP/1.1" 303 - 3 0.013 0.012
+2026-05-03 15:06:09,025 32200 INFO v21 werkzeug: 127.0.0.1 - - [03/May/2026 15:06:09] "POST /web/dataset/call_kw/ir.ui.view/render_public_asset#ir.ui.view.render_public_asset HTTP/1.1" 200 - 12 0.009 0.029
+2026-05-03 15:06:09,288 32200 INFO v21 werkzeug: 127.0.0.1 - - [03/May/2026 15:06:09] "GET /tr HTTP/1.1" 200 - 31 0.019 0.051
+2026-05-03 15:06:09,313 32200 INFO v21 werkzeug: 127.0.0.1 - - [03/May/2026 15:06:09] "GET /tr/website/iframefallback HTTP/1.1" 200 - 12 0.005 0.011
+2026-05-03 15:06:09,327 32200 INFO v21 werkzeug: 127.0.0.1 - - [03/May/2026 15:06:09] "GET /web/assets/1/debug/web.assets_frontend.css HTTP/1.1" 304 - 11 0.003 0.008
+2026-05-03 15:06:09,644 32200 INFO ? werkzeug: 127.0.0.1 - - [03/May/2026 15:06:09] "GET /web/static/lib/odoo_ui_icons/fonts/odoo_ui_icons.woff2 HTTP/1.1" 304 - 0 0.000 0.013
+2026-05-03 15:06:09,653 32200 INFO ? werkzeug: 127.0.0.1 - - [03/May/2026 15:06:09] "GET /web/static/src/libs/fontawesome/fonts/fontawesome-webfont.woff2?v=4.7.0 HTTP/1.1" 304 - 0 0.000 0.009
+2026-05-03 15:06:09,653 32200 INFO v21 werkzeug: 127.0.0.1 - - [03/May/2026 15:06:09] "GET /web/assets/1/debug/website.assets_wysiwyg.css HTTP/1.1" 304 - 11 0.012 0.028
+2026-05-03 15:06:09,667 32200 INFO v21 werkzeug: 127.0.0.1 - - [03/May/2026 15:06:09] "GET /web/assets/1/debug/web.assets_frontend_minimal.js HTTP/1.1" 304 - 5 0.003 0.014
+2026-05-03 15:06:09,670 32200 INFO v21 werkzeug: 127.0.0.1 - - [03/May/2026 15:06:09] "GET /web/image/website.s_text_image_default_image HTTP/1.1" 304 - 8 0.004 0.007
+2026-05-03 15:06:09,675 32200 INFO v21 werkzeug: 127.0.0.1 - - [03/May/2026 15:06:09] "GET /web/assets/1/debug/web.assets_frontend.css HTTP/1.1" 304 - 11 0.010 0.049
+2026-05-03 15:06:09,956 32200 INFO ? werkzeug: 127.0.0.1 - - [03/May/2026 15:06:09] "GET /web/static/img/odoo_logo_tiny.png HTTP/1.1" 304 - 0 0.000 0.003
+2026-05-03 15:06:09,966 32200 INFO v21 werkzeug: 127.0.0.1 - - [03/May/2026 15:06:09] "GET /web/image/website.s_cover_default_image HTTP/1.1" 304 - 8 0.002 0.005
+2026-05-03 15:06:10,307 32200 INFO v21 werkzeug: 127.0.0.1 - - [03/May/2026 15:06:10] "GET /web/assets/1/debug/web.assets_frontend_lazy.js HTTP/1.1" 304 - 5 0.004 0.021
+2026-05-03 15:06:10,541 32200 INFO v21 werkzeug: 127.0.0.1 - - [03/May/2026 15:06:10] "GET /website/translations?hash=0285ba175826154a5b54584f937c0d377089ba76&lang=tr_TR HTTP/1.1" 303 - 3 0.003 0.004
+2026-05-03 15:06:10,677 32200 INFO v21 werkzeug: 127.0.0.1 - - [03/May/2026 15:06:10] "GET /web/bundle/web.chartjs_lib?lang=tr_TR&debug=assets&website_id=1 HTTP/1.1" 200 - 3 0.002 0.006
+2026-05-03 15:06:10,681 32200 INFO v21 werkzeug: 127.0.0.1 - - [03/May/2026 15:06:10] "GET /tr/website/translations?hash=0285ba175826154a5b54584f937c0d377089ba76&lang=tr_TR HTTP/1.1" 200 - 6 0.004 0.007
+2026-05-03 15:06:10,861 32200 INFO v21 werkzeug: 127.0.0.1 - - [03/May/2026 15:06:10] "GET /web/assets/1/debug/web.chartjs_lib.js HTTP/1.1" 304 - 5 0.004 0.006
+2026-05-03 15:06:13,857 32200 INFO v21 werkzeug: 127.0.0.1 - - [03/May/2026 15:06:13] "POST /web/action/load HTTP/1.1" 200 - 12 0.010 0.020
+2026-05-03 15:06:14,207 32200 INFO v21 werkzeug: 127.0.0.1 - - [03/May/2026 15:06:14] "POST /web/dataset/call_kw/website/get_views#website.get_views HTTP/1.1" 200 - 18 0.010 0.017
+2026-05-03 15:06:14,446 32200 INFO v21 werkzeug: 127.0.0.1 - - [03/May/2026 15:06:14] "POST /web/dataset/call_kw/website/web_search_read#website.web_search_read HTTP/1.1" 200 - 7 0.005 0.009
+2026-05-03 15:06:14,518 32200 INFO ? werkzeug: 127.0.0.1 - - [03/May/2026 15:06:14] "GET /web/static/img/openhand.cur HTTP/1.1" 304 - 0 0.000 0.002
+2026-05-03 15:06:20,931 32200 INFO v21 werkzeug: 127.0.0.1 - - [03/May/2026 15:06:20] "POST /web/dataset/call_kw/website/web_read#website.web_read HTTP/1.1" 200 - 8 0.004 0.012
+2026-05-03 15:06:21,275 32200 INFO v21 werkzeug: 127.0.0.1 - - [03/May/2026 15:06:21] "GET /web/bundle/web.ace_lib?lang=tr_TR&debug=assets HTTP/1.1" 200 - 7 0.006 0.010
+2026-05-03 15:06:21,524 32200 INFO v21 werkzeug: 127.0.0.1 - - [03/May/2026 15:06:21] "GET /web/assets/1/debug/web.ace_lib.js HTTP/1.1" 304 - 5 0.004 0.006
+2026-05-03 15:06:21,587 32200 INFO v21 werkzeug: 127.0.0.1 - - [03/May/2026 15:06:21] "GET /web/image/website/2/logo?unique=1775209933000 HTTP/1.1" 200 - 6 0.001 0.004
+2026-05-03 15:06:24,619 32200 INFO v21 odoo.models.unlink: User #2 deleted ir.model.data records with IDs: [42686] 
+2026-05-03 15:06:24,647 32200 INFO v21 odoo.models.unlink: User #2 deleted ir.attachment records with IDs: [1194, 1195] 
+2026-05-03 15:06:24,648 32200 INFO v21 odoo.models.unlink: User #2 deleted website records with IDs: [2] 
+2026-05-03 15:06:24,675 32200 INFO v21 odoo.registry: Caches invalidated, signaling through the database: ['default'] 
+2026-05-03 15:06:24,676 32200 INFO v21 werkzeug: 127.0.0.1 - - [03/May/2026 15:06:24] "POST /web/dataset/call_kw/website/unlink#website.unlink HTTP/1.1" 200 - 59 0.061 0.040
+2026-05-03 15:06:25,020 32200 INFO v21 werkzeug: 127.0.0.1 - - [03/May/2026 15:06:25] "POST /web/dataset/call_kw/website/web_read#website.web_read HTTP/1.1" 200 - 12 0.008 0.011
+2026-05-03 15:06:26,374 32200 INFO v21 werkzeug: 127.0.0.1 - - [03/May/2026 15:06:26] "POST /web/dataset/call_kw/website/web_search_read#website.web_search_read HTTP/1.1" 200 - 7 0.004 0.009
+2026-05-03 15:16:52,696 32200 INFO ? werkzeug: 127.0.0.1 - - [03/May/2026 15:16:52] "GET /web/static/src/libs/fontawesome/fonts/fontawesome-webfont.woff2?v=4.7.0 HTTP/1.1" 304 - 0 0.000 0.002
+2026-05-03 15:17:01,744 32200 INFO v21 odoo.addons.base.models.ir_cron: Job 'Notification: Notify scheduled messages' (8) starting 
+2026-05-03 15:17:01,925 32200 INFO v21 odoo.addons.base.models.ir_cron: Job 'Notification: Notify scheduled messages' (8) fully done (#loop 1; done 0; remaining 0; duration 0.18s) 
+2026-05-03 15:17:01,930 32200 INFO v21 odoo.addons.base.models.ir_cron: Job 'Mail: Email Queue Manager' (3) starting 
+2026-05-03 15:17:01,938 32200 INFO v21 odoo.addons.base.models.ir_cron: Job 'Mail: Email Queue Manager' (3) fully done (#loop 1; done 0; remaining 0; duration 0.01s) 
+2026-05-03 15:19:36,123 14716 WARNING ? odoo.tools.config: missing --http-interface/http_interface, using 0.0.0.0 by default, will change to 127.0.0.1 in 20.0 
+2026-05-03 15:19:36,123 14716 INFO ? odoo: Odoo version 19.0 
+2026-05-03 15:19:36,123 14716 INFO ? odoo: Using configuration file at c:\users\ilhan.ulasan\source\repos\odoo\19.0\odoo.conf 
+2026-05-03 15:19:36,123 14716 INFO ? odoo: addons paths: _NamespacePath(['C:\\Users\\ilhan.ulasan\\Source\\repos\\Odoo\\19.0\\odoo\\addons', 'C:\\Users\\ilhan.ulasan\\AppData\\Local\\OpenERP S.A.\\Odoo\\addons\\19.0', 'c:\\users\\ilhan.ulasan\\source\\repos\\odoo\\19.0\\addons']) 
+2026-05-03 15:19:36,123 14716 INFO ? odoo: database: odoo@localhost:5432 
+2026-05-03 15:19:36,502 14716 INFO v21 odoo.modules.loading: loading 1 modules... 
+2026-05-03 15:19:36,504 14716 INFO v21 odoo.modules.loading: 1 modules loaded in 0.00s, 0 queries (+0 extra) 
+2026-05-03 15:19:36,521 14716 INFO v21 odoo.modules.loading: updating modules list 
+2026-05-03 15:19:36,524 14716 INFO v21 odoo.addons.base.models.ir_module: ALLOW access to module.update_list on [] to user __system__ #1 via n/a 
+2026-05-03 15:19:36,670 14716 WARNING v21 odoo.modules.module: Missing `author` key in manifest for 'contacts_portal_type', defaulting to '' 
+2026-05-03 15:19:36,670 14716 WARNING v21 odoo.modules.module: Missing `author` key in manifest for 'contacts_portal_type', defaulting to '' 
+2026-05-03 15:19:37,063 14716 WARNING v21 odoo.modules.module: Missing `author` key in manifest for 'sale_simple_quotations', defaulting to '' 
+2026-05-03 15:19:37,063 14716 WARNING v21 odoo.modules.module: Missing `license` key in manifest for 'sale_simple_quotations', defaulting to LGPL-3 
+2026-05-03 15:19:37,064 14716 WARNING v21 odoo.modules.module: Missing `author` key in manifest for 'sale_simple_quotations', defaulting to '' 
+2026-05-03 15:19:37,064 14716 WARNING v21 odoo.modules.module: Missing `license` key in manifest for 'sale_simple_quotations', defaulting to LGPL-3 
+2026-05-03 15:19:37,167 14716 WARNING v21 odoo.modules.module: Missing `author` key in manifest for 'website_welcome', defaulting to '' 
+2026-05-03 15:19:37,167 14716 WARNING v21 odoo.modules.module: Missing `author` key in manifest for 'website_welcome', defaulting to '' 
+2026-05-03 15:19:37,169 14716 INFO v21 odoo.addons.base.models.ir_module: ALLOW access to module.button_upgrade on ['Contacts Portal Contact Type'] to user __system__ #1 via n/a 
+2026-05-03 15:19:37,169 14716 INFO v21 odoo.addons.base.models.ir_module: ALLOW access to module.update_list on ['Contacts Portal Contact Type'] to user __system__ #1 via n/a 
+2026-05-03 15:19:37,271 14716 WARNING v21 odoo.modules.module: Missing `author` key in manifest for 'contacts_portal_type', defaulting to '' 
+2026-05-03 15:19:37,538 14716 WARNING v21 odoo.modules.module: Missing `author` key in manifest for 'sale_simple_quotations', defaulting to '' 
+2026-05-03 15:19:37,538 14716 WARNING v21 odoo.modules.module: Missing `license` key in manifest for 'sale_simple_quotations', defaulting to LGPL-3 
+2026-05-03 15:19:37,599 14716 WARNING v21 odoo.modules.module: Missing `author` key in manifest for 'website_welcome', defaulting to '' 
+2026-05-03 15:19:37,601 14716 INFO v21 odoo.addons.base.models.ir_module: ALLOW access to module.button_install on [] to user __system__ #1 via n/a 
+2026-05-03 15:19:37,631 14716 INFO v21 odoo.modules.loading: loading 116 modules... 
+2026-05-03 15:19:37,934 14716 INFO v21 odoo.modules.loading: Loading module contacts_portal_type (54/116) 
+2026-05-03 15:19:37,993 14716 WARNING v21 odoo.tools.translate: no translation language detected, skipping translation <frame at 0x0000023848D50130, file 'c:\\users\\ilhan.ulasan\\source\\repos\\odoo\\19.0\\addons\\contacts_portal_type\\models\\res_partner.py', line 10, code ResPartner> 
+Stack (most recent call last):
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo-bin", line 6, in <module>
+    odoo.cli.main()
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\cli\command.py", line 133, in main
+    command().run(args)
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\cli\server.py", line 127, in run
+    main(args)
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\cli\server.py", line 118, in main
+    rc = server.start(preload=config['db_name'], stop=stop)
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\service\server.py", line 1630, in start
+    rc = server.run(preload, stop)
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\service\server.py", line 702, in run
+    rc = preload_registries(preload)
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\service\server.py", line 1544, in preload_registries
+    registry = Registry.new(dbname, update_module=update_module, install_modules=config['init'], upgrade_modules=config['update'], reinit_modules=config['reinit'])
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\tools\func.py", line 88, in locked
+    return func(inst, *args, **kwargs)
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\orm\registry.py", line 199, in new
+    load_modules(
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\modules\loading.py", line 464, in load_modules
+    load_module_graph(
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\modules\loading.py", line 178, in load_module_graph
+    load_openerp_module(package.name)
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\modules\module.py", line 505, in load_openerp_module
+    __import__(qualname)
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "c:\users\ilhan.ulasan\source\repos\odoo\19.0\addons\contacts_portal_type\__init__.py", line 3, in <module>
+    from . import models
+  File "<frozen importlib._bootstrap>", line 1415, in _handle_fromlist
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "c:\users\ilhan.ulasan\source\repos\odoo\19.0\addons\contacts_portal_type\models\__init__.py", line 2, in <module>
+    from . import res_partner
+  File "<frozen importlib._bootstrap>", line 1415, in _handle_fromlist
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "c:\users\ilhan.ulasan\source\repos\odoo\19.0\addons\contacts_portal_type\models\res_partner.py", line 5, in <module>
+    class ResPartner(models.Model):
+  File "c:\users\ilhan.ulasan\source\repos\odoo\19.0\addons\contacts_portal_type\models\res_partner.py", line 10, in ResPartner
+    ('driver', _('Driver')),
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\tools\translate.py", line 577, in get_text_alias
+    module, lang = _get_translation_source(1)
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\tools\translate.py", line 566, in _get_translation_source
+    lang = lang or _get_lang(frame, default_lang)
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\tools\translate.py", line 557, in _get_lang
+    _logger.log(log_level, 'no translation language detected, skipping translation %s', frame, stack_info=True)
+2026-05-03 15:19:37,993 14716 WARNING v21 odoo.tools.translate: no translation language detected, skipping translation <frame at 0x0000023848D50130, file 'c:\\users\\ilhan.ulasan\\source\\repos\\odoo\\19.0\\addons\\contacts_portal_type\\models\\res_partner.py', line 11, code ResPartner> 
+Stack (most recent call last):
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo-bin", line 6, in <module>
+    odoo.cli.main()
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\cli\command.py", line 133, in main
+    command().run(args)
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\cli\server.py", line 127, in run
+    main(args)
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\cli\server.py", line 118, in main
+    rc = server.start(preload=config['db_name'], stop=stop)
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\service\server.py", line 1630, in start
+    rc = server.run(preload, stop)
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\service\server.py", line 702, in run
+    rc = preload_registries(preload)
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\service\server.py", line 1544, in preload_registries
+    registry = Registry.new(dbname, update_module=update_module, install_modules=config['init'], upgrade_modules=config['update'], reinit_modules=config['reinit'])
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\tools\func.py", line 88, in locked
+    return func(inst, *args, **kwargs)
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\orm\registry.py", line 199, in new
+    load_modules(
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\modules\loading.py", line 464, in load_modules
+    load_module_graph(
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\modules\loading.py", line 178, in load_module_graph
+    load_openerp_module(package.name)
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\modules\module.py", line 505, in load_openerp_module
+    __import__(qualname)
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "c:\users\ilhan.ulasan\source\repos\odoo\19.0\addons\contacts_portal_type\__init__.py", line 3, in <module>
+    from . import models
+  File "<frozen importlib._bootstrap>", line 1415, in _handle_fromlist
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "c:\users\ilhan.ulasan\source\repos\odoo\19.0\addons\contacts_portal_type\models\__init__.py", line 2, in <module>
+    from . import res_partner
+  File "<frozen importlib._bootstrap>", line 1415, in _handle_fromlist
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "c:\users\ilhan.ulasan\source\repos\odoo\19.0\addons\contacts_portal_type\models\res_partner.py", line 5, in <module>
+    class ResPartner(models.Model):
+  File "c:\users\ilhan.ulasan\source\repos\odoo\19.0\addons\contacts_portal_type\models\res_partner.py", line 11, in ResPartner
+    ('student', _('Student')),
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\tools\translate.py", line 577, in get_text_alias
+    module, lang = _get_translation_source(1)
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\tools\translate.py", line 566, in _get_translation_source
+    lang = lang or _get_lang(frame, default_lang)
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\tools\translate.py", line 557, in _get_lang
+    _logger.log(log_level, 'no translation language detected, skipping translation %s', frame, stack_info=True)
+2026-05-03 15:19:37,993 14716 WARNING v21 odoo.tools.translate: no translation language detected, skipping translation <frame at 0x0000023848D50130, file 'c:\\users\\ilhan.ulasan\\source\\repos\\odoo\\19.0\\addons\\contacts_portal_type\\models\\res_partner.py', line 12, code ResPartner> 
+Stack (most recent call last):
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo-bin", line 6, in <module>
+    odoo.cli.main()
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\cli\command.py", line 133, in main
+    command().run(args)
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\cli\server.py", line 127, in run
+    main(args)
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\cli\server.py", line 118, in main
+    rc = server.start(preload=config['db_name'], stop=stop)
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\service\server.py", line 1630, in start
+    rc = server.run(preload, stop)
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\service\server.py", line 702, in run
+    rc = preload_registries(preload)
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\service\server.py", line 1544, in preload_registries
+    registry = Registry.new(dbname, update_module=update_module, install_modules=config['init'], upgrade_modules=config['update'], reinit_modules=config['reinit'])
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\tools\func.py", line 88, in locked
+    return func(inst, *args, **kwargs)
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\orm\registry.py", line 199, in new
+    load_modules(
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\modules\loading.py", line 464, in load_modules
+    load_module_graph(
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\modules\loading.py", line 178, in load_module_graph
+    load_openerp_module(package.name)
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\modules\module.py", line 505, in load_openerp_module
+    __import__(qualname)
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "c:\users\ilhan.ulasan\source\repos\odoo\19.0\addons\contacts_portal_type\__init__.py", line 3, in <module>
+    from . import models
+  File "<frozen importlib._bootstrap>", line 1415, in _handle_fromlist
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "c:\users\ilhan.ulasan\source\repos\odoo\19.0\addons\contacts_portal_type\models\__init__.py", line 2, in <module>
+    from . import res_partner
+  File "<frozen importlib._bootstrap>", line 1415, in _handle_fromlist
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "c:\users\ilhan.ulasan\source\repos\odoo\19.0\addons\contacts_portal_type\models\res_partner.py", line 5, in <module>
+    class ResPartner(models.Model):
+  File "c:\users\ilhan.ulasan\source\repos\odoo\19.0\addons\contacts_portal_type\models\res_partner.py", line 12, in ResPartner
+    ('parent', _('Parent')),
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\tools\translate.py", line 577, in get_text_alias
+    module, lang = _get_translation_source(1)
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\tools\translate.py", line 566, in _get_translation_source
+    lang = lang or _get_lang(frame, default_lang)
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\tools\translate.py", line 557, in _get_lang
+    _logger.log(log_level, 'no translation language detected, skipping translation %s', frame, stack_info=True)
+2026-05-03 15:19:37,994 14716 WARNING v21 odoo.tools.translate: no translation language detected, skipping translation <frame at 0x0000023848D50130, file 'c:\\users\\ilhan.ulasan\\source\\repos\\odoo\\19.0\\addons\\contacts_portal_type\\models\\res_partner.py', line 13, code ResPartner> 
+Stack (most recent call last):
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo-bin", line 6, in <module>
+    odoo.cli.main()
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\cli\command.py", line 133, in main
+    command().run(args)
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\cli\server.py", line 127, in run
+    main(args)
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\cli\server.py", line 118, in main
+    rc = server.start(preload=config['db_name'], stop=stop)
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\service\server.py", line 1630, in start
+    rc = server.run(preload, stop)
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\service\server.py", line 702, in run
+    rc = preload_registries(preload)
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\service\server.py", line 1544, in preload_registries
+    registry = Registry.new(dbname, update_module=update_module, install_modules=config['init'], upgrade_modules=config['update'], reinit_modules=config['reinit'])
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\tools\func.py", line 88, in locked
+    return func(inst, *args, **kwargs)
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\orm\registry.py", line 199, in new
+    load_modules(
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\modules\loading.py", line 464, in load_modules
+    load_module_graph(
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\modules\loading.py", line 178, in load_module_graph
+    load_openerp_module(package.name)
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\modules\module.py", line 505, in load_openerp_module
+    __import__(qualname)
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "c:\users\ilhan.ulasan\source\repos\odoo\19.0\addons\contacts_portal_type\__init__.py", line 3, in <module>
+    from . import models
+  File "<frozen importlib._bootstrap>", line 1415, in _handle_fromlist
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "c:\users\ilhan.ulasan\source\repos\odoo\19.0\addons\contacts_portal_type\models\__init__.py", line 2, in <module>
+    from . import res_partner
+  File "<frozen importlib._bootstrap>", line 1415, in _handle_fromlist
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "c:\users\ilhan.ulasan\source\repos\odoo\19.0\addons\contacts_portal_type\models\res_partner.py", line 5, in <module>
+    class ResPartner(models.Model):
+  File "c:\users\ilhan.ulasan\source\repos\odoo\19.0\addons\contacts_portal_type\models\res_partner.py", line 13, in ResPartner
+    ('assistant', _('Assistant')),
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\tools\translate.py", line 577, in get_text_alias
+    module, lang = _get_translation_source(1)
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\tools\translate.py", line 566, in _get_translation_source
+    lang = lang or _get_lang(frame, default_lang)
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\tools\translate.py", line 557, in _get_lang
+    _logger.log(log_level, 'no translation language detected, skipping translation %s', frame, stack_info=True)
+2026-05-03 15:19:37,994 14716 WARNING v21 odoo.tools.translate: no translation language detected, skipping translation <frame at 0x0000023848D50130, file 'c:\\users\\ilhan.ulasan\\source\\repos\\odoo\\19.0\\addons\\contacts_portal_type\\models\\res_partner.py', line 14, code ResPartner> 
+Stack (most recent call last):
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo-bin", line 6, in <module>
+    odoo.cli.main()
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\cli\command.py", line 133, in main
+    command().run(args)
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\cli\server.py", line 127, in run
+    main(args)
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\cli\server.py", line 118, in main
+    rc = server.start(preload=config['db_name'], stop=stop)
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\service\server.py", line 1630, in start
+    rc = server.run(preload, stop)
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\service\server.py", line 702, in run
+    rc = preload_registries(preload)
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\service\server.py", line 1544, in preload_registries
+    registry = Registry.new(dbname, update_module=update_module, install_modules=config['init'], upgrade_modules=config['update'], reinit_modules=config['reinit'])
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\tools\func.py", line 88, in locked
+    return func(inst, *args, **kwargs)
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\orm\registry.py", line 199, in new
+    load_modules(
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\modules\loading.py", line 464, in load_modules
+    load_module_graph(
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\modules\loading.py", line 178, in load_module_graph
+    load_openerp_module(package.name)
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\modules\module.py", line 505, in load_openerp_module
+    __import__(qualname)
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "c:\users\ilhan.ulasan\source\repos\odoo\19.0\addons\contacts_portal_type\__init__.py", line 3, in <module>
+    from . import models
+  File "<frozen importlib._bootstrap>", line 1415, in _handle_fromlist
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "c:\users\ilhan.ulasan\source\repos\odoo\19.0\addons\contacts_portal_type\models\__init__.py", line 2, in <module>
+    from . import res_partner
+  File "<frozen importlib._bootstrap>", line 1415, in _handle_fromlist
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "c:\users\ilhan.ulasan\source\repos\odoo\19.0\addons\contacts_portal_type\models\res_partner.py", line 5, in <module>
+    class ResPartner(models.Model):
+  File "c:\users\ilhan.ulasan\source\repos\odoo\19.0\addons\contacts_portal_type\models\res_partner.py", line 14, in ResPartner
+    ('company_rep', _('Company Rep')),
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\tools\translate.py", line 577, in get_text_alias
+    module, lang = _get_translation_source(1)
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\tools\translate.py", line 566, in _get_translation_source
+    lang = lang or _get_lang(frame, default_lang)
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\tools\translate.py", line 557, in _get_lang
+    _logger.log(log_level, 'no translation language detected, skipping translation %s', frame, stack_info=True)
+2026-05-03 15:19:37,994 14716 WARNING v21 odoo.tools.translate: no translation language detected, skipping translation <frame at 0x0000023848D50130, file 'c:\\users\\ilhan.ulasan\\source\\repos\\odoo\\19.0\\addons\\contacts_portal_type\\models\\res_partner.py', line 15, code ResPartner> 
+Stack (most recent call last):
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo-bin", line 6, in <module>
+    odoo.cli.main()
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\cli\command.py", line 133, in main
+    command().run(args)
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\cli\server.py", line 127, in run
+    main(args)
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\cli\server.py", line 118, in main
+    rc = server.start(preload=config['db_name'], stop=stop)
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\service\server.py", line 1630, in start
+    rc = server.run(preload, stop)
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\service\server.py", line 702, in run
+    rc = preload_registries(preload)
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\service\server.py", line 1544, in preload_registries
+    registry = Registry.new(dbname, update_module=update_module, install_modules=config['init'], upgrade_modules=config['update'], reinit_modules=config['reinit'])
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\tools\func.py", line 88, in locked
+    return func(inst, *args, **kwargs)
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\orm\registry.py", line 199, in new
+    load_modules(
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\modules\loading.py", line 464, in load_modules
+    load_module_graph(
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\modules\loading.py", line 178, in load_module_graph
+    load_openerp_module(package.name)
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\modules\module.py", line 505, in load_openerp_module
+    __import__(qualname)
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "c:\users\ilhan.ulasan\source\repos\odoo\19.0\addons\contacts_portal_type\__init__.py", line 3, in <module>
+    from . import models
+  File "<frozen importlib._bootstrap>", line 1415, in _handle_fromlist
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "c:\users\ilhan.ulasan\source\repos\odoo\19.0\addons\contacts_portal_type\models\__init__.py", line 2, in <module>
+    from . import res_partner
+  File "<frozen importlib._bootstrap>", line 1415, in _handle_fromlist
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "c:\users\ilhan.ulasan\source\repos\odoo\19.0\addons\contacts_portal_type\models\res_partner.py", line 5, in <module>
+    class ResPartner(models.Model):
+  File "c:\users\ilhan.ulasan\source\repos\odoo\19.0\addons\contacts_portal_type\models\res_partner.py", line 15, in ResPartner
+    ('internal', _('Internal')),
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\tools\translate.py", line 577, in get_text_alias
+    module, lang = _get_translation_source(1)
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\tools\translate.py", line 566, in _get_translation_source
+    lang = lang or _get_lang(frame, default_lang)
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\tools\translate.py", line 557, in _get_lang
+    _logger.log(log_level, 'no translation language detected, skipping translation %s', frame, stack_info=True)
+2026-05-03 15:19:37,995 14716 WARNING v21 odoo.tools.translate: no translation language detected, skipping translation <frame at 0x0000023848D50130, file 'c:\\users\\ilhan.ulasan\\source\\repos\\odoo\\19.0\\addons\\contacts_portal_type\\models\\res_partner.py', line 17, code ResPartner> 
+Stack (most recent call last):
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo-bin", line 6, in <module>
+    odoo.cli.main()
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\cli\command.py", line 133, in main
+    command().run(args)
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\cli\server.py", line 127, in run
+    main(args)
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\cli\server.py", line 118, in main
+    rc = server.start(preload=config['db_name'], stop=stop)
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\service\server.py", line 1630, in start
+    rc = server.run(preload, stop)
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\service\server.py", line 702, in run
+    rc = preload_registries(preload)
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\service\server.py", line 1544, in preload_registries
+    registry = Registry.new(dbname, update_module=update_module, install_modules=config['init'], upgrade_modules=config['update'], reinit_modules=config['reinit'])
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\tools\func.py", line 88, in locked
+    return func(inst, *args, **kwargs)
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\orm\registry.py", line 199, in new
+    load_modules(
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\modules\loading.py", line 464, in load_modules
+    load_module_graph(
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\modules\loading.py", line 178, in load_module_graph
+    load_openerp_module(package.name)
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\modules\module.py", line 505, in load_openerp_module
+    __import__(qualname)
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "c:\users\ilhan.ulasan\source\repos\odoo\19.0\addons\contacts_portal_type\__init__.py", line 3, in <module>
+    from . import models
+  File "<frozen importlib._bootstrap>", line 1415, in _handle_fromlist
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "c:\users\ilhan.ulasan\source\repos\odoo\19.0\addons\contacts_portal_type\models\__init__.py", line 2, in <module>
+    from . import res_partner
+  File "<frozen importlib._bootstrap>", line 1415, in _handle_fromlist
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "c:\users\ilhan.ulasan\source\repos\odoo\19.0\addons\contacts_portal_type\models\res_partner.py", line 5, in <module>
+    class ResPartner(models.Model):
+  File "c:\users\ilhan.ulasan\source\repos\odoo\19.0\addons\contacts_portal_type\models\res_partner.py", line 17, in ResPartner
+    string=_('Portal Contact Type'),
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\tools\translate.py", line 577, in get_text_alias
+    module, lang = _get_translation_source(1)
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\tools\translate.py", line 566, in _get_translation_source
+    lang = lang or _get_lang(frame, default_lang)
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\tools\translate.py", line 557, in _get_lang
+    _logger.log(log_level, 'no translation language detected, skipping translation %s', frame, stack_info=True)
+2026-05-03 15:19:37,995 14716 WARNING v21 odoo.tools.translate: no translation language detected, skipping translation <frame at 0x0000023848D50130, file 'c:\\users\\ilhan.ulasan\\source\\repos\\odoo\\19.0\\addons\\contacts_portal_type\\models\\res_partner.py', line 18, code ResPartner> 
+Stack (most recent call last):
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo-bin", line 6, in <module>
+    odoo.cli.main()
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\cli\command.py", line 133, in main
+    command().run(args)
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\cli\server.py", line 127, in run
+    main(args)
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\cli\server.py", line 118, in main
+    rc = server.start(preload=config['db_name'], stop=stop)
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\service\server.py", line 1630, in start
+    rc = server.run(preload, stop)
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\service\server.py", line 702, in run
+    rc = preload_registries(preload)
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\service\server.py", line 1544, in preload_registries
+    registry = Registry.new(dbname, update_module=update_module, install_modules=config['init'], upgrade_modules=config['update'], reinit_modules=config['reinit'])
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\tools\func.py", line 88, in locked
+    return func(inst, *args, **kwargs)
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\orm\registry.py", line 199, in new
+    load_modules(
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\modules\loading.py", line 464, in load_modules
+    load_module_graph(
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\modules\loading.py", line 178, in load_module_graph
+    load_openerp_module(package.name)
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\modules\module.py", line 505, in load_openerp_module
+    __import__(qualname)
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "c:\users\ilhan.ulasan\source\repos\odoo\19.0\addons\contacts_portal_type\__init__.py", line 3, in <module>
+    from . import models
+  File "<frozen importlib._bootstrap>", line 1415, in _handle_fromlist
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "c:\users\ilhan.ulasan\source\repos\odoo\19.0\addons\contacts_portal_type\models\__init__.py", line 2, in <module>
+    from . import res_partner
+  File "<frozen importlib._bootstrap>", line 1415, in _handle_fromlist
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "c:\users\ilhan.ulasan\source\repos\odoo\19.0\addons\contacts_portal_type\models\res_partner.py", line 5, in <module>
+    class ResPartner(models.Model):
+  File "c:\users\ilhan.ulasan\source\repos\odoo\19.0\addons\contacts_portal_type\models\res_partner.py", line 18, in ResPartner
+    help=_('Role of this contact when exposed on the portal.'),
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\tools\translate.py", line 577, in get_text_alias
+    module, lang = _get_translation_source(1)
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\tools\translate.py", line 566, in _get_translation_source
+    lang = lang or _get_lang(frame, default_lang)
+  File "C:\Users\ilhan.ulasan\Source\repos\Odoo\19.0\odoo\tools\translate.py", line 557, in _get_lang
+    _logger.log(log_level, 'no translation language detected, skipping translation %s', frame, stack_info=True)
+2026-05-03 15:19:38,003 14716 INFO v21 odoo.registry: module contacts_portal_type: creating or updating database tables 
+2026-05-03 15:19:38,082 14716 INFO v21 odoo.modules.loading: loading contacts_portal_type/views/res_partner_views.xml 
+2026-05-03 15:19:38,090 14716 WARNING v21 odoo.addons.base.models.ir_ui_view: Error-prone use of @class in view res.partner.form.portal.contact.type (contacts_portal_type.view_partner_form_portal_contact_type): use the hasclass(*classes) function to filter elements by their classes 
+2026-05-03 15:19:38,105 14716 WARNING v21 odoo.addons.base.models.ir_ui_view: Error-prone use of @class in view res.partner.form.portal.contact.type (contacts_portal_type.view_partner_form_portal_contact_type): use the hasclass(*classes) function to filter elements by their classes 
+2026-05-03 15:19:38,110 14716 INFO v21 odoo.modules.loading: loading contacts_portal_type/views/portal_templates.xml 
+2026-05-03 15:19:38,115 14716 WARNING v21 odoo.addons.base.models.ir_ui_view: Error-prone use of @class in view portal_my_home_contact_type_welcome (contacts_portal_type.portal_my_home_contact_type_welcome): use the hasclass(*classes) function to filter elements by their classes 
+2026-05-03 15:19:38,118 14716 WARNING v21 odoo.addons.base.models.ir_ui_view: Error-prone use of @class in view portal_my_home_contact_type_welcome (contacts_portal_type.portal_my_home_contact_type_welcome): use the hasclass(*classes) function to filter elements by their classes 
+2026-05-03 15:19:38,120 14716 INFO v21 odoo.modules.loading: loading contacts_portal_type/views/portal_role_pages.xml 
+2026-05-03 15:19:38,141 14716 INFO v21 odoo.addons.base.models.ir_module: module contacts_portal_type: loading translation file c:\users\ilhan.ulasan\source\repos\odoo\19.0\addons\contacts_portal_type\i18n\tr.po for language tr_TR 
+2026-05-03 15:19:38,150 14716 INFO v21 odoo.modules.loading: Module contacts_portal_type loaded in 0.22s, 149 queries (+149 other) 
+2026-05-03 15:19:38,400 14716 INFO v21 odoo.modules.loading: 116 modules loaded in 0.77s, 149 queries (+149 extra) 
+2026-05-03 15:19:38,767 14716 INFO v21 odoo.registry: verifying fields for every extended model 
+2026-05-03 15:19:39,246 14716 INFO v21 odoo.modules.loading: Modules loaded. 
+2026-05-03 15:19:39,259 14716 INFO v21 odoo.registry: Registry changed, signaling through the database 
+2026-05-03 15:19:39,260 14716 INFO v21 odoo.registry: Registry loaded in 2.810s 
+2026-05-03 15:19:39,260 14716 INFO v21 odoo.service.server: Initiating shutdown 
+2026-05-03 15:19:39,260 14716 INFO v21 odoo.service.server: Hit CTRL-C again or send a second signal to force the shutdown. 
+2026-05-03 15:19:39,261 14716 INFO v21 odoo.sql_db: ConnectionPool(read/write;used=0/count=0/max=64): Closed 1 connections  

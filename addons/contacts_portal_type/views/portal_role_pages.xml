@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="portal_page_role_driver" name="Driver portal">
+        <t t-call="portal.portal_layout">
+            <div class="container py-4">
+                <h1 class="h2 mb-3" t-out="portal_role_page_title"/>
+            </div>
+        </t>
+    </template>
+
+    <template id="portal_page_role_parents" name="Parents portal">
+        <t t-call="portal.portal_layout">
+            <div class="container py-4">
+                <h1 class="h2 mb-3" t-out="portal_role_page_title"/>
+            </div>
+        </t>
+    </template>
+</odoo>

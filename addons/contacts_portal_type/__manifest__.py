@@ -8,6 +8,7 @@
     'data': [
         'views/res_partner_views.xml',
         'views/portal_templates.xml',
+        'views/portal_role_pages.xml',
     ],
     'license': 'LGPL-3',
     'installable': True,
