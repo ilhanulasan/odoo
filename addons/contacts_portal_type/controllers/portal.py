@@ -33,7 +33,9 @@ class PortalContactTypePortal(CustomerPortal):
         values.update(
             {
                 'page_name': 'drivers',
-                'portal_role_page_title': _('Driver'),
+                'portal_drivers_header': _('Shuttle Drivers'),
+                'portal_drivers_btn_start_tour': _('Start Tour'),
+                'portal_drivers_btn_enroll_student': _('Enroll New Student'),
             }
         )
         return request.render('contacts_portal_type.portal_page_role_driver', values)

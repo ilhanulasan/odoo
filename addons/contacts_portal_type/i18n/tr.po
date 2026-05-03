@@ -78,4 +78,19 @@ msgstr "Öğrenci"
 #. module: contacts_portal_type
 #: code:addons/contacts_portal_type/controllers/portal.py:0
 msgid "Parents"
-msgstr "Ebeveyn"
+msgstr "Ebeveynler"
+
+#. module: contacts_portal_type
+#: code:addons/contacts_portal_type/controllers/portal.py:0
+msgid "Shuttle Drivers"
+msgstr "Shuttle sürücüleri"
+
+#. module: contacts_portal_type
+#: code:addons/contacts_portal_type/controllers/portal.py:0
+msgid "Start Tour"
+msgstr "Tur başlat"
+
+#. module: contacts_portal_type
+#: code:addons/contacts_portal_type/controllers/portal.py:0
+msgid "Enroll New Student"
+msgstr "Yeni öğrenci kaydı"
