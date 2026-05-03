@@ -5,43 +5,72 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
 "Language: tr\n"
+"Language-Team: Turkish\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #. module: contacts_portal_type
+#: code:addons/contacts_portal_type/controllers/portal.py:0
 msgid "Welcome %s"
 msgstr "Hoş geldiniz, %s"
 
 #. module: contacts_portal_type
+#: model:ir.module.module,shortdesc:base.module_contacts_portal_type
+msgid "Contacts Portal Contact Type"
+msgstr "Kişiler — Portal iletişim türü"
+
+#. module: contacts_portal_type
+#: model:ir.module.module,summary:base.module_contacts_portal_type
+msgid "Portal contact type on partners"
+msgstr "Partner kayıtlarında portal iletişim türü"
+
+#. module: contacts_portal_type
+#: model:ir.model.fields,field_description:contacts_portal_type.field_res_partner__portal_contact_type
+#: model_terms:ir.ui.view,arch_db:contacts_portal_type.view_partner_form_portal_contact_type
 msgid "Portal Contact Type"
 msgstr "Portal iletişim türü"
 
 #. module: contacts_portal_type
+#: model:ir.model.fields,help:contacts_portal_type.field_res_partner__portal_contact_type
 msgid "Role of this contact when exposed on the portal."
 msgstr "Bu kişinin portalda göründüğündeki rolü."
 
 #. module: contacts_portal_type
+#: model:ir.model.fields.selection,name:contacts_portal_type.selection__res_partner__portal_contact_type__assistant
+#: code:addons/contacts_portal_type/models/res_partner.py:0
 msgid "Assistant"
 msgstr "Asistan"
 
 #. module: contacts_portal_type
+#: model:ir.model.fields.selection,name:contacts_portal_type.selection__res_partner__portal_contact_type__company_rep
+#: code:addons/contacts_portal_type/models/res_partner.py:0
 msgid "Company Rep"
 msgstr "Şirket temsilcisi"
 
 #. module: contacts_portal_type
+#: model:ir.model.fields.selection,name:contacts_portal_type.selection__res_partner__portal_contact_type__driver
+#: code:addons/contacts_portal_type/models/res_partner.py:0
 msgid "Driver"
 msgstr "Sürücü"
 
 #. module: contacts_portal_type
+#: model:ir.model.fields.selection,name:contacts_portal_type.selection__res_partner__portal_contact_type__internal
+#: code:addons/contacts_portal_type/models/res_partner.py:0
 msgid "Internal"
 msgstr "İç kullanıcı"
 
 #. module: contacts_portal_type
+#: model:ir.model.fields.selection,name:contacts_portal_type.selection__res_partner__portal_contact_type__parent
+#: code:addons/contacts_portal_type/models/res_partner.py:0
 msgid "Parent"
 msgstr "Veli"
 
 #. module: contacts_portal_type
+#: model:ir.model.fields.selection,name:contacts_portal_type.selection__res_partner__portal_contact_type__student
+#: code:addons/contacts_portal_type/models/res_partner.py:0
 msgid "Student"
 msgstr "Öğrenci"
