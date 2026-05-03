@@ -22,28 +22,28 @@ class PortalContactTypePortal(CustomerPortal):
         if partner:
             ptype = partner.portal_contact_type
             if ptype == 'driver':
-                return request.redirect('/driver')
+                return request.redirect('/drivers')
             if ptype == 'parent':
-                return request.redirect('/parents')
+                return request.redirect('/parents2')
         return super().home(**kw)
 
-    @route(['/driver'], type='http', auth='user', website=True, readonly=True)
+    @route(['/drivers'], type='http', auth='user', website=True, readonly=True)
     def portal_driver_home(self, **kw):
         values = self._prepare_portal_layout_values()
         values.update(
             {
-                'page_name': 'driver',
+                'page_name': 'drivers',
                 'portal_role_page_title': _('Driver'),
             }
         )
         return request.render('contacts_portal_type.portal_page_role_driver', values)
 
-    @route(['/parents', '/Parents'], type='http', auth='user', website=True, readonly=True)
+    @route(['/parents2', '/Parents2'], type='http', auth='user', website=True, readonly=True)
     def portal_parents_home(self, **kw):
         values = self._prepare_portal_layout_values()
         values.update(
             {
-                'page_name': 'parents',
+                'page_name': 'parents2',
                 'portal_role_page_title': _('Parents'),
             }
         )
