@@ -31,22 +31,25 @@ export class PortalHomeCounters extends Interaction {
                 counters: needed.slice(i * counterByRpc, (i + 1) * counterByRpc),
             });
             Object.keys(documentsCountersData).forEach((counterName) => {
-                const documentsCounterEl = this.el.querySelector(
-                    `[data-placeholder_count='${counterName}']`
+                const documentsCounterEl = [...this.el.querySelectorAll("[data-placeholder_count]")].find(
+                    (el) => el.getAttribute("data-placeholder_count") === counterName
                 );
+                if (!documentsCounterEl) {
+                    return;
+                }
                 documentsCounterEl.textContent = documentsCountersData[counterName];
                 // The element is hidden by default, only show it if its counter is > 0 or if it's in the list of counters always shown
                 if (
                     documentsCountersData[counterName] !== 0 ||
                     countersAlwaysDisplayed.includes(counterName)
                 ) {
-                    documentsCounterEl.closest(".o_portal_index_card").classList.remove("d-none");
+                    documentsCounterEl.closest(".o_portal_index_card")?.classList.remove("d-none");
                 }
             });
             return documentsCountersData;
         });
-        return Promise.all(proms).then((results) => {
-            this.el.querySelector(".o_portal_doc_spinner").remove();
+        return Promise.all(proms).then(() => {
+            this.el.querySelector(".o_portal_doc_spinner")?.remove();
         });
     }
 }

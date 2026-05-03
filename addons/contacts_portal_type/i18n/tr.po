@@ -1,0 +1,47 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * contacts_portal_type
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Language: tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. module: contacts_portal_type
+msgid "Welcome %s"
+msgstr "Hoş geldiniz, %s"
+
+#. module: contacts_portal_type
+msgid "Portal Contact Type"
+msgstr "Portal iletişim türü"
+
+#. module: contacts_portal_type
+msgid "Role of this contact when exposed on the portal."
+msgstr "Bu kişinin portalda göründüğündeki rolü."
+
+#. module: contacts_portal_type
+msgid "Assistant"
+msgstr "Asistan"
+
+#. module: contacts_portal_type
+msgid "Company Rep"
+msgstr "Şirket temsilcisi"
+
+#. module: contacts_portal_type
+msgid "Driver"
+msgstr "Sürücü"
+
+#. module: contacts_portal_type
+msgid "Internal"
+msgstr "İç kullanıcı"
+
+#. module: contacts_portal_type
+msgid "Parent"
+msgstr "Veli"
+
+#. module: contacts_portal_type
+msgid "Student"
+msgstr "Öğrenci"
