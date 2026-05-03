@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+    <!-- Same two-column layout as /my (main + user card): enable my_details and retitle for drivers. -->
+    <template id="portal_layout_drivers_heading" inherit_id="portal.portal_layout" priority="20">
+        <xpath expr="//div[@id='wrap']//div[contains(@class, 'wrapper') and contains(@class, 'col-12')]/h3[@class='my-3']" position="replace">
+            <h3 class="my-3 text-primary" t-if="page_name == 'drivers'" t-out="portal_drivers_header"/>
+            <h3 class="my-3" t-if="page_name != 'drivers'" t-out="request.env._('My account')"/>
+        </xpath>
+    </template>
+
     <template id="portal_page_role_driver" name="Driver portal">
         <t t-call="portal.portal_layout">
-            <div class="container py-4">
-                <header class="mb-4">
-                    <h1 class="h2 mb-0 text-primary" t-out="portal_drivers_header"/>
-                </header>
+            <t t-set="my_details" t-value="True"/>
+            <div class="o_portal_drivers_home pt-2">
                 <div class="d-grid gap-3 d-md-flex">
                     <a href="#" class="btn btn-primary btn-lg px-4 py-3 flex-md-fill text-center">
                         <span t-out="portal_drivers_btn_start_tour"/>

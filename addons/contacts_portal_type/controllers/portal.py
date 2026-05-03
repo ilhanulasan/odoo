@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-from odoo import _
 from odoo.http import request, route
 from odoo.tools.translate import LazyTranslate
 
@@ -9,6 +8,22 @@ _lt = LazyTranslate(__name__)
 
 
 class PortalContactTypePortal(CustomerPortal):
+
+    def _portal_translation_env(self):
+        """Environment for ``_()`` / translations on frontend routes.
+
+        ``http_routing`` stores the resolved language on ``request.lang`` (URL,
+        ``frontend_lang`` cookie, …). That can differ from ``request.env.context``
+        on some portal requests, so ``request.env._()`` would not load Turkish
+        even after picking it in the top bar. Sync context to ``request.lang``.
+        """
+        lang = getattr(request, "lang", None)
+        if not lang:
+            return request.env
+        code = lang.code
+        if code and request.env.context.get("lang") != code:
+            return request.env(context={**request.env.context, "lang": code})
+        return request.env
 
     @route(
         ['/my', '/my/home'],
@@ -30,12 +45,13 @@ class PortalContactTypePortal(CustomerPortal):
     @route(['/drivers'], type='http', auth='user', website=True, readonly=True)
     def portal_driver_home(self, **kw):
         values = self._prepare_portal_layout_values()
+        tenv = self._portal_translation_env()
         values.update(
             {
                 'page_name': 'drivers',
-                'portal_drivers_header': _('Shuttle Drivers'),
-                'portal_drivers_btn_start_tour': _('Start Tour'),
-                'portal_drivers_btn_enroll_student': _('Enroll New Student'),
+                'portal_drivers_header': tenv._('Servis Soförleri Portalı'),
+                'portal_drivers_btn_start_tour': tenv._('Tur Başlat'),
+                'portal_drivers_btn_enroll_student': tenv._('Yeni Öğrenci Kaydı'),
             }
         )
         return request.render('contacts_portal_type.portal_page_role_driver', values)
@@ -43,10 +59,11 @@ class PortalContactTypePortal(CustomerPortal):
     @route(['/parents2', '/Parents2'], type='http', auth='user', website=True, readonly=True)
     def portal_parents_home(self, **kw):
         values = self._prepare_portal_layout_values()
+        tenv = self._portal_translation_env()
         values.update(
             {
                 'page_name': 'parents2',
-                'portal_role_page_title': _('Parents'),
+                'portal_role_page_title': tenv._('Parents'),
             }
         )
         return request.render('contacts_portal_type.portal_page_role_parents', values)
@@ -56,9 +73,10 @@ class PortalContactTypePortal(CustomerPortal):
         partner = request.env.user.partner_id
         if not partner or not partner.portal_contact_type:
             return values
-        partner_fields = request.env['res.partner'].fields_get(['portal_contact_type'])
+        tenv = self._portal_translation_env()
+        partner_fields = tenv['res.partner'].fields_get(['portal_contact_type'])
         selection = partner_fields.get('portal_contact_type', {}).get('selection') or []
         labels = dict(selection)
         label = labels.get(partner.portal_contact_type, partner.portal_contact_type)
-        values['portal_contact_welcome'] = _('Welcome %s') % label
+        values['portal_contact_welcome'] = tenv._('Welcome %s') % label
         return values
