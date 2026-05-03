@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="portal_my_home_contact_type_welcome" inherit_id="portal.portal_my_home">
+        <xpath expr="//div[contains(@class,'o_portal_my_home')]/div[1]" position="before">
+            <div t-if="portal_contact_welcome" class="mb-3 pt-1">
+                <p class="h4 mb-0 text-muted" t-out="portal_contact_welcome"/>
+            </div>
+        </xpath>
+    </template>
+</odoo>
