@@ -26,6 +26,260 @@
 
     <template id="portal_page_role_parents" name="Parents portal">
         <t t-call="portal.portal_layout">
+            <t t-set="partner" t-value="request.env.user.partner_id"/>
+            <div class="container py-4">
+                <h1 class="h2 mb-3" t-out="portal_role_page_title"/>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card mb-3">
+                            <div class="card-body text-center">
+                                <t t-if="partner.image_1920 or partner.avatar_128">
+                                    <img t-att-src="'data:image/png;base64,%s' % (partner.image_1920 or partner.avatar_128)" class="img-fluid rounded-circle mb-2" style="width:120px;height:120px;object-fit:cover;"/>
+                                </t>
+                                <h3 class="h5 mb-1" t-out="partner.name"/>
+                                <p class="mb-1"><span class="text-muted">Phone:</span> <t t-esc="partner.phone or ''"/></p>
+                                <p class="mb-1"><span class="text-muted">Email:</span> <t t-esc="partner.email or ''"/></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="mb-4">
+                            <h4>Address</h4>
+                            <p t-if="partner.street or partner.city or partner.zip or partner.country_id">
+                                <t t-esc="partner.street or ''"/><t t-if="partner.street2"> <t t-esc="partner.street2"/></t><br/>
+                                <t t-esc="partner.city or ''"/> <t t-esc="partner.zip or ''"/><br/>
+                                <t t-esc="partner.state_id and partner.state_id.name or ''"/> <t t-esc="partner.country_id and partner.country_id.name or ''"/>
+                            </p>
+                            <p t-if="not (partner.street or partner.city or partner.zip or partner.country_id)">No address set.</p>
+                        </div>
+                        <div>
+                            <h4>Map</h4>
+                            <t t-set="addr" t-value="('%s %s %s %s %s' % (partner.street or '', partner.street2 or '', partner.city or '', partner.zip or '', partner.country_id and partner.country_id.name or '')).strip()"/>
+                            <!-- Leaflet map will geocode the address via Nominatim and zoom to street level -->
+                            <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+                            <div id="partner_map" class="mb-3" t-att-data-addr="addr" style="width:100%;height:400px;min-height:200px;position:relative;"></div>
+                            <script>
+                                (function(){
+                                    var container = document.getElementById('partner_map');
+                                    if (!container) { return; }
+                                    var address = (container.getAttribute('data-addr') || '').trim();
+                                    function loadScript(url, cb){ var s=document.createElement('script'); s.src=url; s.onload=cb; document.head.appendChild(s); }
+                                    function showMessage(msg){
+                                        var el = container.querySelector('.map-msg');
+                                        if (!el){
+                                            el = document.createElement('div');
+                                            el.className = 'map-msg';
+                                            el.style.position = 'absolute';
+                                            el.style.left = '0';
+                                            el.style.right = '0';
+                                            el.style.top = '0';
+                                            el.style.padding = '8px';
+                                            el.style.background = 'rgba(255,255,255,0.9)';
+                                            el.style.zIndex = 1000;
+                                            el.style.textAlign = 'center';
+                                            container.appendChild(el);
+                                        }
+                                        el.textContent = msg;
+                                    }
+                                    function initLeaflet(){
+                                        try{
+                                            var map = L.map(container).setView([0,0], 2);
+                                            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                                                maxZoom: 19,
+                                                attribution: '&copy; OpenStreetMap contributors'
+                                            }).addTo(map);
+                                            if (!address){
+                                                showMessage('No address set for this contact.');
+                                                return;
+                                            }
+                                            var q = encodeURIComponent(address);
+                                            var nominatimUrl = 'https://nominatim.openstreetmap.org/search?format=json&limit=1&q=' + q;
+                                            // debug
+                                            console.debug('Nominatim URL:', nominatimUrl);
+                                            fetch(nominatimUrl, { method: 'GET' })
+                                                .then(function(r){ return r.json(); })
+                                                .then(function(results){
+                                                    if (results && results.length){
+                                                        var r0 = results[0];
+                                                        var lat = parseFloat(r0.lat), lon = parseFloat(r0.lon);
+                                                        map.setView([lat, lon], 17);
+                                                        L.marker([lat, lon]).addTo(map);
+                                                    } else {
+                                                        showMessage('Address not found on map.');
+                                                    }
+                                                }).catch(function(err){
+                                                    console.error('Geocode error', err);
+                                                    showMessage('Error finding address.');
+                                                });
+                                        }catch(e){
+                                            console.error(e);
+                                            showMessage('Map initialization error.');
+                                        }
+                                    }
+                                    if (typeof L === 'undefined'){
+                                        loadScript('https://unpkg.com/leaflet@1.9.4/dist/leaflet.js', initLeaflet);
+                                    } else { initLeaflet(); }
+                                })();
+                            </script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <template id="portal_page_role_student" name="Student portal">
+        <t t-call="portal.portal_layout">
+            <t t-set="partner" t-value="request.env.user.partner_id"/>
+            <div class="container py-4">
+                <h1 class="h2 mb-3" t-out="portal_role_page_title"/>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card mb-3">
+                            <div class="card-body text-center">
+                                <t t-if="partner.image_1920 or partner.avatar_128">
+                                    <img t-att-src="'data:image/png;base64,%s' % (partner.image_1920 or partner.avatar_128)" class="img-fluid rounded-circle mb-2" style="width:120px;height:120px;object-fit:cover;"/>
+                                </t>
+                                <h3 class="h5 mb-1" t-out="partner.name"/>
+                                <p class="mb-1"><span class="text-muted">Phone:</span> <t t-esc="partner.phone or ''"/></p>
+                                <p class="mb-1"><span class="text-muted">Email:</span> <t t-esc="partner.email or ''"/></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="mb-4">
+                            <h4>Address</h4>
+                            <p t-if="partner.street or partner.city or partner.zip or partner.country_id">
+                                <t t-esc="partner.street or ''"/><t t-if="partner.street2"> <t t-esc="partner.street2"/></t><br/>
+                                <t t-esc="partner.city or ''"/> <t t-esc="partner.zip or ''"/><br/>
+                                <t t-esc="partner.state_id and partner.state_id.name or ''"/> <t t-esc="partner.country_id and partner.country_id.name or ''"/>
+                            </p>
+                            <p t-if="not (partner.street or partner.city or partner.zip or partner.country_id)">No address set.</p>
+                        </div>
+                        <div>
+                            <h4>Map</h4>
+                            <t t-set="addr" t-value="('%s %s %s %s %s' % (partner.street or '', partner.street2 or '', partner.city or '', partner.zip or '', partner.country_id and partner.country_id.name or '')).strip()"/>
+                            <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+                            <div id="partner_map_student" class="mb-3" t-att-data-addr="addr" style="width:100%;height:400px;min-height:200px;position:relative;"></div>
+                            <script>
+                                (function(){
+                                    var container = document.getElementById('partner_map_student');
+                                    if (!container) { return; }
+                                    var address = (container.getAttribute('data-addr') || '').trim();
+                                    function loadScript(url, cb){ var s=document.createElement('script'); s.src=url; s.onload=cb; document.head.appendChild(s); }
+                                    function showMessage(msg){
+                                        var el = container.querySelector('.map-msg');
+                                        if (!el){
+                                            el = document.createElement('div');
+                                            el.className = 'map-msg';
+                                            el.style.position = 'absolute';
+                                            el.style.left = '0';
+                                            el.style.right = '0';
+                                            el.style.top = '0';
+                                            el.style.padding = '8px';
+                                            el.style.background = 'rgba(255,255,255,0.9)';
+                                            el.style.zIndex = 1000;
+                                            el.style.textAlign = 'center';
+                                            container.appendChild(el);
+                                        }
+                                        el.textContent = msg;
+                                    }
+                                    function initLeaflet(){
+                                        try{
+                                            var map = L.map(container).setView([0,0], 2);
+                                            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                                                maxZoom: 19,
+                                                attribution: '&copy; OpenStreetMap contributors'
+                                            }).addTo(map);
+                                            if (!address){
+                                                showMessage('No address set for this contact.');
+                                                return;
+                                            }
+                                            var q = encodeURIComponent(address);
+                                            var nominatimUrl = 'https://nominatim.openstreetmap.org/search?format=json&limit=1&q=' + q;
+                                            console.debug('Nominatim URL:', nominatimUrl);
+                                            fetch(nominatimUrl, { method: 'GET' })
+                                                .then(function(r){ return r.json(); })
+                                                .then(function(results){
+                                                    if (results && results.length){
+                                                        var r0 = results[0];
+                                                        var lat = parseFloat(r0.lat), lon = parseFloat(r0.lon);
+                                                        map.setView([lat, lon], 17);
+                                                        L.marker([lat, lon]).addTo(map);
+                                                    } else {
+                                                        showMessage('Address not found on map.');
+                                                    }
+                                                }).catch(function(err){
+                                                    console.error('Geocode error', err);
+                                                    showMessage('Error finding address.');
+                                                });
+                                        }catch(e){
+                                            console.error(e);
+                                            showMessage('Map initialization error.');
+                                        }
+                                    }
+                                    if (typeof L === 'undefined'){
+                                        loadScript('https://unpkg.com/leaflet@1.9.4/dist/leaflet.js', initLeaflet);
+                                    } else { initLeaflet(); }
+                                })();
+                            </script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <template id="portal_page_role_hostess" name="Hostess portal">
+        <t t-call="portal.portal_layout">
+            <div class="container py-4">
+                <h1 class="h2 mb-3" t-out="portal_role_page_title"/>
+            </div>
+        </t>
+    </template>
+
+    <template id="portal_page_role_school_rep" name="School Representative portal">
+        <t t-call="portal.portal_layout">
+            <div class="container py-4">
+                <h1 class="h2 mb-3" t-out="portal_role_page_title"/>
+            </div>
+        </t>
+    </template>
+
+    <template id="portal_page_role_internal" name="Internal portal">
+        <t t-call="portal.portal_layout">
+            <div class="container py-4">
+                <h1 class="h2 mb-3" t-out="portal_role_page_title"/>
+            </div>
+        </t>
+    </template>
+
+    <template id="portal_page_role_vendor" name="Vendor portal">
+        <t t-call="portal.portal_layout">
+            <div class="container py-4">
+                <h1 class="h2 mb-3" t-out="portal_role_page_title"/>
+            </div>
+        </t>
+    </template>
+
+    <template id="portal_page_role_customer" name="Customer portal">
+        <t t-call="portal.portal_layout">
+            <div class="container py-4">
+                <h1 class="h2 mb-3" t-out="portal_role_page_title"/>
+            </div>
+        </t>
+    </template>
+
+    <template id="portal_page_role_factory_rep" name="Factory Representative portal">
+        <t t-call="portal.portal_layout">
+            <div class="container py-4">
+                <h1 class="h2 mb-3" t-out="portal_role_page_title"/>
+            </div>
+        </t>
+    </template>
+
+    <template id="portal_page_role_factory_employee" name="Factory Employee portal">
+        <t t-call="portal.portal_layout">
             <div class="container py-4">
                 <h1 class="h2 mb-3" t-out="portal_role_page_title"/>
             </div>

@@ -36,10 +36,22 @@ class PortalContactTypePortal(CustomerPortal):
         partner = request.env.user.partner_id
         if partner:
             ptype = partner.portal_contact_type
-            if ptype == 'driver':
-                return request.redirect('/drivers')
-            if ptype == 'parent':
-                return request.redirect('/parents2')
+            if ptype:
+                mapping = {
+                    'driver': '/drivers',
+                    'student': '/students',
+                    'parent': '/parents2',
+                    'hostess': '/hostess',
+                    'school_rep': '/school_representative',
+                    'internal': '/internal',
+                    'vendor': '/vendors',
+                    'customer': '/customers',
+                    'factory_rep': '/factory_representatives',
+                    'factory_employee': '/factory_employees',
+                }
+                path = mapping.get(ptype)
+                if path:
+                    return request.redirect(path)
         return super().home(**kw)
 
     @route(['/drivers'], type='http', auth='user', website=True, readonly=True)
@@ -67,6 +79,95 @@ class PortalContactTypePortal(CustomerPortal):
             }
         )
         return request.render('contacts_portal_type.portal_page_role_parents', values)
+
+    @route(['/students'], type='http', auth='user', website=True, readonly=True)
+    def portal_students_home(self, **kw):
+        values = self._prepare_portal_layout_values()
+        tenv = self._portal_translation_env()
+        # Lookup label for display
+        partner_fields = tenv['res.partner'].fields_get(['portal_contact_type'])
+        selection = partner_fields.get('portal_contact_type', {}).get('selection') or []
+        labels = dict(selection)
+        label = labels.get('student', 'student')
+        values.update({'page_name': 'students', 'portal_role_page_title': tenv._('Welcome %s') % label})
+        return request.render('contacts_portal_type.portal_page_role_student', values)
+
+    @route(['/hostess'], type='http', auth='user', website=True, readonly=True)
+    def portal_hostess_home(self, **kw):
+        values = self._prepare_portal_layout_values()
+        tenv = self._portal_translation_env()
+        partner_fields = tenv['res.partner'].fields_get(['portal_contact_type'])
+        selection = partner_fields.get('portal_contact_type', {}).get('selection') or []
+        labels = dict(selection)
+        label = labels.get('hostess', 'hostess')
+        values.update({'page_name': 'hostess', 'portal_role_page_title': tenv._('Welcome %s') % label})
+        return request.render('contacts_portal_type.portal_page_role_hostess', values)
+
+    @route(['/school_representative'], type='http', auth='user', website=True, readonly=True)
+    def portal_school_rep_home(self, **kw):
+        values = self._prepare_portal_layout_values()
+        tenv = self._portal_translation_env()
+        partner_fields = tenv['res.partner'].fields_get(['portal_contact_type'])
+        selection = partner_fields.get('portal_contact_type', {}).get('selection') or []
+        labels = dict(selection)
+        label = labels.get('school_rep', 'school_rep')
+        values.update({'page_name': 'school_representative', 'portal_role_page_title': tenv._('Welcome %s') % label})
+        return request.render('contacts_portal_type.portal_page_role_school_rep', values)
+
+    @route(['/internal'], type='http', auth='user', website=True, readonly=True)
+    def portal_internal_home(self, **kw):
+        values = self._prepare_portal_layout_values()
+        tenv = self._portal_translation_env()
+        partner_fields = tenv['res.partner'].fields_get(['portal_contact_type'])
+        selection = partner_fields.get('portal_contact_type', {}).get('selection') or []
+        labels = dict(selection)
+        label = labels.get('internal', 'internal')
+        values.update({'page_name': 'internal', 'portal_role_page_title': tenv._('Welcome %s') % label})
+        return request.render('contacts_portal_type.portal_page_role_internal', values)
+
+    @route(['/vendors'], type='http', auth='user', website=True, readonly=True)
+    def portal_vendors_home(self, **kw):
+        values = self._prepare_portal_layout_values()
+        tenv = self._portal_translation_env()
+        partner_fields = tenv['res.partner'].fields_get(['portal_contact_type'])
+        selection = partner_fields.get('portal_contact_type', {}).get('selection') or []
+        labels = dict(selection)
+        label = labels.get('vendor', 'vendor')
+        values.update({'page_name': 'vendors', 'portal_role_page_title': tenv._('Welcome %s') % label})
+        return request.render('contacts_portal_type.portal_page_role_vendor', values)
+
+    @route(['/customers'], type='http', auth='user', website=True, readonly=True)
+    def portal_customers_home(self, **kw):
+        values = self._prepare_portal_layout_values()
+        tenv = self._portal_translation_env()
+        partner_fields = tenv['res.partner'].fields_get(['portal_contact_type'])
+        selection = partner_fields.get('portal_contact_type', {}).get('selection') or []
+        labels = dict(selection)
+        label = labels.get('customer', 'customer')
+        values.update({'page_name': 'customers', 'portal_role_page_title': tenv._('Welcome %s') % label})
+        return request.render('contacts_portal_type.portal_page_role_customer', values)
+
+    @route(['/factory_representatives'], type='http', auth='user', website=True, readonly=True)
+    def portal_factory_reps_home(self, **kw):
+        values = self._prepare_portal_layout_values()
+        tenv = self._portal_translation_env()
+        partner_fields = tenv['res.partner'].fields_get(['portal_contact_type'])
+        selection = partner_fields.get('portal_contact_type', {}).get('selection') or []
+        labels = dict(selection)
+        label = labels.get('factory_rep', 'factory_rep')
+        values.update({'page_name': 'factory_representatives', 'portal_role_page_title': tenv._('Welcome %s') % label})
+        return request.render('contacts_portal_type.portal_page_role_factory_rep', values)
+
+    @route(['/factory_employees'], type='http', auth='user', website=True, readonly=True)
+    def portal_factory_employees_home(self, **kw):
+        values = self._prepare_portal_layout_values()
+        tenv = self._portal_translation_env()
+        partner_fields = tenv['res.partner'].fields_get(['portal_contact_type'])
+        selection = partner_fields.get('portal_contact_type', {}).get('selection') or []
+        labels = dict(selection)
+        label = labels.get('factory_employee', 'factory_employee')
+        values.update({'page_name': 'factory_employees', 'portal_role_page_title': tenv._('Welcome %s') % label})
+        return request.render('contacts_portal_type.portal_page_role_factory_employee', values)
 
     def _prepare_home_portal_values(self, counters):
         values = super()._prepare_home_portal_values(counters)

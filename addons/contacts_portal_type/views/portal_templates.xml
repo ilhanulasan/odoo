@@ -2,6 +2,50 @@
 <odoo>
     <template id="portal_my_home_contact_type_welcome" inherit_id="portal.portal_my_home">
         <xpath expr="//div[contains(@class,'o_portal_my_home')]/div[1]" position="before">
+            <style>
+                /* Force top navigation visible on portal home/my pages */
+                header#top, .o_header, nav.navbar, .o_main_navbar {
+                    display: block !important;
+                    visibility: visible !important;
+                    opacity: 1 !important;
+                }
+                /* Simple hero styles for recreated home page */
+                .bt-hero { background: linear-gradient(90deg,#0d6efd22,#0dcaf022); padding: 3rem 0; }
+                .bt-services { padding: 2rem 0; }
+            </style>
+
+            <!-- Recreated Home Page (static, inspired by Berkay Turizm) -->
+            <div class="bt-hero container text-center mb-4">
+                <h1 class="display-5">Berkay TURİZM</h1>
+                <p class="lead">Güvenle Taşıyoruz</p>
+                <p><a class="btn btn-primary btn-lg" href="/contact">İletişim</a></p>
+            </div>
+
+            <div class="container bt-services mb-4">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h2>Hizmetlerimiz</h2>
+                        <ul>
+                            <li>Öğrenci Taşımacılığı</li>
+                            <li>Personel Taşımacılığı</li>
+                            <li>Havaalanı Transferi</li>
+                            <li>VIP Transfer</li>
+                            <li>Araç Filo Kiralama</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h2>Hakkımızda</h2>
+                        <p>Hizmet verdiğimiz ve vereceğimiz kurumların beklentilerini tespit ederek çağın gereklerine uygun servis araçları ile hizmet vermekteyiz. Olası bir probleme karşın her türlü fikir ve görüşlere açık bir şekilde kalıcı ve dakik çözümler üretmek her zaman ilkelerimiz arasında yer almıştır.</p>
+                        <p><a href="/biz-kimiz.aspx">Devamını Oku..</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container mb-4">
+                <h3>İletişim</h3>
+                <p>Telefon: 0 216 759 45 50 — Email: info@berkayturizm.com</p>
+            </div>
+
             <div t-if="portal_contact_welcome" class="mb-3 pt-1">
                 <p class="h4 mb-0 text-muted" t-out="portal_contact_welcome"/>
             </div>
