@@ -850,9 +850,14 @@ class PoFileReader:
                 continue
 
             # in case of moduleS keep only the first
-            match = re.match(r"(module[s]?): (\w+)", entry.comment)
+            match = re.match(r"(module[s]?): (\w+)", entry.comment or "")
+            if not match:
+                # Skip entries without a module comment to avoid parsing errors.
+                # These entries are usually generic or come from external headers.
+                _logger.debug("Skipping PO entry without module comment: %s", entry.msgid)
+                continue
             _, module = match.groups()
-            comments = "\n".join([c for c in entry.comment.split('\n') if not c.startswith('module:')])
+            comments = "\n".join([c for c in (entry.comment or "").split('\n') if not c.startswith('module:')])
             source = entry.msgid
             translation = entry.msgstr
             found_code_occurrence = False

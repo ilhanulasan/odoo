@@ -1,0 +1,15 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_shuttle_route_employee,shuttle.route employee,model_shuttle_route,base.group_user,1,1,1,0
+access_shuttle_route_manager,shuttle.route manager,model_shuttle_route,shuttle_management.group_shuttle_manager,1,1,1,1
+access_shuttle_route_point_employee,shuttle.route.point employee,model_shuttle_route_point,base.group_user,1,1,1,0
+access_shuttle_route_point_manager,shuttle.route.point manager,model_shuttle_route_point,shuttle_management.group_shuttle_manager,1,1,1,1
+access_shuttle_shuttle_employee,shuttle.shuttle employee,model_shuttle_shuttle,base.group_user,1,1,1,0
+access_shuttle_shuttle_manager,shuttle.shuttle manager,model_shuttle_shuttle,shuttle_management.group_shuttle_manager,1,1,1,1
+access_shuttle_note_employee,shuttle.note employee,model_shuttle_note,base.group_user,1,1,1,0
+access_shuttle_note_manager,shuttle.note manager,model_shuttle_note,shuttle_management.group_shuttle_manager,1,1,1,1
+access_shuttle_vehicle_brand_employee,shuttle.vehicle.brand employee,model_shuttle_vehicle_brand,base.group_user,1,1,1,0
+access_shuttle_vehicle_brand_manager,shuttle.vehicle.brand manager,model_shuttle_vehicle_brand,shuttle_management.group_shuttle_manager,1,1,1,1
+access_shuttle_tour_employee,shuttle.tour employee,model_shuttle_tour,base.group_user,1,1,1,0
+access_shuttle_tour_manager,shuttle.tour manager,model_shuttle_tour,shuttle_management.group_shuttle_manager,1,1,1,1
+access_shuttle_tour_point_employee,shuttle.tour.point employee,model_shuttle_tour_point,base.group_user,1,1,1,0
+access_shuttle_tour_point_manager,shuttle.tour.point manager,model_shuttle_tour_point,shuttle_management.group_shuttle_manager,1,1,1,1

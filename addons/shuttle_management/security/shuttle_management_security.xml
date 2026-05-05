@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="module_category_shuttle_management" model="ir.module.category">
+        <field name="name">Shuttle Management</field>
+        <field name="sequence">60</field>
+    </record>
+
+    <record id="res_groups_privilege_shuttle" model="res.groups.privilege">
+        <field name="name">Shuttle</field>
+        <field name="sequence">60</field>
+        <field name="category_id" ref="module_category_shuttle_management"/>
+    </record>
+
+    <record id="group_shuttle_user" model="res.groups">
+        <field name="name">User</field>
+        <field name="sequence">10</field>
+        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        <field name="privilege_id" ref="res_groups_privilege_shuttle"/>
+    </record>
+
+    <record id="group_shuttle_manager" model="res.groups">
+        <field name="name">Administrator</field>
+        <field name="sequence">20</field>
+        <field name="privilege_id" ref="res_groups_privilege_shuttle"/>
+        <field name="implied_ids" eval="[(4, ref('group_shuttle_user'))]"/>
+    </record>
+</odoo>

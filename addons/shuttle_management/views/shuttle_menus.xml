@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem
+        id="menu_shuttle_management_root"
+        name="Shuttle Management"
+        sequence="45"
+    />
+
+    <menuitem
+        id="menu_shuttle_shuttle"
+        name="Shuttles"
+        parent="menu_shuttle_management_root"
+        action="action_shuttle_shuttle"
+        sequence="10"
+    />
+
+    <menuitem
+        id="menu_shuttle_route"
+        name="Routes"
+        parent="menu_shuttle_management_root"
+        action="action_shuttle_route"
+        sequence="20"
+    />
+
+    <menuitem
+        id="menu_shuttle_tour"
+        name="Tours"
+        parent="menu_shuttle_management_root"
+        action="action_shuttle_tour"
+        sequence="30"
+    />
+
+    <menuitem
+        id="menu_shuttle_configuration"
+        name="Configuration"
+        parent="menu_shuttle_management_root"
+        sequence="90"
+        groups="base.group_user"
+    />
+
+    <menuitem
+        id="menu_shuttle_vehicle_brand"
+        name="Vehicle Brands"
+        parent="menu_shuttle_configuration"
+        action="action_shuttle_vehicle_brand"
+        sequence="10"
+        groups="base.group_user"
+    />
+</odoo>

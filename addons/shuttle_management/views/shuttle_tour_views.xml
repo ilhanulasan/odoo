@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_shuttle_tour_tree" model="ir.ui.view">
+        <field name="name">shuttle.tour.list</field>
+        <field name="model">shuttle.tour</field>
+        <field name="arch" type="xml">
+            <list string="Tours">
+                <field name="tour_no"/>
+                <field name="date"/>
+                <field name="start_time"/>
+                <field name="end_time"/>
+                <field name="total_duration"/>
+                <field name="shuttle_id"/>
+                <field name="route_id"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_shuttle_tour_form" model="ir.ui.view">
+        <field name="name">shuttle.tour.form</field>
+        <field name="model">shuttle.tour</field>
+        <field name="arch" type="xml">
+            <form string="Tour">
+                <sheet>
+                    <group>
+                        <field name="tour_no"/>
+                        <field name="date"/>
+                        <field name="start_time"/>
+                        <field name="end_time"/>
+                        <field name="total_duration" readonly="1"/>
+                    </group>
+                    <group>
+                        <field name="shuttle_id"/>
+                        <field name="route_id"/>
+                    </group>
+                    <notebook>
+                        <page string="Points" name="points">
+                            <field name="point_ids" nolabel="1">
+                                <list string="Points" editable="bottom">
+                                    <field name="datetime"/>
+                                    <field name="latitude"/>
+                                    <field name="longitude"/>
+                                    <field name="address" readonly="1"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_shuttle_tour_point_tree" model="ir.ui.view">
+        <field name="name">shuttle.tour.point.list</field>
+        <field name="model">shuttle.tour.point</field>
+        <field name="arch" type="xml">
+            <list string="Tour Points">
+                <field name="tour_id"/>
+                <field name="datetime"/>
+                <field name="latitude"/>
+                <field name="longitude"/>
+                <field name="address"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_shuttle_tour_search" model="ir.ui.view">
+        <field name="name">shuttle.tour.search</field>
+        <field name="model">shuttle.tour</field>
+        <field name="arch" type="xml">
+            <search string="Tours">
+                <field name="tour_no"/>
+                <field name="date"/>
+                <field name="shuttle_id"/>
+                <field name="route_id"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_shuttle_tour" model="ir.actions.act_window">
+        <field name="name">Tours</field>
+        <field name="res_model">shuttle.tour</field>
+        <field name="view_mode">list,form</field>
+        <field name="search_view_id" ref="view_shuttle_tour_search"/>
+    </record>
+</odoo>
+

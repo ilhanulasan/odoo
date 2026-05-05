@@ -5,12 +5,362 @@
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.view_partner_form"/>
         <field name="arch" type="xml">
+            <xpath expr="//div[contains(@class,'flex-column') and contains(@class,'flex-grow-1')]/field[@name='company_type']" position="replace">
+                <field name="contact_type" widget="radio" options="{'horizontal': true}"/>
+            </xpath>
             <xpath expr="//div[contains(@class,'flex-column') and contains(@class,'flex-grow-1')]/h1" position="after">
                 <field name="portal_contact_type"
                        widget="radio"
                        options="{'horizontal': true}"
-                       string="Portal Contact Type"/>
+                       string="Portal Contact Type"
+                       invisible="contact_type != 'person'"/>
+            </xpath>
+
+            <xpath expr="//sheet//span[@name='address_name']/following-sibling::div[contains(@class,'o_address_format')][1]" position="after">
+                <!-- Route selection (visible to students and factory employees) -->
+                <span class="o_form_label o_td_label mt-2" invisible="portal_contact_type not in ('student','factory_employee')">
+                    <label for="route_id" class="fw-bold"/>
+                </span>
+                <div class="o_address_format d-flex align-items-center gap-2 mt-1" invisible="portal_contact_type not in ('student','factory_employee')">
+                    <field name="route_id"
+                           widget="many2one"
+                           class="flex-grow-1"
+                           options="{'no_create': False}"
+                           context="{'default_route_id': False}"/>
+                    <field name="route_shuttle_picture"
+                           widget="image"
+                           class="rounded"
+                           options="{'size': [64, 64], 'img_class': 'rounded border object-fit-cover'}"
+                           nolabel="1"
+                           invisible="not route_id"/>
+                </div>
+                <span class="o_form_label o_td_label mt-2" invisible="contact_type != 'person' or portal_contact_type != 'student'">
+                    <label for="parent_partner_id" class="fw-bold"/>
+                </span>
+                <div class="o_address_format d-flex align-items-center gap-2 mt-1" invisible="contact_type != 'person' or portal_contact_type != 'student'">
+                    <field name="parent_partner_id"
+                           widget="many2one"
+                           class="flex-grow-1"
+                           domain="[('portal_contact_type','=', 'parent'), ('contact_type', '=', 'person')]"
+                           options="{'no_create': False}"/>
+                    <field name="parent_avatar_128"
+                           widget="image"
+                           class="rounded"
+                           options="{'size': [64, 64], 'img_class': 'rounded border object-fit-cover'}"
+                           nolabel="1"/>
+                </div>
+                <span class="o_form_label o_td_label mt-2" invisible="portal_contact_type not in ('student','factory_employee') or not route_id">
+                    <label for="annual_fee" class="fw-bold"/>
+                </span>
+                <div class="o_address_format d-flex align-items-center gap-2 mt-1" invisible="portal_contact_type not in ('student','factory_employee') or not route_id">
+                    <field name="currency_id" invisible="1"/>
+                    <field name="annual_fee" class="flex-grow-1"/>
+                </div>
+            </xpath>
+
+            <!-- Right column (next to Address): DOB / Gender / School / Special -->
+            <xpath expr="//field[@name='function']" position="after">
+                <div invisible="contact_type != 'person'">
+                    <div class="d-flex align-items-center gap-2">
+                        <label for="date_of_birth" class="mb-0 text-nowrap"/>
+                        <field name="date_of_birth" widget="date" options="{'numeric': true}" class="flex-grow-1"/>
+                    </div>
+                    <div class="d-flex align-items-center gap-2 mt-2">
+                        <label for="gender" class="mb-0 text-nowrap"/>
+                        <field name="gender" widget="radio" options="{'horizontal': true}" class="flex-grow-1"/>
+                    </div>
+
+                    <div class="mt-2" invisible="portal_contact_type not in ('student','parent')">
+                        <label for="school_id" class="fw-bold"/>
+                        <div class="d-flex align-items-center gap-2">
+                            <field name="school_id"
+                                   class="fs-3 flex-grow-1"
+                                   domain="[('contact_type','=','school')]"
+                                   options="{'no_create': False}"/>
+                            <field name="school_avatar_128" widget="image"
+                                   class="rounded"
+                                   options="{'size': [200, 512], 'img_class': 'rounded object-fit-contain'}"
+                                   nolabel="1"/>
+                        </div>
+
+                        <div class="d-flex flex-wrap gap-3 mt-2 align-items-center">
+                            <span class="d-inline-flex align-items-center gap-1">
+                                <span class="text-muted" title="Engelli">
+                                    <svg fill="#000000" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+	 width="28" height="28" viewBox="0 0 535.5 535.5" xml:space="preserve"
+	>
+<g>
+	<g>
+		<path d="M0,54.793v-0.01V54.793z"/>
+		<path d="M443.527,47.812h-4.781H101.535c-24.356,0-44.16,19.804-44.16,44.16v341.993c0,24.355,19.804,44.16,44.16,44.16h341.992
+			c24.357,0,44.16-19.805,44.16-44.16V96.762v-4.781C487.688,67.616,467.885,47.812,443.527,47.812z M196.567,411.482
+			c-57.652-25.867-83.576-93.971-57.71-151.632c11.532-25.704,31.48-45.097,55.137-56.409l1.187,31.91
+			c-12.891,8.692-23.619,20.942-30.428,36.118c-19.46,43.385,0.048,94.641,43.423,114.109c43.395,19.469,94.649-0.037,114.12-43.434
+			c0.477-1.07,0.928-2.152,1.357-3.232l17.098,28.756C310.887,415.414,249.352,435.16,196.567,411.482z M364.521,383.562
+			l-58.5-102.225h-96.726l-4.16-136.007c-8.932-7.382-12.278-20.11-7.307-31.183c5.948-13.263,21.611-19.23,34.885-13.273
+			c13.263,5.948,19.229,21.621,13.281,34.884c-3.041,6.78-8.635,11.646-15.117,14l0.306,0.115l5.171,53.215c0,0,43.548,0,65.156,0
+			c27.273,0,27.273,25.599,3.844,25.599c-17.904,0-65.039,0.067-65.039,0.067l3.223,26.144l79.816,0.22l51.5,91.945
+			c0,0,14.168-7.168,14.299-7.326c22.869-11.842,36.869,11.158,12.035,24.492C376.365,377.557,364.521,383.562,364.521,383.562z"/>
+		<path d="M483.9,535.5L483.9,535.5L483.9,535.5z"/>
+		<path d="M534.879,46.349c-3.232-24.04-20.072-42.037-42.648-45.632C489.523,0.373,486.838,0,483.9,0l0,0H65.274
+			c-0.01,0-0.019,0-0.019,0C34.54,0.01,9.563,24.585,9.563,54.793v419.422c0,29.002,24.47,51.723,55.702,51.723h418.627
+			c30.389,0,51.607-21.266,51.607-51.713l0,0V54.794v-0.01C535.5,51.847,535.176,49.103,534.879,46.349z M497.25,433.965
+			c0,29.615-24.107,53.723-53.723,53.723h-4.781H101.535c-29.615,0-53.722-24.107-53.722-53.723V96.762v-4.781
+			c0-29.625,24.107-53.732,53.722-53.732h341.992c29.615,0,53.723,24.107,53.723,53.722V433.965z"/>
+	</g>
+</g>
+</svg>
+                                </span>
+                                <field name="is_handicapped" widget="boolean_toggle" string=""/>
+                            </span>
+                            <span class="d-inline-flex align-items-center gap-1" title="İşitme engelli">
+                                <span class="text-muted lh-1" aria-label="İşitme engelli">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 16 16">
+                                        <path d="M8.5 1.5a4.5 4.5 0 0 1 4.5 4.5c0 1.88-1.1 3.22-2.1 4.27-.2.21-.4.41-.58.6-.77.83-1.07 1.32-1.07 2.13a2.25 2.25 0 0 1-4.5 0h1.2a1.05 1.05 0 0 0 2.1 0c0-1.29.56-2.14 1.52-3.18.18-.2.37-.4.57-.6.96-1 1.76-2.03 1.76-3.82a3.3 3.3 0 0 0-6.6 0h-1.2A4.5 4.5 0 0 1 8.5 1.5z"/>
+                                        <path d="M2.2 2.2a.6.6 0 0 1 .85 0l10.75 10.75a.6.6 0 0 1-.85.85L2.2 3.05a.6.6 0 0 1 0-.85z"/>
+                                    </svg>
+                                </span>
+                                <field name="is_deaf" widget="boolean_toggle" string=""/>
+                            </span>
+                            <span class="d-inline-flex align-items-center gap-1" title="Görme engelli">
+                                <span class="text-muted lh-1" aria-label="Görme engelli">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 16 16">
+                                        <path d="M16 8s-3 5-8 5-8-5-8-5 3-5 8-5 8 5 8 5z"/>
+                                        <path d="M8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" fill="#fff"/>
+                                        <path d="M2.2 2.2a.6.6 0 0 1 .85 0l10.75 10.75a.6.6 0 0 1-.85.85L2.2 3.05a.6.6 0 0 1 0-.85z"/>
+                                    </svg>
+                                </span>
+                                <field name="is_blind" widget="boolean_toggle" string=""/>
+                            </span>
+                            <span class="d-inline-flex align-items-center gap-1" title="Alerjik">
+                                <span class="text-muted lh-1" aria-label="Alerjik">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 16 16">
+                                        <path d="M8.982 1.566a1.13 1.13 0 0 0-1.964 0L.165 13.233c-.457.778.091 1.767.982 1.767h13.706c.89 0 1.438-.99.982-1.767L8.982 1.566z"/>
+                                        <path d="M8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5z" fill="#fff"/>
+                                        <path d="M8.002 11a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" fill="#fff"/>
+                                    </svg>
+                                </span>
+                                <field name="is_allergic" widget="boolean_toggle" string=""/>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+
+            <!-- Full width map below the 2-column address block -->
+            <xpath expr="//group[.//div[contains(@class,'o_address_format')]]" position="after">
+                <div class="mt-2 w-100">
+                    <widget name="partner_location_map"/>
+                </div>
+            </xpath>
+
+            <!-- Hide default sheet duplicates; keep fields inside notebook subviews (e.g. Addresses) untouched. Duplicates live on the Information tab below. -->
+            <xpath expr="//sheet//field[@name='parent_id'][not(ancestor::notebook)]" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </xpath>
+            <xpath expr="//page[@name='contact_addresses']" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </xpath>
+            <xpath expr="//page[@name='sales_purchases']" position="attributes">
+                <attribute name="invisible">portal_contact_type != 'parent'</attribute>
+            </xpath>
+            <xpath expr="//page[@name='accounting']" position="attributes">
+                <attribute name="invisible">portal_contact_type != 'parent'</attribute>
+            </xpath>
+            <xpath expr="//page[@name='accounting_disabled']" position="attributes">
+                <attribute name="invisible">portal_contact_type != 'parent'</attribute>
+            </xpath>
+            <xpath expr="//sheet//field[@name='function'][not(ancestor::notebook)]" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </xpath>
+            <xpath expr="//sheet//field[@name='vat'][not(ancestor::notebook)]" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </xpath>
+            <xpath expr="//sheet//field[@name='website'][not(ancestor::notebook)]" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </xpath>
+            <xpath expr="//sheet//field[@name='lang'][not(ancestor::notebook)]" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </xpath>
+            <xpath expr="//sheet//field[@name='category_id'][not(ancestor::notebook)]" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </xpath>
+
+            <!-- First notebook under the sheet (main partner tabs); avoids targeting nested notebooks accidentally. -->
+            <xpath expr="(//sheet//notebook)[1]" position="inside">
+                <page string="Information" name="contact_information">
+                    <group>
+                        <group>
+                            <field name="parent_id"
+                                widget="res_partner_many2one"
+                                placeholder="Company Name..."
+                                string="Company"
+                                domain="[('is_company', '=', True)]"
+                                context="{'default_is_company': True, 'default_user_id': user_id, 'show_address': False}"/>
+                            <field name="function" placeholder="e.g. Sales Director"/>
+                            <field name="vat"/>
+                            <field name="website" widget="url"/>
+                        </group>
+                        <group>
+                            <field name="lang" invisible="active_lang_count &lt;= 1"/>
+                            <field name="category_id" widget="many2many_tags" options="{'color_field': 'color'}"/>
+                        </group>
+                    </group>
+                </page>
+                <page string="Dependants" name="dependants" groups="base.group_user" invisible="portal_contact_type != 'parent'">
+                    <field name="dependants_ids" mode="list,form" nolabel="1" context="{'default_parent_partner_id': id}">
+                        <list>
+                            <field name="avatar_128" widget="image" options="{'size': [24,24], 'img_class': 'o_avatar rounded'}"/>
+                            <field name="name"/>
+                            <field name="phone"/>
+                            <field name="email"/>
+                        </list>
+                        <form>
+                            <sheet>
+                                <group>
+                                    <field name="image_1920" widget="contact_image" options="{'preview_image': 'avatar_128', 'size': [130,130], 'img_class': 'rounded border'}"/>
+                                    <field name="name"/>
+                                    <field name="phone"/>
+                                    <field name="email"/>
+                                </group>
+                            </sheet>
+                        </form>
+                    </field>
+                </page>
+                <page string="Shift Hours" name="shift_hours">
+                    <group>
+                        <field name="shift_hours_ids"
+                               mode="list,form"
+                               nolabel="1"
+                               invisible="contact_type not in ('school', 'factory')">
+                            <list>
+                                <field name="shift_type"/>
+                                <field name="start_hour" widget="float_time"/>
+                                <field name="end_hour" widget="float_time"/>
+                                <field name="monday"/>
+                                <field name="tuesday"/>
+                                <field name="wednesday"/>
+                                <field name="thursday"/>
+                                <field name="friday"/>
+                                <field name="saturday"/>
+                                <field name="sunday"/>
+                            </list>
+                            <form>
+                                <sheet>
+                                    <group>
+                                        <field name="shift_type"/>
+                                        <field name="start_hour" widget="float_time"/>
+                                        <field name="end_hour" widget="float_time"/>
+                                        <group>
+                                            <field name="monday"/>
+                                            <field name="tuesday"/>
+                                            <field name="wednesday"/>
+                                            <field name="thursday"/>
+                                            <field name="friday"/>
+                                            <field name="saturday"/>
+                                            <field name="sunday"/>
+                                        </group>
+                                    </group>
+                                </sheet>
+                            </form>
+                        </field>
+
+                        <field name="shift_hours_display_ids"
+                               mode="list"
+                               nolabel="1"
+                               invisible="contact_type in ('school', 'factory')">
+                            <list>
+                                <field name="shift_type"/>
+                                <field name="start_hour" widget="float_time"/>
+                                <field name="end_hour" widget="float_time"/>
+                                <field name="monday"/>
+                                <field name="tuesday"/>
+                                <field name="wednesday"/>
+                                <field name="thursday"/>
+                                <field name="friday"/>
+                                <field name="saturday"/>
+                                <field name="sunday"/>
+                            </list>
+                        </field>
+                    </group>
+                </page>
             </xpath>
         </field>
     </record>
+
+    <!-- Filtered contact lists (Contacts top menu bar) -->
+    <record id="action_contacts_students" model="ir.actions.act_window">
+        <field name="name">Students</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">list,kanban,form,activity</field>
+        <field name="search_view_id" ref="base.view_res_partner_filter"/>
+        <field name="domain">[('contact_type', '=', 'person'), ('portal_contact_type', '=', 'student')]</field>
+        <field name="context">{'default_contact_type': 'person', 'default_portal_contact_type': 'student'}</field>
+    </record>
+
+    <record id="action_contacts_parents" model="ir.actions.act_window">
+        <field name="name">Parents</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">list,kanban,form,activity</field>
+        <field name="search_view_id" ref="base.view_res_partner_filter"/>
+        <field name="domain">[('contact_type', '=', 'person'), ('portal_contact_type', '=', 'parent')]</field>
+        <field name="context">{'default_contact_type': 'person', 'default_portal_contact_type': 'parent'}</field>
+    </record>
+
+    <record id="action_contacts_employees" model="ir.actions.act_window">
+        <field name="name">Employees</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">list,kanban,form,activity</field>
+        <field name="search_view_id" ref="base.view_res_partner_filter"/>
+        <field name="domain">[('contact_type', '=', 'person'), ('portal_contact_type', 'in', ['driver', 'hostess'])]</field>
+        <field name="context">{'default_contact_type': 'person'}</field>
+    </record>
+
+    <record id="action_contacts_schools" model="ir.actions.act_window">
+        <field name="name">Schools</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">list,kanban,form,activity</field>
+        <field name="search_view_id" ref="base.view_res_partner_filter"/>
+        <field name="domain">[('contact_type', '=', 'school')]</field>
+        <field name="context">{'default_contact_type': 'school'}</field>
+    </record>
+
+    <record id="action_contacts_factories" model="ir.actions.act_window">
+        <field name="name">Factories</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">list,kanban,form,activity</field>
+        <field name="search_view_id" ref="base.view_res_partner_filter"/>
+        <field name="domain">[('contact_type', '=', 'factory')]</field>
+        <field name="context">{'default_contact_type': 'factory'}</field>
+    </record>
+
+    <menuitem id="menu_contacts_students"
+              name="Students"
+              parent="contacts.menu_contacts"
+              action="action_contacts_students"
+              sequence="3"/>
+
+    <menuitem id="menu_contacts_parents"
+              name="Parents"
+              parent="contacts.menu_contacts"
+              action="action_contacts_parents"
+              sequence="4"/>
+
+    <menuitem id="menu_contacts_schools"
+              name="Schools"
+              parent="contacts.menu_contacts"
+              action="action_contacts_schools"
+              sequence="5"/>
+
+    <menuitem id="menu_contacts_factories"
+              name="Factories"
+              parent="contacts.menu_contacts"
+              action="action_contacts_factories"
+              sequence="6"/>
+
+    <menuitem id="menu_contacts_employees"
+              name="Employees"
+              parent="contacts.menu_contacts"
+              action="action_contacts_employees"
+              sequence="7"/>
 </odoo>

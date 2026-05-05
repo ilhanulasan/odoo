@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="contacts_portal_type.PartnerLocationMapWidget">
+        <div class="o_partner_location_map w-100">
+            <p class="text-muted small mb-1" t-out="helpText"/>
+            <div class="o_partner_location_map_canvas w-100 border rounded" style="min-height: 560px;" t-ref="map"/>
+        </div>
+    </t>
+</templates>

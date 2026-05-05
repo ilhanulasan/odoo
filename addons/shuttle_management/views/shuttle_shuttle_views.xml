@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_shuttle_shuttle_tree" model="ir.ui.view">
+        <field name="name">shuttle.shuttle.list</field>
+        <field name="model">shuttle.shuttle</field>
+        <field name="arch" type="xml">
+            <list string="Shuttles">
+                <field name="brand_id" optional="show"/>
+                <field name="shuttle_no"/>
+                <field name="route_id"/>
+                <field name="plate_number"/>
+                <field name="driver_id"/>
+                <field name="vehicle_model"/>
+                <field name="year" options="{'enable_formatting': False}"/>
+                <field name="passenger_count" optional="show"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_shuttle_shuttle_form" model="ir.ui.view">
+        <field name="name">shuttle.shuttle.form</field>
+        <field name="model">shuttle.shuttle</field>
+        <field name="arch" type="xml">
+            <form string="Shuttle">
+                <sheet>
+                    <div class="oe_button_box" name="button_box"/>
+                    <field name="picture" widget="image" class="oe_avatar"/>
+                    <div class="oe_title">
+                        <label for="shuttle_no"/>
+                        <h1>
+                            <field name="shuttle_no" placeholder="Shuttle number"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group string="Assignment">
+                            <field name="route_id" options="{'no_create': False}"/>
+                            <field name="plate_number"/>
+                            <field name="driver_id" context="{'default_is_company': False}"/>
+                        </group>
+                        <group string="Vehicle">
+                            <label for="brand_id" string="Brand"/>
+                            <div class="d-flex flex-row align-items-center flex-wrap gap-3 mb-2">
+                                <div style="flex: 0 0 220px; min-width: 160px; max-width: 260px;">
+                                    <field name="brand_id" nolabel="1" options="{'no_create': True}" placeholder="Select a brand" class="w-100"/>
+                                </div>
+                                <field name="brand_logo" nolabel="1" widget="image" readonly="1" invisible="not brand_id"
+                                       class="rounded bg-white p-1 align-self-center flex-shrink-0"
+                                       style="max-height: 60px; max-width: 120px; object-fit: contain;"/>
+                            </div>
+                            <field name="vehicle_model"/>
+                            <field name="year" options="{'enable_formatting': False}"/>
+                            <field name="passenger_count"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="description" placeholder="Description..."/>
+                    </group>
+                    <notebook>
+                        <page string="Notes" name="notes">
+                            <field name="note_ids" nolabel="1">
+                                <list editable="bottom">
+                                    <field name="note"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page string="Tours" name="tours">
+                            <field name="tour_ids" nolabel="1">
+                                <list string="Tours" editable="bottom">
+                                    <field name="tour_no"/>
+                                    <field name="date"/>
+                                    <field name="start_time"/>
+                                    <field name="end_time"/>
+                                    <field name="total_duration"/>
+                                    <field name="route_id"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_shuttle_shuttle_search" model="ir.ui.view">
+        <field name="name">shuttle.shuttle.search</field>
+        <field name="model">shuttle.shuttle</field>
+        <field name="arch" type="xml">
+            <search string="Shuttles">
+                <field name="brand_id"/>
+                <field name="shuttle_no"/>
+                <field name="route_id"/>
+                <field name="plate_number"/>
+                <field name="driver_id"/>
+                <field name="vehicle_model"/>
+                <field name="passenger_count"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_shuttle_shuttle" model="ir.actions.act_window">
+        <field name="name">Shuttles</field>
+        <field name="res_model">shuttle.shuttle</field>
+        <field name="view_mode">list,form</field>
+        <field name="search_view_id" ref="view_shuttle_shuttle_search"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Register a shuttle and link it to a route.
+            </p>
+        </field>
+    </record>
+</odoo>

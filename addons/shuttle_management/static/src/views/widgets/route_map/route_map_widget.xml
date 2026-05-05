@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="shuttle_management.RouteMapWidget">
+        <div class="o_shuttle_route_map w-100">
+            <p class="text-muted small mb-1" t-out="mapHelpText"/>
+            <div class="o_shuttle_route_map_canvas w-100 border rounded" style="min-height: 420px;" t-ref="map"/>
+        </div>
+    </t>
+</templates>
