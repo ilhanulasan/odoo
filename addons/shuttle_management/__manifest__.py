@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     "name": "Shuttle Management",
-    "version": "19.0.4.0.0",
+    "version": "19.0.4.0.2",
     "category": "Operations",
     "summary": "Shuttles, routes, and route points on a map",
     "depends": ["base", "contacts", "mail"],

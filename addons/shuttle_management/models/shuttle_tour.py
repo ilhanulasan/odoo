@@ -15,6 +15,7 @@ _logger = logging.getLogger(__name__)
 class ShuttleTour(models.Model):
     _name = "shuttle.tour"
     _description = "Shuttle Tour"
+    _inherit = ["mail.thread", "mail.activity.mixin"]
     _order = "tour_no"
 
     tour_no = fields.Char(string="No.", required=True, copy=False, readonly=True, default=lambda self: "New")
@@ -24,13 +25,14 @@ class ShuttleTour(models.Model):
     total_duration = fields.Float(string="Total Duration (hours)", compute="_compute_total_duration", store=True)
     shuttle_id = fields.Many2one("shuttle.shuttle", string="Shuttle", ondelete="set null")
     route_id = fields.Many2one("shuttle.route", string="Route", ondelete="set null")
+    notes = fields.Text(string="Notes")
     point_ids = fields.One2many("shuttle.tour.point", "tour_id", string="Tour Points")
 
     @api.model_create_multi
     def create(self, vals_list):
         for vals in vals_list:
             if vals.get("tour_no", "New") == "New":
-                vals["tour_no"] = self.env["ir.sequence"].next_by_code("shuttle.tour") or "New"
+                vals["tour_no"] = self.env["ir.sequence"].sudo().next_by_code("shuttle.tour") or "New"
         return super().create(vals_list)
 
     @api.depends("start_time", "end_time")

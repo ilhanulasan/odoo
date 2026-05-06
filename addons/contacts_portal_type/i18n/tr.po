@@ -1,352 +1,3 @@
-msgid ""
-msgstr ""
-"Project-Id-Version: contacts_portal_type\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-05 00:00+0000\n"
-"PO-Revision-Date: 2026-05-05 00:00+0000\n"
-"Last-Translator: Auto Translator <devnull@example.com>\n"
-"Language-Team: Turkish\n"
-"Language: tr\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-
-#: models/res_partner.py:8
-msgid "Person"
-msgstr "Kişi"
-
-#: models/res_partner.py:11
-msgid "Company"
-msgstr "Şirket"
-
-#: models/res_partner.py:12
-msgid "School"
-msgstr "Okul"
-
-#: models/res_partner.py:13
-msgid "Factory"
-msgstr "Fabrika"
-
-#: models/res_partner.py:15
-msgid "Contact Type"
-msgstr "İletişim Türü"
-
-#: models/res_partner.py:22
-msgid "Driver"
-msgstr "Şoför"
-
-#: models/res_partner.py:23
-msgid "Student"
-msgstr "Öğrenci"
-
-#: models/res_partner.py:24
-msgid "Parent"
-msgstr "Veli"
-
-#: models/res_partner.py:25
-msgid "Hostess"
-msgstr "Hostes"
-
-#: models/res_partner.py:26
-msgid "School Representative"
-msgstr "Okul Temsilcisi"
-
-#: models/res_partner.py:27
-msgid "Internal User"
-msgstr "Dahili Kullanıcı"
-
-#: models/res_partner.py:28
-msgid "Vendor"
-msgstr "Tedarikçi"
-
-#: models/res_partner.py:29
-msgid "Customer"
-msgstr "Müşteri"
-
-#: models/res_partner.py:30
-msgid "Factory Representative"
-msgstr "Fabrika Temsilcisi"
-
-#: models/res_partner.py:31
-msgid "Factory Employee"
-msgstr "Fabrika Çalışanı"
-
-#: models/res_partner.py:33
-msgid "Portal Contact Type"
-msgstr "Portal İletişim Türü"
-
-#: models/res_partner.py:34
-msgid "Role of this contact when exposed on the portal."
-msgstr "Portal'da gösterildiğinde bu kişinin rolü."
-
-#: models/res_partner.py:37
-msgid "Date of Birth"
-msgstr "Doğum Tarihi"
-
-#: models/res_partner.py:40
-msgid "Male"
-msgstr "Erkek"
-
-#: models/res_partner.py:41
-msgid "Female"
-msgstr "Kadın"
-
-#: models/res_partner.py:43
-msgid "Gender"
-msgstr "Cinsiyet"
-
-#: models/res_partner.py:48
-msgid "School"
-msgstr "Okul"
-
-#: models/res_partner.py:55
-msgid "Parent"
-msgstr "Veli"
-
-#: models/res_partner.py:62
-msgid "Dependants"
-msgstr "Bakılan Kişiler"
-
-#: models/res_partner.py:67
-msgid "Shift Hours"
-msgstr "Vardiya Saatleri"
-
-#: models/res_partner.py:71
-msgid "Shift Hours (Display)"
-msgstr "Vardiya Saatleri (Görüntüle)"
-
-#: models/res_partner.py:90
-msgid "Handicapped"
-msgstr "Engelli"
-
-#: models/res_partner.py:91
-msgid "Deaf"
-msgstr "İşitme Engelli"
-
-#: models/res_partner.py:92
-msgid "Blind"
-msgstr "Görme Engelli"
-
-#: models/res_partner.py:93
-msgid "Allergic"
-msgstr "Alerjik"
-
-#: models/res_partner.py:97
-msgid "Route Id"
-msgstr "Güzergah Kimliği"
-
-#: models/res_partner.py:100
-msgid "Route Name"
-msgstr "Güzergah Adı"
-
-#: models/res_partner.py:101
-msgid "Assigned Shuttle"
-msgstr "Atanan Servis"
-
-#: models/res_partner.py:102
-msgid "Assigned Shuttle Plate"
-msgstr "Atanan Servis Plakası"
-
-#: models/res_partner.py:103
-msgid "Assigned Shuttle Picture"
-msgstr "Atanan Servis Görseli"
-
-#: models/res_partner.py:112
-msgid "Annual Fee Currency"
-msgstr "Yıllık Ücret Para Birimi"
-
-#: models/res_partner.py:114
-msgid "Annual shuttle fee is denominated in Turkish Lira (TRY)."
-msgstr "Yıllık servis ücreti Türk Lirası (TRY) cinsindendir."
-
-#: models/res_partner.py:116
-msgid "Annual Fee"
-msgstr "Yıllık Ücret"
-
-#: models/res_partner.py:123
-msgid "Address"
-msgstr "Adres"
-
-#: models/res_partner.py:151
-msgid "Contact"
-msgstr "Kişi"
-
-#: models/res_partner.py:154
-msgid "Morning"
-msgstr "Sabah"
-
-#: models/res_partner.py:155
-msgid "Afternoon"
-msgstr "Öğleden Sonra"
-
-#: models/res_partner.py:156
-msgid "Full Day"
-msgstr "Tam Gün"
-
-#: models/res_partner.py:157
-msgid "Day Shift"
-msgstr "Gündüz Vardiyası"
-
-#: models/res_partner.py:158
-msgid "Shift-1"
-msgstr "Vardiya-1"
-
-#: models/res_partner.py:159
-msgid "Shift-2"
-msgstr "Vardiya-2"
-
-#: models/res_partner.py:160
-msgid "Shift-3"
-msgstr "Vardiya-3"
-
-#: models/res_partner.py:165
-msgid "Start Hour"
-msgstr "Başlangıç Saati"
-
-#: models/res_partner.py:166
-msgid "End Hour"
-msgstr "Bitiş Saati"
-
-#: models/res_partner.py:167
-msgid "Monday"
-msgstr "Pazartesi"
-
-#: models/res_partner.py:168
-msgid "Tuesday"
-msgstr "Salı"
-
-#: models/res_partner.py:169
-msgid "Wednesday"
-msgstr "Çarşamba"
-
-#: models/res_partner.py:170
-msgid "Thursday"
-msgstr "Perşembe"
-
-#: models/res_partner.py:171
-msgid "Friday"
-msgstr "Cuma"
-
-#: models/res_partner.py:172
-msgid "Saturday"
-msgstr "Cumartesi"
-
-#: models/res_partner.py:173
-msgid "Sunday"
-msgstr "Pazar"
-
-#: controllers/portal.py:33
-msgid "User Dashboard"
-msgstr "Kullanıcı Paneli"
-
-#: controllers/portal.py:52
-msgid "Servis Soförleri Portalı"
-msgstr "Servis Şoförleri Portalı"
-
-#: controllers/portal.py:53
-msgid "Tur Başlat"
-msgstr "Tur Başlat"
-
-#: controllers/portal.py:54
-msgid "Yeni Öğrenci Kaydı"
-msgstr "Yeni Öğrenci Kaydı"
-
-#: controllers/portal.py:66
-msgid "Parents"
-msgstr "Veliler"
-
-#: controllers/portal.py:81
-msgid "Welcome %s"
-msgstr "Hoş geldiniz %s"
-
-#: views/res_partner_views.xml:15
-msgid "Portal Contact Type"
-msgstr "Portal İletişim Türü"
-
-#: views/res_partner_views.xml:196
-msgid "Company Name..."
-msgstr "Şirket Adı..."
-
-#: views/res_partner_views.xml:199
-msgid "Company"
-msgstr "Şirket"
-
-#: views/res_partner_views.xml:200
-msgid "e.g. Sales Director"
-msgstr "ör. Satış Direktörü"
-
-#: views/portal_role_pages.xml:11
-msgid "Driver portal"
-msgstr "Şoför Portalı"
-
-#: views/portal_role_pages.xml:27
-msgid "Parents portal"
-msgstr "Veli Portalı"
-
-#: views/portal_role_pages.xml:16
-msgid "Tur Başlat"
-msgstr "Tur Başlat"
-
-#: views/portal_role_pages.xml:20
-msgid "Yeni Öğrenci Kaydı"
-msgstr "Yeni Öğrenci Kaydı"
-
-#: views/portal_templates.xml:6
-msgid "portal_contact_welcome"
-msgstr "portal_contact_welcome"
-
-#: views/res_partner_views.xml:191
-msgid "Information"
-msgstr "Bilgiler"
-
-#: views/res_partner_views.xml:210
-msgid "Dependants"
-msgstr "Bakılan Kişiler"
-
-#: views/res_partner_views.xml:230
-msgid "Shift Hours"
-msgstr "Vardiya Saatleri"
-
-#: views/res_partner_views.xml:292
-msgid "Students"
-msgstr "Öğrenciler"
-
-#: views/res_partner_views.xml:302
-msgid "Parents"
-msgstr "Veliler"
-
-#: views/res_partner_views.xml:311
-msgid "Employees"
-msgstr "Çalışanlar"
-
-#: views/res_partner_views.xml:320
-msgid "Schools"
-msgstr "Okullar"
-
-#: views/res_partner_views.xml:329
-msgid "Factories"
-msgstr "Fabrikalar"
-
-#: views/res_partner_views.xml:337
-msgid "Students"
-msgstr "Öğrenciler"
-
-#: views/res_partner_views.xml:343
-msgid "Parents"
-msgstr "Veliler"
-
-#: views/res_partner_views.xml:349
-msgid "Schools"
-msgstr "Okullar"
-
-#: views/res_partner_views.xml:355
-msgid "Factories"
-msgstr "Fabrikalar"
-
-#: views/res_partner_views.xml:361
-msgid "Employees"
-msgstr "Çalışanlar"
-
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * contacts_portal_type
@@ -355,219 +6,196 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 19.0\n"
 "Report-Msgid-Bugs-To: \n"
-"Language: tr\n"
+"POT-Creation-Date: 2026-05-07 12:00+0000\n"
+"PO-Revision-Date: 2026-05-07 12:00+0000\n"
+"Last-Translator: \n"
 "Language-Team: Turkish\n"
+"Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: contacts_portal_type
-#: code:addons/contacts_portal_type/controllers/portal.py:0
-msgid "Welcome %s"
-msgstr "Hoş geldiniz, %s"
-
-#. module: contacts_portal_type
-#: model:ir.module.module,shortdesc:base.module_contacts_portal_type
 msgid "Contacts Portal Contact Type"
-msgstr "Kişiler — Portal iletişim türü"
+msgstr "İletişim Portal İletişim Türü"
 
 #. module: contacts_portal_type
-#: model:ir.module.module,summary:base.module_contacts_portal_type
 msgid "Portal contact type on partners"
-msgstr "Partner kayıtlarında portal iletişim türü"
+msgstr "İş ortaklarında portal iletişim türü"
 
 #. module: contacts_portal_type
-#: model:ir.model.fields,field_description:contacts_portal_type.field_res_partner__portal_contact_type
-#: model_terms:ir.ui.view,arch_db:contacts_portal_type.view_partner_form_portal_contact_type
-msgid "Portal Contact Type"
-msgstr "Portal iletişim türü"
+msgid "Sales/CRM"
+msgstr "Satış/CRM"
 
 #. module: contacts_portal_type
-#: model:ir.model.fields,field_description:contacts_portal_type.field_res_partner__contact_type
-msgid "Contact Type"
-msgstr "İletişim türü"
-
-#. module: contacts_portal_type
-#: model:ir.model.fields,field_description:contacts_portal_type.field_res_partner__date_of_birth
-msgid "Date of Birth"
-msgstr "Doğum tarihi"
-
-#. module: contacts_portal_type
-#: model:ir.model.fields,field_description:contacts_portal_type.field_res_partner__gender
-msgid "Gender"
-msgstr "Cinsiyet"
-
-#. module: contacts_portal_type
-#: model:ir.model.fields,field_description:contacts_portal_type.field_res_partner__school_id
-msgid "School"
-msgstr "Okul"
-
-#. module: contacts_portal_type
-#: model:ir.model.fields,field_description:contacts_portal_type.field_res_partner__is_handicapped
-msgid "Handicapped"
-msgstr "Engelli"
-
-#. module: contacts_portal_type
-#: model:ir.model.fields,field_description:contacts_portal_type.field_res_partner__is_deaf
-msgid "Deaf"
-msgstr "İşitme engelli"
-
-#. module: contacts_portal_type
-#: model:ir.model.fields,field_description:contacts_portal_type.field_res_partner__is_blind
-msgid "Blind"
-msgstr "Görme engelli"
-
-#. module: contacts_portal_type
-#: model:ir.model.fields,field_description:contacts_portal_type.field_res_partner__is_allergic
-msgid "Allergic"
-msgstr "Alerjik"
-
-#. module: contacts_portal_type
-#: model:ir.model.fields.selection,name:contacts_portal_type.selection__res_partner__gender__male
-#: code:addons/contacts_portal_type/models/res_partner.py:0
-msgid "Male"
-msgstr "Erkek"
-
-#. module: contacts_portal_type
-#: model:ir.model.fields.selection,name:contacts_portal_type.selection__res_partner__gender__female
-#: code:addons/contacts_portal_type/models/res_partner.py:0
-msgid "Female"
-msgstr "Kız"
-
-#. module: contacts_portal_type
-#: model:ir.model.fields,help:contacts_portal_type.field_res_partner__portal_contact_type
-msgid "Role of this contact when exposed on the portal."
-msgstr "Bu kişinin portalda göründüğündeki rolü."
-
-#. module: contacts_portal_type
-#: model:ir.model.fields.selection,name:contacts_portal_type.selection__res_partner__portal_contact_type__hostess
-#: code:addons/contacts_portal_type/models/res_partner.py:0
 msgid "Hostess"
 msgstr "Hostes"
 
 #. module: contacts_portal_type
-#: model:ir.model.fields.selection,name:contacts_portal_type.selection__res_partner__portal_contact_type__school_rep
-#: code:addons/contacts_portal_type/models/res_partner.py:0
-msgid "School Representative"
-msgstr "Okul temsilcisi"
+msgid "Portal hostess who started this tour from the website."
+msgstr "Bu turu web sitesinden başlatan portal hostesidir."
 
 #. module: contacts_portal_type
-#: model:ir.model.fields.selection,name:contacts_portal_type.selection__res_partner__portal_contact_type__driver
-#: code:addons/contacts_portal_type/models/res_partner.py:0
-msgid "Driver"
-msgstr "Sürücü"
+msgid "User Dashboard"
+msgstr "Kullanıcı Paneli"
 
 #. module: contacts_portal_type
-#: model:ir.model.fields.selection,name:contacts_portal_type.selection__res_partner__portal_contact_type__internal
-#: code:addons/contacts_portal_type/models/res_partner.py:0
-msgid "Internal User"
-msgstr "İç kullanıcı"
+msgid "This action is only available for portal users whose contact is set to Hostess."
+msgstr "Bu işlem yalnızca iletişim türü Hostes olarak ayarlanmış portal kullanıcıları için geçerlidir."
 
 #. module: contacts_portal_type
-#: model:ir.model.fields.selection,name:contacts_portal_type.selection__res_partner__portal_contact_type__parent
-#: code:addons/contacts_portal_type/models/res_partner.py:0
-msgid "Parent"
-msgstr "Veli"
+msgid "Please sign in to continue."
+msgstr "Devam etmek için lütfen giriş yapın."
 
 #. module: contacts_portal_type
-#: model:ir.model.fields.selection,name:contacts_portal_type.selection__res_partner__portal_contact_type__student
-#: code:addons/contacts_portal_type/models/res_partner.py:0
-msgid "Student"
-msgstr "Öğrenci"
+msgid "You already have an active tour. Finish it before starting a new one."
+msgstr "Zaten aktif bir turunuz var. Yeni tur başlatmadan önce mevcut turu bitirin."
 
 #. module: contacts_portal_type
-#: model:ir.model.fields.selection,name:contacts_portal_type.selection__res_partner__portal_contact_type__vendor
-#: code:addons/contacts_portal_type/models/res_partner.py:0
-msgid "Vendor"
-msgstr "Tedarikçi"
+msgid "Invalid route or shuttle."
+msgstr "Geçersiz güzergâh veya servis."
 
 #. module: contacts_portal_type
-#: model:ir.model.fields.selection,name:contacts_portal_type.selection__res_partner__portal_contact_type__customer
-#: code:addons/contacts_portal_type/models/res_partner.py:0
-msgid "Customer"
-msgstr "Müşteri"
+msgid "The selected shuttle does not match the route."
+msgstr "Seçilen servis bu güzergâha ait değil."
 
 #. module: contacts_portal_type
-#: model:ir.model.fields.selection,name:contacts_portal_type.selection__res_partner__portal_contact_type__factory_rep
-#: code:addons/contacts_portal_type/models/res_partner.py:0
-msgid "Factory Representative"
-msgstr "Fabrika temsilcisi"
+msgid "Invalid tour or coordinates."
+msgstr "Geçersiz tur veya koordinatlar."
 
 #. module: contacts_portal_type
-#: model:ir.model.fields.selection,name:contacts_portal_type.selection__res_partner__contact_type__person
-#: code:addons/contacts_portal_type/models/res_partner.py:0
-msgid "Person"
-msgstr "Kişi"
+msgid "Tour not found or already finished."
+msgstr "Tur bulunamadı veya zaten tamamlandı."
 
 #. module: contacts_portal_type
-#: model:ir.model.fields.selection,name:contacts_portal_type.selection__res_partner__contact_type__company
-#: code:addons/contacts_portal_type/models/res_partner.py:0
-msgid "Company"
-msgstr "Şirket"
+msgid "Invalid tour."
+msgstr "Geçersiz tur."
 
 #. module: contacts_portal_type
-#: model:ir.model.fields.selection,name:contacts_portal_type.selection__res_partner__contact_type__school
-#: code:addons/contacts_portal_type/models/res_partner.py:0
-msgid "School"
-msgstr "Okul"
+msgid "Tour not found."
+msgstr "Tur bulunamadı."
 
 #. module: contacts_portal_type
-#: model:ir.model.fields.selection,name:contacts_portal_type.selection__res_partner__contact_type__factory
-#: code:addons/contacts_portal_type/models/res_partner.py:0
-msgid "Factory"
-msgstr "Fabrika"
+msgid "Geolocation is not supported by this browser."
+msgstr "Bu tarayıcı konum hizmetini desteklemiyor."
 
 #. module: contacts_portal_type
-#: code:addons/contacts_portal_type/controllers/portal.py:0
-msgid "Parents"
-msgstr "Veliler"
+msgid "Invalid response from server. Try refreshing the page."
+msgstr "Sunucudan geçersiz yanıt. Sayfayı yenilemeyi deneyin."
 
 #. module: contacts_portal_type
-#: code:addons/contacts_portal_type/controllers/portal.py:0
-msgid "Shuttle Drivers"
-msgstr "Shuttle sürücüleri"
+msgid "Request failed"
+msgstr "İstek başarısız"
 
 #. module: contacts_portal_type
-#: code:addons/contacts_portal_type/controllers/portal.py:0
+msgid "Request failed (%s). If the problem continues, sign out and sign in again."
+msgstr "İstek başarısız (%s). Sorun sürerse oturumu kapatıp tekrar açın."
+
+#. module: contacts_portal_type
+msgid "Unexpected response from server (not JSON). Try refreshing the page."
+msgstr "Sunucudan beklenmeyen yanıt (JSON değil). Sayfayı yenileyin."
+
+#. module: contacts_portal_type
+msgid "Please select a route and a shuttle."
+msgstr "Lütfen bir güzergâh ve bir servis seçin."
+
+#. module: contacts_portal_type
+msgid "Getting location…"
+msgstr "Konum alınıyor…"
+
+#. module: contacts_portal_type
+msgid "No location; using a random point on the Anatolian side of Istanbul."
+msgstr "Konum yok; İstanbul Anadolu yakasında rastgele bir nokta kullanılıyor."
+
+#. module: contacts_portal_type
+msgid "Tour %s started."
+msgstr "Tur %s başlatıldı."
+
+#. module: contacts_portal_type
+msgid "Could not start tour. Try again."
+msgstr "Tur başlatılamadı. Tekrar deneyin."
+
+#. module: contacts_portal_type
+msgid "Tour point added."
+msgstr "Tur noktası eklendi."
+
+#. module: contacts_portal_type
+msgid "Could not add point."
+msgstr "Nokta eklenemedi."
+
+#. module: contacts_portal_type
+msgid "Tour finished. Destination recorded."
+msgstr "Tur bitti. Varış kaydedildi."
+
+#. module: contacts_portal_type
+msgid "Could not finish tour."
+msgstr "Tur bitirilemedi."
+
+#. module: contacts_portal_type
+msgid "Notes saved."
+msgstr "Notlar kaydedildi."
+
+#. module: contacts_portal_type
+msgid "Could not save notes."
+msgstr "Notlar kaydedilemedi."
+
+#. module: contacts_portal_type
+msgid "Shuttle tour"
+msgstr "Servis turu"
+
+#. module: contacts_portal_type
+msgid "Active tour:"
+msgstr "Aktif tur:"
+
+#. module: contacts_portal_type
+msgid "No active tour. Select a route and shuttle, then start."
+msgstr "Aktif tur yok. Güzergâh ve servis seçin, ardından başlatın."
+
+#. module: contacts_portal_type
+msgid "Route"
+msgstr "Güzergâh"
+
+#. module: contacts_portal_type
+msgid "Shuttle"
+msgstr "Servis"
+
+#. module: contacts_portal_type
+msgid "Select route..."
+msgstr "Güzergâh seçin..."
+
+#. module: contacts_portal_type
+msgid "Select shuttle..."
+msgstr "Servis seçin..."
+
+#. module: contacts_portal_type
 msgid "Start Tour"
-msgstr "Tur başlat"
+msgstr "Turu Başlat"
 
 #. module: contacts_portal_type
-#: code:addons/contacts_portal_type/controllers/portal.py:0
-msgid "Enroll New Student"
-msgstr "Yeni öğrenci kaydı"
+msgid "Add Tour Point"
+msgstr "Tur Noktası Ekle"
 
 #. module: contacts_portal_type
-#: model:ir.actions.act_window,name:contacts_portal_type.action_contacts_students
-#: model:ir.ui.menu,name:contacts_portal_type.menu_contacts_students
-msgid "Students"
-msgstr "Öğrenciler"
+msgid "Finish Tour"
+msgstr "Turu Bitir"
 
 #. module: contacts_portal_type
-#: model:ir.actions.act_window,name:contacts_portal_type.action_contacts_parents
-#: model:ir.ui.menu,name:contacts_portal_type.menu_contacts_parents
+msgid "Tour notes"
+msgstr "Tur notları"
+
+#. module: contacts_portal_type
+msgid "Save notes"
+msgstr "Notları kaydet"
+
+#. module: contacts_portal_type
+msgid "Hostess portal"
+msgstr "Hostes portalı"
+
+#. module: contacts_portal_type
+msgid "Welcome %s"
+msgstr "Hoş geldiniz %s"
+
+#. module: contacts_portal_type
 msgid "Parents"
 msgstr "Veliler"
-
-#. module: contacts_portal_type
-#: model:ir.actions.act_window,name:contacts_portal_type.action_contacts_schools
-#: model:ir.ui.menu,name:contacts_portal_type.menu_contacts_schools
-msgid "Schools"
-msgstr "Okullar"
-
-#. module: contacts_portal_type
-#: model:ir.actions.act_window,name:contacts_portal_type.action_contacts_factories
-#: model:ir.ui.menu,name:contacts_portal_type.menu_contacts_factories
-msgid "Factories"
-msgstr "Fabrikalar"
-
-#. module: contacts_portal_type
-#: model:ir.actions.act_window,name:contacts_portal_type.action_contacts_employees
-#: model:ir.ui.menu,name:contacts_portal_type.menu_contacts_employees
-msgid "Employees"
-msgstr "Personel"
-#. module: contacts_portal_type
-#: code:addons/contacts_portal_type/static/src/widgets/partner_location_map/partner_location_map_widget.js:0
-msgid "Click the map to set the location. Drag the pin to fine-tune. Editing the address will update the pin."
-msgstr "Konumu ayarlamak için haritaya tıklayın. İğneyi sürükleyerek hassas ayar yapın. Adresi düzenlemek iğneyi günceller."

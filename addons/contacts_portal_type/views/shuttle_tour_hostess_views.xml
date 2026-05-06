@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_shuttle_tour_form_hostess" model="ir.ui.view">
+        <field name="name">shuttle.tour.form.inherit.hostess</field>
+        <field name="model">shuttle.tour</field>
+        <field name="inherit_id" ref="shuttle_management.view_shuttle_tour_form"/>
+        <field name="arch" type="xml">
+            <field name="route_id" position="after">
+                <field name="hostess_id"/>
+            </field>
+        </field>
+    </record>
+</odoo>

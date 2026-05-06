@@ -18,7 +18,7 @@
             <div class="bt-hero container text-center mb-4">
                 <h1 class="display-5">Berkay TURİZM</h1>
                 <p class="lead">Güvenle Taşıyoruz</p>
-                <p><a class="btn btn-primary btn-lg" href="/contact">İletişim</a></p>
+                <p><a class="btn btn-primary btn-lg me-2" href="/request-quote">Request a quote</a><a class="btn btn-outline-primary btn-lg" href="/contact">İletişim</a></p>
             </div>
 
             <div class="container bt-services mb-4">

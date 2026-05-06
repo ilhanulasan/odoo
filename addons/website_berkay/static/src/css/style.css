@@ -1,0 +1,47 @@
+/* Simple styles to mimic berkayturizm.com hero and layout */
+.berkay-hero{
+  background: linear-gradient(90deg, #0d6efd 0%, #0062cc 100%);
+  color: #fff;
+  padding: 80px 0;
+  text-align: center;
+}
+.berkay-hero-inner{max-width:980px;margin:0 auto;}
+.berkay-title{font-size:48px;margin:0 0 10px;}
+.berkay-subtitle{font-size:24px;margin:0 0 20px;}
+.berkay-cta .btn{margin:0 8px;padding:10px 20px;border-radius:4px;text-decoration:none;color:#fff;background:#007bff;border:1px solid #007bff;}
+.btn-outline{background:transparent;border:1px solid rgba(255,255,255,0.9);}
+.section{padding:60px 0;}
+.section .container{max-width:1100px;margin:0 auto;}
+.section-title{text-align:center;margin-bottom:30px;font-size:28px;}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px;}
+.service-card{background:#f8f9fa;border-radius:8px;padding:24px;text-align:center;box-shadow:0 2px 6px rgba(0,0,0,0.05);}
+.about-grid{display:grid;grid-template-columns:2fr 1fr;gap:24px;align-items:center;}
+.contact-box{background:#fff;border-radius:8px;padding:20px;box-shadow:0 2px 6px rgba(0,0,0,0.05);}
+.berkay-footer{background:#f1f1f1;padding:20px 0;margin-top:30px;}
+.footer-inner{display:flex;justify-content:space-between;align-items:center;}
+.footer-links{list-style:none;padding:0;margin:0;display:flex;gap:12px;}
+.footer-links a{color:#333;text-decoration:none;}
+
+/* Hide duplicate logos in header if present (themes sometimes render multiple brand placeholders) */
+.o_main_nav .navbar-brand.logo ~ .navbar-brand.logo,
+.o_main_nav .navbar-brand.logo + .navbar-brand.logo {
+  display: none !important;
+}
+
+/* Mobile header duplicates */
+.o_navbar_mobile .navbar-brand.logo ~ .navbar-brand.logo,
+.o_navbar_mobile .navbar-brand.logo + .navbar-brand.logo {
+  display: none !important;
+}
+
+/* If header renders two nav rows, hide the second one (common theme duplication) */
+header .o_main_nav:nth-of-type(2) {
+  display: none !important;
+}
+
+/* Also hide a second navbar container if present */
+header > .container > .o_main_nav:nth-of-type(2),
+header .container .o_main_nav + .o_main_nav {
+  display: none !important;
+}
+

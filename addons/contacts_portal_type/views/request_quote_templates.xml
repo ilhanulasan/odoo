@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="request_quote_page" name="Request a quote">
+        <t t-call="website.layout">
+            <div id="wrap">
+                <div class="container py-4">
+                    <h1 class="mb-4">Request a quote</h1>
+                    <div t-if="error_message" class="alert alert-danger" role="alert">
+                        <span t-esc="error_message"/>
+                    </div>
+                    <p class="text-muted">
+                        Please fill in your details, choose the school, and <strong>place a pin on the map</strong> for your address.
+                    </p>
+                    <form action="/request-quote/submit" method="post" class="o_request_quote_form">
+                        <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <h3 class="h5 border-bottom pb-2">Parent / guardian</h3>
+                                <div class="mb-2">
+                                    <label class="form-label" for="parent_first_name">First name</label>
+                                    <input id="parent_first_name" name="parent_first_name" type="text" class="form-control" required="required"
+                                           t-att-value="form.get('parent_first_name')"/>
+                                    <div t-if="errors.get('parent_first_name')" class="text-danger small" t-esc="errors.get('parent_first_name')"/>
+                                </div>
+                                <div class="mb-2">
+                                    <label class="form-label" for="parent_surname">Surname</label>
+                                    <input id="parent_surname" name="parent_surname" type="text" class="form-control" required="required"
+                                           t-att-value="form.get('parent_surname')"/>
+                                    <div t-if="errors.get('parent_surname')" class="text-danger small" t-esc="errors.get('parent_surname')"/>
+                                </div>
+                                <div class="mb-2">
+                                    <label class="form-label" for="phone">Phone</label>
+                                    <input id="phone" name="phone" type="tel" class="form-control" required="required"
+                                           t-att-value="form.get('phone')"/>
+                                    <div t-if="errors.get('phone')" class="text-danger small" t-esc="errors.get('phone')"/>
+                                </div>
+                                <div class="mb-2">
+                                    <label class="form-label" for="email">Email</label>
+                                    <input id="email" name="email" type="email" class="form-control" required="required"
+                                           t-att-value="form.get('email')"/>
+                                    <div t-if="errors.get('email')" class="text-danger small" t-esc="errors.get('email')"/>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <h3 class="h5 border-bottom pb-2">Student</h3>
+                                <div class="mb-2">
+                                    <label class="form-label" for="student_name">Student name</label>
+                                    <input id="student_name" name="student_name" type="text" class="form-control" required="required"
+                                           t-att-value="form.get('student_name')"/>
+                                    <div t-if="errors.get('student_name')" class="text-danger small" t-esc="errors.get('student_name')"/>
+                                </div>
+                                <div class="mb-2">
+                                    <label class="form-label d-block">Student gender</label>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="student_gender" id="gender_m" value="male"
+                                               t-att-checked="True if form.get('student_gender') == 'male' else None"/>
+                                        <label class="form-check-label" for="gender_m">Male</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="student_gender" id="gender_f" value="female"
+                                               t-att-checked="True if form.get('student_gender') == 'female' else None"/>
+                                        <label class="form-check-label" for="gender_f">Female</label>
+                                    </div>
+                                    <div t-if="errors.get('student_gender')" class="text-danger small" t-esc="errors.get('student_gender')"/>
+                                </div>
+                                <div class="mb-2">
+                                    <label class="form-label" for="student_dob">Date of birth</label>
+                                    <input id="student_dob" name="student_dob" type="date" class="form-control" required="required"
+                                           t-att-value="form.get('student_dob')"/>
+                                    <div t-if="errors.get('student_dob')" class="text-danger small" t-esc="errors.get('student_dob')"/>
+                                </div>
+                                <div class="mb-2">
+                                    <label class="form-label" for="school_id">School</label>
+                                    <select id="school_id" name="school_id" class="form-select" required="required">
+                                        <option value="">— Select —</option>
+                                        <t t-foreach="schools" t-as="sch">
+                                            <option t-att-value="sch.id"
+                                                    t-att-selected="str(sch.id) == str(form.get('school_id') or '') or None">
+                                                <t t-esc="sch.display_name"/>
+                                            </option>
+                                        </t>
+                                    </select>
+                                    <div t-if="errors.get('school_id')" class="text-danger small" t-esc="errors.get('school_id')"/>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="h5 border-bottom pb-2 mt-2">Address</h3>
+                        <div class="row">
+                            <div class="col-md-8 mb-2">
+                                <label class="form-label" for="street">Street</label>
+                                <input id="street" name="street" type="text" class="form-control o_request_quote_street" required="required"
+                                       t-att-value="form.get('street')"/>
+                                <div t-if="errors.get('street')" class="text-danger small" t-esc="errors.get('street')"/>
+                            </div>
+                            <div class="col-md-4 mb-2">
+                                <label class="form-label" for="street2">Street 2</label>
+                                <input id="street2" name="street2" type="text" class="form-control"
+                                       t-att-value="form.get('street2')"/>
+                            </div>
+                            <div class="col-md-4 mb-2">
+                                <label class="form-label" for="zip">ZIP</label>
+                                <input id="zip" name="zip" type="text" class="form-control o_request_quote_zip"
+                                       t-att-value="form.get('zip')"/>
+                            </div>
+                            <div class="col-md-4 mb-2">
+                                <label class="form-label" for="city">City</label>
+                                <input id="city" name="city" type="text" class="form-control o_request_quote_city" required="required"
+                                       t-att-value="form.get('city')"/>
+                                <div t-if="errors.get('city')" class="text-danger small" t-esc="errors.get('city')"/>
+                            </div>
+                            <div class="col-md-4 mb-2">
+                                <label class="form-label" for="country_id">Country</label>
+                                <select id="country_id" name="country_id" class="form-select">
+                                    <option value="">—</option>
+                                    <t t-foreach="countries" t-as="co">
+                                        <option t-att-value="co.id"
+                                                t-att-selected="str(co.id) == str(form.get('country_id') or '') or None">
+                                            <t t-esc="co.name"/>
+                                        </option>
+                                    </t>
+                                </select>
+                                <div t-if="errors.get('country_id')" class="text-danger small" t-esc="errors.get('country_id')"/>
+                            </div>
+                        </div>
+                        <div class="mb-2">
+                            <label class="form-label">Location on map</label>
+                            <p class="small text-muted mb-1">Click the map to drop a pin (drag the pin to adjust).</p>
+                            <div id="o_request_quote_map" class="rounded border" style="height: 340px; z-index: 1;"></div>
+                            <input type="hidden" name="partner_latitude" id="o_request_quote_lat" class="o_request_quote_lat"
+                                   t-att-value="form.get('partner_latitude')"/>
+                            <input type="hidden" name="partner_longitude" id="o_request_quote_lng" class="o_request_quote_lng"
+                                   t-att-value="form.get('partner_longitude')"/>
+                            <div t-if="errors.get('map')" class="text-danger small mt-1" t-esc="errors.get('map')"/>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <template id="request_quote_thank_you" name="Request quote — thank you">
+        <t t-call="website.layout">
+            <div id="wrap">
+                <div class="container py-5 text-center">
+                    <h1>Thank you</h1>
+                    <p class="lead">Your request has been received. We will get back to you shortly.</p>
+                    <a href="/" class="btn btn-primary">Back to home</a>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>

@@ -58,7 +58,7 @@ class ShuttleRoute(models.Model):
     def create(self, vals_list):
         for vals in vals_list:
             if vals.get("route_code", "New") == "New":
-                vals["route_code"] = self.env["ir.sequence"].next_by_code(
+                vals["route_code"] = self.env["ir.sequence"].sudo().next_by_code(
                     "shuttle.route"
                 ) or "New"
         return super().create(vals_list)

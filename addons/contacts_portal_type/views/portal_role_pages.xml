@@ -4,7 +4,8 @@
     <template id="portal_layout_drivers_heading" inherit_id="portal.portal_layout" priority="20">
         <xpath expr="//div[@id='wrap']//div[contains(@class, 'wrapper') and contains(@class, 'col-12')]/h3[@class='my-3']" position="replace">
             <h3 class="my-3 text-primary" t-if="page_name == 'drivers'" t-out="portal_drivers_header"/>
-            <h3 class="my-3" t-if="page_name != 'drivers'" t-out="request.env._('My account')"/>
+            <h3 class="my-3 text-primary" t-if="page_name == 'users'" t-out="portal_role_page_title"/>
+            <h3 class="my-3" t-if="page_name not in ('drivers', 'users')" t-out="request.env._('My account')"/>
         </xpath>
     </template>
 
@@ -33,8 +34,8 @@
                     <div class="col-md-4">
                         <div class="card mb-3">
                             <div class="card-body text-center">
-                                <t t-if="partner.image_1920 or partner.avatar_128">
-                                    <img t-att-src="'data:image/png;base64,%s' % (partner.image_1920 or partner.avatar_128)" class="img-fluid rounded-circle mb-2" style="width:120px;height:120px;object-fit:cover;"/>
+                                <t t-if="partner.image_1920 or partner.image_128">
+                                    <img t-att-src="'data:image/png;base64,%s' % ((partner.image_1920 or partner.image_128).decode('utf-8'))" class="img-fluid rounded-circle mb-2" style="width:120px;height:120px;object-fit:cover;"/>
                                 </t>
                                 <h3 class="h5 mb-1" t-out="partner.name"/>
                                 <p class="mb-1"><span class="text-muted">Phone:</span> <t t-esc="partner.phone or ''"/></p>
@@ -124,6 +125,64 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Students: render a responsive card grid with avatar, name, school, route and shuttle. -->
+                <div class="container mt-4">
+                    <h3>Students</h3>
+
+                    <!-- Re-browse ids with sudo to ensure visibility through nested t-call templates. -->
+                    <t t-set="student_ids" t-value="portal_parent_student_ids"/>
+                    <t t-set="students" t-value="request.env['res.partner'].sudo().browse(student_ids)"/>
+
+                    <t t-if="student_ids and students">
+                        <div class="row">
+                            <t t-foreach="students" t-as="child">
+                                <div class="col-12 col-md-6 col-lg-4 mb-3">
+                                    <div class="card h-100 shadow-sm">
+                                        <div class="card-body text-center">
+                                            <t t-if="child.image_1920 or child.image_128">
+                                                <img t-att-src="'data:image/png;base64,%s' % ((child.image_1920 or child.image_128).decode('utf-8'))"
+                                                     class="img-fluid rounded-circle mb-2"
+                                                     style="width:120px;height:120px;object-fit:cover;"/>
+                                            </t>
+                                            <h5 class="h5 mb-1" t-out="child.name"/>
+                                            <p class="mb-1 text-muted small">
+                                                <t t-set="birth" t-value="('birth_date' in child._fields and child.birth_date) or ('birthday' in child._fields and child.birthday) or ('date_of_birth' in child._fields and child.date_of_birth)"/>
+                                                <t t-if="birth"><t t-esc="birth"/></t>
+                                            </p>
+                                            <div class="mt-2 text-start">
+                                                <t t-if="child.school_id">
+                                                    <div class="mb-1">
+                                                        <div class="text-muted small">School</div>
+                                                        <div t-out="child.school_id.name"/>
+                                                    </div>
+                                                </t>
+                                                <t t-if="child.route_id or child.route">
+                                                    <div class="mb-1">
+                                                        <div class="text-muted small">Route</div>
+                                                        <t t-if="child.route_id"><div t-out="child.route_id.name"/></t>
+                                                        <t t-elif="child.route"><div t-out="child.route"/></t>
+                                                    </div>
+                                                </t>
+                                                <t t-set="shuttle" t-value="('shuttle_id' in child._fields and child.shuttle_id) or ('shuttle' in child._fields and child.shuttle)"/>
+                                                <t t-if="shuttle">
+                                                    <div class="mb-1">
+                                                        <div class="text-muted small">Shuttle</div>
+                                                        <t t-if="'shuttle_id' in child._fields and child.shuttle_id"><div t-out="child.shuttle_id.name"/></t>
+                                                        <t t-elif="'shuttle' in child._fields"><div t-out="child.shuttle"/></t>
+                                                    </div>
+                                                </t>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </t>
+                        </div>
+                    </t>
+                    <t t-if="not student_ids">
+                        <p>No students linked to this parent.</p>
+                    </t>
+                </div>
             </div>
         </t>
     </template>
@@ -137,8 +196,8 @@
                     <div class="col-md-4">
                         <div class="card mb-3">
                             <div class="card-body text-center">
-                                <t t-if="partner.image_1920 or partner.avatar_128">
-                                    <img t-att-src="'data:image/png;base64,%s' % (partner.image_1920 or partner.avatar_128)" class="img-fluid rounded-circle mb-2" style="width:120px;height:120px;object-fit:cover;"/>
+                                <t t-if="partner.image_1920 or partner.image_128">
+                                    <img t-att-src="'data:image/png;base64,%s' % ((partner.image_1920 or partner.image_128).decode('utf-8'))" class="img-fluid rounded-circle mb-2" style="width:120px;height:120px;object-fit:cover;"/>
                                 </t>
                                 <h3 class="h5 mb-1" t-out="partner.name"/>
                                 <p class="mb-1"><span class="text-muted">Phone:</span> <t t-esc="partner.phone or ''"/></p>
@@ -232,8 +291,76 @@
 
     <template id="portal_page_role_hostess" name="Hostess portal">
         <t t-call="portal.portal_layout">
-            <div class="container py-4">
-                <h1 class="h2 mb-3" t-out="portal_role_page_title"/>
+            <t t-set="my_details" t-value="True"/>
+            <t t-set="partner" t-value="partner or request.env.user.partner_id"/>
+            <div class="container py-4 o_portal_hostess_users" id="hostess_tour_portal_root">
+                <div class="row mb-4">
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body text-center">
+                                <t t-if="partner.image_1920 or partner.image_128">
+                                    <img t-att-src="'data:image/png;base64,%s' % ((partner.image_1920 or partner.image_128).decode('utf-8'))"
+                                         class="img-fluid rounded-circle mb-2"
+                                         style="width:120px;height:120px;object-fit:cover;"
+                                         alt=""/>
+                                </t>
+                                <h2 class="h5 mb-0" t-out="partner.name"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <h2 class="h4 mb-3" t-out="hostess_ui['page_heading']"/>
+                        <p t-if="open_hostess_tour" class="text-muted small mb-2">
+                            <span t-out="hostess_ui['active_tour_prefix']"/> <strong t-out="open_hostess_tour.tour_no"/>
+                        </p>
+                        <p t-if="not open_hostess_tour" class="text-muted small mb-2" t-out="hostess_ui['no_active_tour']"/>
+
+                        <div class="row g-2 mb-3">
+                            <div class="col-md-6">
+                                <label class="form-label" t-out="hostess_ui['label_route']"/>
+                                <select id="hostess_route_select" class="form-select" t-att-disabled="open_hostess_tour">
+                                    <option value="" t-out="hostess_ui['select_route']"/>
+                                    <t t-foreach="portal_routes" t-as="r">
+                                        <option t-att-value="r.id" t-out="r.display_name"/>
+                                    </t>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label" t-out="hostess_ui['label_shuttle']"/>
+                                <select id="hostess_shuttle_select" class="form-select" t-att-disabled="open_hostess_tour">
+                                    <option value="" t-out="hostess_ui['select_shuttle']"/>
+                                    <t t-foreach="portal_shuttles" t-as="s">
+                                        <option t-att-value="s.id" t-attf-data-route-id="{{ s.route_id.id if s.route_id else '' }}" t-out="s.display_name"/>
+                                    </t>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="d-flex flex-wrap gap-2 mb-3">
+                            <button type="button" id="hostess_btn_start" class="btn btn-primary" t-att-disabled="open_hostess_tour">
+                                <t t-out="hostess_ui['btn_start']"/>
+                            </button>
+                            <button type="button" id="hostess_btn_add_point" class="btn btn-outline-primary" t-att-disabled="not open_hostess_tour">
+                                <t t-out="hostess_ui['btn_add_point']"/>
+                            </button>
+                            <button type="button" id="hostess_btn_finish" class="btn btn-success" t-att-disabled="not open_hostess_tour">
+                                <t t-out="hostess_ui['btn_finish']"/>
+                            </button>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label" for="hostess_notes_input" t-out="hostess_ui['label_notes']"/>
+                            <textarea id="hostess_notes_input" class="form-control" rows="4" t-att-placeholder="hostess_ui['placeholder_notes']"
+                                      t-att-readonly="not open_hostess_tour"><t t-esc="open_hostess_tour and (open_hostess_tour.notes or '') or ''"/></textarea>
+                            <button type="button" id="hostess_btn_save_notes" class="btn btn-outline-secondary btn-sm mt-2" t-att-disabled="not open_hostess_tour">
+                                <t t-out="hostess_ui['btn_save_notes']"/>
+                            </button>
+                        </div>
+
+                        <div id="hostess_tour_status" class="alert alert-light border small d-none" role="status"/>
+                    </div>
+                </div>
+                <script type="application/json" id="hostess_tour_bootstrap"><t t-out="hostess_tour_json"/></script>
             </div>
         </t>
     </template>

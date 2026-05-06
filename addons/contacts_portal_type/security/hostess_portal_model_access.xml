@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Portal hostesses need read on routes/shuttles for /users dropdown and related reads on tours. -->
+    <record id="access_shuttle_route_portal_hostess" model="ir.model.access">
+        <field name="name">shuttle.route portal hostess read</field>
+        <field name="model_id" ref="shuttle_management.model_shuttle_route"/>
+        <field name="group_id" ref="base.group_portal"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="False"/>
+        <field name="perm_create" eval="False"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+    <record id="access_shuttle_shuttle_portal_hostess" model="ir.model.access">
+        <field name="name">shuttle.shuttle portal hostess read</field>
+        <field name="model_id" ref="shuttle_management.model_shuttle_shuttle"/>
+        <field name="group_id" ref="base.group_portal"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="False"/>
+        <field name="perm_create" eval="False"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+    <record id="access_shuttle_route_point_portal_hostess" model="ir.model.access">
+        <field name="name">shuttle.route.point portal hostess read</field>
+        <field name="model_id" ref="shuttle_management.model_shuttle_route_point"/>
+        <field name="group_id" ref="base.group_portal"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="False"/>
+        <field name="perm_create" eval="False"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+    <record id="access_shuttle_tour_portal_hostess" model="ir.model.access">
+        <field name="name">shuttle.tour portal hostess</field>
+        <field name="model_id" ref="shuttle_management.model_shuttle_tour"/>
+        <field name="group_id" ref="base.group_portal"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+    <record id="access_shuttle_tour_point_portal_hostess" model="ir.model.access">
+        <field name="name">shuttle.tour.point portal hostess</field>
+        <field name="model_id" ref="shuttle_management.model_shuttle_tour_point"/>
+        <field name="group_id" ref="base.group_portal"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+</odoo>
