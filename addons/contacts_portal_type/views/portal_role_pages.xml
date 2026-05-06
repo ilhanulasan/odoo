@@ -93,13 +93,13 @@
                                                 return;
                                             }
                                             var q = encodeURIComponent(address);
-                                            var nominatimUrl = 'https://nominatim.openstreetmap.org/search?format=json&limit=1&q=' + q;
+                                            var nominatimUrl = 'https://nominatim.openstreetmap.org/search?format=json&amp;limit=1&amp;q=' + q;
                                             // debug
                                             console.debug('Nominatim URL:', nominatimUrl);
                                             fetch(nominatimUrl, { method: 'GET' })
                                                 .then(function(r){ return r.json(); })
                                                 .then(function(results){
-                                                    if (results && results.length){
+                                                    if (results &amp;&amp; results.length){
                                                         var r0 = results[0];
                                                         var lat = parseFloat(r0.lat), lon = parseFloat(r0.lon);
                                                         map.setView([lat, lon], 17);
@@ -196,12 +196,12 @@
                                                 return;
                                             }
                                             var q = encodeURIComponent(address);
-                                            var nominatimUrl = 'https://nominatim.openstreetmap.org/search?format=json&limit=1&q=' + q;
+                                            var nominatimUrl = 'https://nominatim.openstreetmap.org/search?format=json&amp;limit=1&amp;q=' + q;
                                             console.debug('Nominatim URL:', nominatimUrl);
                                             fetch(nominatimUrl, { method: 'GET' })
                                                 .then(function(r){ return r.json(); })
                                                 .then(function(results){
-                                                    if (results && results.length){
+                                                    if (results &amp;&amp; results.length){
                                                         var r0 = results[0];
                                                         var lat = parseFloat(r0.lat), lon = parseFloat(r0.lon);
                                                         map.setView([lat, lon], 17);
