@@ -86,7 +86,7 @@
                                             var map = L.map(container).setView([0,0], 2);
                                             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                                                 maxZoom: 19,
-                                                attribution: '&copy; OpenStreetMap contributors'
+                                                attribution: '\\u00A9 OpenStreetMap contributors'
                                             }).addTo(map);
                                             if (!address){
                                                 showMessage('No address set for this contact.');
@@ -189,7 +189,7 @@
                                             var map = L.map(container).setView([0,0], 2);
                                             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                                                 maxZoom: 19,
-                                                attribution: '&copy; OpenStreetMap contributors'
+                                                attribution: '\\u00A9 OpenStreetMap contributors'
                                             }).addTo(map);
                                             if (!address){
                                                 showMessage('No address set for this contact.');
