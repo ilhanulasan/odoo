@@ -20507,3 +20507,49 @@ DETAIL:  Key (id)=(1) is referenced from table "blog_blog".
 2026-05-05 22:59:19,483 45652 INFO v21 odoo.addons.base.models.res_users: GC 'res.users.apikeys' delete 0 entries 
 2026-05-05 22:59:19,492 45652 INFO v21 odoo.addons.base.models.res_device: GC device logs delete 0 entries 
 2026-05-05 22:59:19,517 45652 INFO v21 odoo.addons.base.models.ir_cron: Job 'Base: Auto-vacuum internal data' (1) fully done (#loop 1; done 146; remaining 0; duration 0.43s) 
+2026-05-05 23:17:20,540 45652 INFO v21 odoo.addons.base.models.ir_cron: Job 'Notification: Notify scheduled messages' (8) starting 
+2026-05-05 23:17:20,603 45652 INFO v21 odoo.addons.base.models.ir_cron: Job 'Notification: Notify scheduled messages' (8) fully done (#loop 1; done 0; remaining 0; duration 0.06s) 
+2026-05-05 23:17:20,608 45652 INFO v21 odoo.addons.base.models.ir_cron: Job 'Mail: Email Queue Manager' (3) starting 
+2026-05-05 23:17:20,617 45652 INFO v21 odoo.addons.base.models.ir_cron: Job 'Mail: Email Queue Manager' (3) fully done (#loop 1; done 0; remaining 0; duration 0.01s) 
+2026-05-05 23:52:22,842 45652 INFO odoo19 odoo.addons.base.models.ir_cron: Job 'Notification: Notify scheduled messages' (8) starting 
+2026-05-05 23:52:22,892 45652 INFO odoo19 odoo.addons.base.models.ir_cron: Job 'Notification: Notify scheduled messages' (8) fully done (#loop 1; done 0; remaining 0; duration 0.05s) 
+2026-05-05 23:52:22,901 45652 INFO odoo19 odoo.addons.base.models.ir_cron: Job 'Mail: Email Queue Manager' (3) starting 
+2026-05-05 23:52:22,907 45652 INFO odoo19 odoo.addons.base.models.ir_cron: Job 'Mail: Email Queue Manager' (3) fully done (#loop 1; done 0; remaining 0; duration 0.01s) 
+2026-05-06 00:17:24,459 45652 INFO v21 odoo.addons.base.models.ir_cron: Job 'Notification: Notify scheduled messages' (8) starting 
+2026-05-06 00:17:24,526 45652 INFO v21 odoo.addons.base.models.ir_cron: Job 'Notification: Notify scheduled messages' (8) fully done (#loop 1; done 0; remaining 0; duration 0.07s) 
+2026-05-06 00:17:24,531 45652 INFO v21 odoo.addons.base.models.ir_cron: Job 'Mail: Email Queue Manager' (3) starting 
+2026-05-06 00:17:24,542 45652 INFO v21 odoo.addons.base.models.ir_cron: Job 'Mail: Email Queue Manager' (3) fully done (#loop 1; done 0; remaining 0; duration 0.01s) 
+2026-05-06 00:52:26,977 45652 INFO odoo19 odoo.addons.base.models.ir_cron: Job 'Notification: Notify scheduled messages' (8) starting 
+2026-05-06 00:52:27,037 45652 INFO odoo19 odoo.addons.base.models.ir_cron: Job 'Notification: Notify scheduled messages' (8) fully done (#loop 1; done 0; remaining 0; duration 0.06s) 
+2026-05-06 00:52:27,041 45652 INFO odoo19 odoo.addons.base.models.ir_cron: Job 'Mail: Email Queue Manager' (3) starting 
+2026-05-06 00:52:27,050 45652 INFO odoo19 odoo.addons.base.models.ir_cron: Job 'Mail: Email Queue Manager' (3) fully done (#loop 1; done 0; remaining 0; duration 0.01s) 
+2026-05-06 01:17:28,611 45652 INFO v21 odoo.addons.base.models.ir_cron: Job 'Notification: Notify scheduled messages' (8) starting 
+2026-05-06 01:17:28,670 45652 INFO v21 odoo.addons.base.models.ir_cron: Job 'Notification: Notify scheduled messages' (8) fully done (#loop 1; done 0; remaining 0; duration 0.06s) 
+2026-05-06 01:17:28,674 45652 INFO v21 odoo.addons.base.models.ir_cron: Job 'Mail: Email Queue Manager' (3) starting 
+2026-05-06 01:17:28,683 45652 INFO v21 odoo.addons.base.models.ir_cron: Job 'Mail: Email Queue Manager' (3) fully done (#loop 1; done 0; remaining 0; duration 0.01s) 
+2026-05-06 01:52:06,260 45652 INFO odoo19 odoo.addons.base.models.ir_cron: Job 'Notification: Notify scheduled messages' (8) starting 
+2026-05-06 01:52:06,305 45652 INFO odoo19 odoo.addons.base.models.ir_cron: Job 'Notification: Notify scheduled messages' (8) fully done (#loop 1; done 0; remaining 0; duration 0.05s) 
+2026-05-06 01:52:06,309 45652 INFO odoo19 odoo.addons.base.models.ir_cron: Job 'Mail: Email Queue Manager' (3) starting 
+2026-05-06 01:52:06,315 45652 INFO odoo19 odoo.addons.base.models.ir_cron: Job 'Mail: Email Queue Manager' (3) fully done (#loop 1; done 0; remaining 0; duration 0.01s) 
+2026-05-06 02:01:15,927 45652 INFO v21 odoo.addons.base.models.ir_cron: Job 'Account: Post draft entries with auto_post enabled and accounting date up to today' (16) starting 
+2026-05-06 02:01:16,021 45652 INFO v21 odoo.addons.base.models.ir_cron: Job 'Account: Post draft entries with auto_post enabled and accounting date up to today' (16) fully done (#loop 1; done 0; remaining 0; duration 0.09s) 
+2026-05-06 02:17:32,665 45652 INFO v21 odoo.addons.base.models.ir_cron: Job 'Notification: Notify scheduled messages' (8) starting 
+2026-05-06 02:17:32,720 45652 INFO v21 odoo.addons.base.models.ir_cron: Job 'Notification: Notify scheduled messages' (8) fully done (#loop 1; done 0; remaining 0; duration 0.06s) 
+2026-05-06 02:17:32,724 45652 INFO v21 odoo.addons.base.models.ir_cron: Job 'Mail: Email Queue Manager' (3) starting 
+2026-05-06 02:17:32,730 45652 INFO v21 odoo.addons.base.models.ir_cron: Job 'Mail: Email Queue Manager' (3) fully done (#loop 1; done 0; remaining 0; duration 0.01s) 
+2026-05-06 02:52:09,649 45652 INFO odoo19 odoo.addons.base.models.ir_cron: Job 'Notification: Notify scheduled messages' (8) starting 
+2026-05-06 02:52:09,708 45652 INFO odoo19 odoo.addons.base.models.ir_cron: Job 'Notification: Notify scheduled messages' (8) fully done (#loop 1; done 0; remaining 0; duration 0.06s) 
+2026-05-06 02:52:09,714 45652 INFO odoo19 odoo.addons.base.models.ir_cron: Job 'Mail: Email Queue Manager' (3) starting 
+2026-05-06 02:52:09,727 45652 INFO odoo19 odoo.addons.base.models.ir_cron: Job 'Mail: Email Queue Manager' (3) fully done (#loop 1; done 0; remaining 0; duration 0.01s) 
+2026-05-06 03:17:36,688 45652 INFO v21 odoo.addons.base.models.ir_cron: Job 'Notification: Notify scheduled messages' (8) starting 
+2026-05-06 03:17:36,751 45652 INFO v21 odoo.addons.base.models.ir_cron: Job 'Notification: Notify scheduled messages' (8) fully done (#loop 1; done 0; remaining 0; duration 0.06s) 
+2026-05-06 03:17:36,755 45652 INFO v21 odoo.addons.base.models.ir_cron: Job 'Mail: Email Queue Manager' (3) starting 
+2026-05-06 03:17:36,768 45652 INFO v21 odoo.addons.base.models.ir_cron: Job 'Mail: Email Queue Manager' (3) fully done (#loop 1; done 0; remaining 0; duration 0.01s) 
+2026-05-06 03:52:13,439 45652 INFO odoo19 odoo.addons.base.models.ir_cron: Job 'Notification: Notify scheduled messages' (8) starting 
+2026-05-06 03:52:13,506 45652 INFO odoo19 odoo.addons.base.models.ir_cron: Job 'Notification: Notify scheduled messages' (8) fully done (#loop 1; done 0; remaining 0; duration 0.07s) 
+2026-05-06 03:52:13,509 45652 INFO odoo19 odoo.addons.base.models.ir_cron: Job 'Mail: Email Queue Manager' (3) starting 
+2026-05-06 03:52:13,517 45652 INFO odoo19 odoo.addons.base.models.ir_cron: Job 'Mail: Email Queue Manager' (3) fully done (#loop 1; done 0; remaining 0; duration 0.01s) 
+2026-05-06 04:50:42,019 45652 INFO v21 odoo.addons.base.models.ir_cron: Job 'Notification: Notify scheduled messages' (8) starting 
+2026-05-06 04:50:42,023 45652 INFO v21 odoo.addons.base.models.ir_cron: Job 'Mail: Email Queue Manager' (3) starting 
+2026-05-06 04:50:42,228 45652 INFO v21 odoo.addons.base.models.ir_cron: Job 'Notification: Notify scheduled messages' (8) fully done (#loop 1; done 0; remaining 0; duration 0.21s) 
+2026-05-06 04:50:42,239 45652 INFO v21 odoo.addons.base.models.ir_cron: Job 'Mail: Email Queue Manager' (3) fully done (#loop 1; done 0; remaining 0; duration 0.22s) 
