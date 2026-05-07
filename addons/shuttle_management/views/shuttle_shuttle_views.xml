@@ -56,6 +56,21 @@
                         <field name="description" placeholder="Description..."/>
                     </group>
                     <notebook>
+                        <page string="Route Points" name="route_points" invisible="not route_id">
+                            <field name="point_ids" nolabel="1">
+                                <list string="Points" editable="bottom">
+                                    <field name="sequence" widget="handle"/>
+                                    <field name="name"/>
+                                    <field name="address" readonly="1"/>
+                                    <field name="latitude" optional="hide"/>
+                                    <field name="longitude" optional="hide"/>
+                                </list>
+                            </field>
+                            <div class="mt-3 mb-2">
+                                <span class="o_form_label">Map</span>
+                                <widget name="shuttle_route_map"/>
+                            </div>
+                        </page>
                         <page string="Notes" name="notes">
                             <field name="note_ids" nolabel="1">
                                 <list editable="bottom">

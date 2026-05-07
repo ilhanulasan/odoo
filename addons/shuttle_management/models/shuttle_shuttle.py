@@ -35,6 +35,13 @@ class ShuttleShuttle(models.Model):
         ondelete="restrict",
         tracking=True,
     )
+    point_ids = fields.One2many(
+        "shuttle.route.point",
+        "route_id",
+        string="Route Points",
+        related="route_id.point_ids",
+        readonly=False,
+    )
     plate_number = fields.Char(string="Plate Nr", tracking=True)
     driver_id = fields.Many2one(
         "res.partner",

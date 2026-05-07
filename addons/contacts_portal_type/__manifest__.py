@@ -26,6 +26,7 @@
         'security/ir.model.access.csv',
         'security/hostess_portal_model_access.xml',
         'security/hostess_portal_rules.xml',
+        'views/shuttle_route_point_views.xml',
         'views/shuttle_tour_hostess_views.xml',
         'views/res_partner_views.xml',
         'views/portal_templates.xml',

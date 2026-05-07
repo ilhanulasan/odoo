@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_shuttle_route_form_route_points_student" model="ir.ui.view">
+        <field name="name">shuttle.route.form.route.points.student</field>
+        <field name="model">shuttle.route</field>
+        <field name="inherit_id" ref="shuttle_management.view_shuttle_route_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='point_ids']/list/field[@name='sequence']" position="after">
+                <field name="student_partner_id"
+                       optional="show"
+                       options="{'no_create': True}"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_shuttle_shuttle_form_route_points_student" model="ir.ui.view">
+        <field name="name">shuttle.shuttle.form.route.points.student</field>
+        <field name="model">shuttle.shuttle</field>
+        <field name="inherit_id" ref="shuttle_management.view_shuttle_shuttle_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='route_points']//field[@name='point_ids']/list/field[@name='sequence']" position="after">
+                <field name="student_partner_id"
+                       optional="show"
+                       options="{'no_create': True}"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

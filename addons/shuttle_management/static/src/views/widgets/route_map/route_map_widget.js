@@ -29,6 +29,9 @@ export class ShuttleRouteMapWidget extends Component {
         this.markersGroup = null;
         this._mapEventsBound = false;
         this._renderGeneration = 0;
+        /** Like partner map: frame route once; later redraws must not pan/zoom (e.g. after click-to-add). */
+        this._initialViewApplied = false;
+        this._boundsRecordKey = undefined;
 
         onWillStart(async () => {
             await Promise.all([loadCSS(LEAFLET_CSS), loadJS(LEAFLET_JS)]);
@@ -40,10 +43,14 @@ export class ShuttleRouteMapWidget extends Component {
             void this.refreshMap();
         });
         onWillUnmount(() => {
+            // Invalidate async refreshMap runs that may resume after await (e.g. OSRM fetch).
+            this._renderGeneration++;
             if (this.leafletMap) {
                 this.leafletMap.remove();
                 this.leafletMap = null;
             }
+            this.markersGroup = null;
+            this._mapEventsBound = false;
         });
     }
 
@@ -144,6 +151,12 @@ export class ShuttleRouteMapWidget extends Component {
         if (!L || !el) {
             return;
         }
+        const recordKey = this.props.record.resId ?? this.props.record.id;
+        if (this._boundsRecordKey !== recordKey) {
+            this._boundsRecordKey = recordKey;
+            this._initialViewApplied = false;
+        }
+
         const generation = ++this._renderGeneration;
 
         if (!this.leafletMap) {
@@ -165,7 +178,7 @@ export class ShuttleRouteMapWidget extends Component {
         if (latlngs.length >= 2) {
             routeLatLngs = await this.fetchOsrmDrivingGeometry(latlngs);
         }
-        if (generation !== this._renderGeneration) {
+        if (generation !== this._renderGeneration || !this.leafletMap || !this.markersGroup) {
             return;
         }
 
@@ -203,24 +216,27 @@ export class ShuttleRouteMapWidget extends Component {
             }
         });
 
-        if (generation !== this._renderGeneration) {
+        if (generation !== this._renderGeneration || !this.leafletMap) {
             return;
         }
 
-        if (latlngs.length) {
-            if (routeLatLngs?.length) {
-                this.leafletMap.fitBounds(Lref.latLngBounds(routeLatLngs), {
-                    padding: [32, 32],
-                    maxZoom: 16,
-                });
+        if (!this._initialViewApplied) {
+            this._initialViewApplied = true;
+            if (latlngs.length) {
+                if (routeLatLngs?.length) {
+                    this.leafletMap.fitBounds(Lref.latLngBounds(routeLatLngs), {
+                        padding: [32, 32],
+                        maxZoom: 16,
+                    });
+                } else {
+                    this.leafletMap.fitBounds(Lref.latLngBounds(latlngs), {
+                        padding: [32, 32],
+                        maxZoom: 16,
+                    });
+                }
             } else {
-                this.leafletMap.fitBounds(Lref.latLngBounds(latlngs), {
-                    padding: [32, 32],
-                    maxZoom: 16,
-                });
+                this.leafletMap.setView(ISTANBUL_ANATOLIA_CENTER, ISTANBUL_ANATOLIA_ZOOM);
             }
-        } else {
-            this.leafletMap.setView(ISTANBUL_ANATOLIA_CENTER, ISTANBUL_ANATOLIA_ZOOM);
         }
     }
 }

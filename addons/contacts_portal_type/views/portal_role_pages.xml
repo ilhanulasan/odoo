@@ -157,18 +157,19 @@
                                                         <div t-out="child.school_id.name"/>
                                                     </div>
                                                 </t>
-                                                <t t-if="child.route_id or child.route">
+                                                <t t-if="child.route_id or ('route' in child._fields and child.route)">
                                                     <div class="mb-1">
                                                         <div class="text-muted small">Route</div>
                                                         <t t-if="child.route_id"><div t-out="child.route_id.name"/></t>
-                                                        <t t-elif="child.route"><div t-out="child.route"/></t>
+                                                        <t t-elif="'route' in child._fields and child.route"><div t-out="child.route"/></t>
                                                     </div>
                                                 </t>
-                                                <t t-set="shuttle" t-value="('shuttle_id' in child._fields and child.shuttle_id) or ('shuttle' in child._fields and child.shuttle)"/>
+                                                <t t-set="shuttle" t-value="('shuttle_id' in child._fields and child.shuttle_id) or ('route_shuttle_id' in child._fields and child.route_shuttle_id) or ('shuttle' in child._fields and child.shuttle)"/>
                                                 <t t-if="shuttle">
                                                     <div class="mb-1">
                                                         <div class="text-muted small">Shuttle</div>
                                                         <t t-if="'shuttle_id' in child._fields and child.shuttle_id"><div t-out="child.shuttle_id.name"/></t>
+                                                        <t t-elif="'route_shuttle_id' in child._fields and child.route_shuttle_id"><div t-out="child.route_shuttle_id.name"/></t>
                                                         <t t-elif="'shuttle' in child._fields"><div t-out="child.shuttle"/></t>
                                                     </div>
                                                 </t>

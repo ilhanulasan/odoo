@@ -942,3 +942,18 @@ msgstr "İletişim"
 #: model_terms:ir.ui.view,arch_db:contacts_portal_type.view_partner_form_portal_contact_type
 msgid "İşitme engelli"
 msgstr "İşitme engelli"
+
+#. module: contacts_portal_type
+#: model:ir.model.fields,help:contacts_portal_type.field_shuttle_route_point__student_partner_id
+msgid "Pick a student contact to use their saved map coordinates as this stop."
+msgstr "Bu durağın konumu için öğrenci kaydındaki kayıtlı harita koordinatlarını kullanın."
+
+#. module: contacts_portal_type
+#. odoo-python
+#: code:addons/contacts_portal_type/models/shuttle_route_point.py:0
+msgid ""
+"Selected student \"%(name)s\" has no map coordinates. Open the contact, "
+"set the address location on the map, then try again."
+msgstr ""
+"Seçilen öğrenci \"%(name)s\" için harita koordinatı yok. İletişim kaydını "
+"açın, adres konumunu haritada işaretleyin, sonra tekrar deneyin."
