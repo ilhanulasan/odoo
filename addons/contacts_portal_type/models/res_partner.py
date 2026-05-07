@@ -1,9 +1,5 @@
 # -*- coding: utf-8 -*-
 from odoo import _, api, fields, models
-from odoo.tools.translate import LazyTranslate
-
-# Lazy translate factory for module-level strings (deferred until runtime/env is available)
-_lt = LazyTranslate(__name__)
 
 
 class ResPartner(models.Model):
@@ -56,7 +52,7 @@ class ResPartner(models.Model):
 
     parent_partner_id = fields.Many2one(
         comodel_name='res.partner',
-        string='Parent ',
+        string='Parent',
         domain=[('portal_contact_type', '=', 'parent'), ('contact_type', '=', 'person')],
     )
     parent_avatar_128 = fields.Image(related='parent_partner_id.avatar_128', readonly=True)
@@ -98,7 +94,7 @@ class ResPartner(models.Model):
     # Shuttle Management integrations
     route_id = fields.Many2one(
         comodel_name='shuttle.route',
-        string='Route Id ',
+        string='Route',
         ondelete='set null',
     )
     route_name = fields.Char(related='route_id.name', string='Route Name', readonly=True)

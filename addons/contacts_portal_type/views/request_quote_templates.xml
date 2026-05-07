@@ -4,75 +4,73 @@
         <t t-call="website.layout">
             <div id="wrap">
                 <div class="container py-4">
-                    <h1 class="mb-4">Request a quote</h1>
+                    <h1 class="mb-4" t-out="request.env._('Request a quote')"/>
                     <div t-if="error_message" class="alert alert-danger" role="alert">
                         <span t-esc="error_message"/>
                     </div>
-                    <p class="text-muted">
-                        Please fill in your details, choose the school, and <strong>place a pin on the map</strong> for your address.
-                    </p>
+                    <p class="text-muted" t-out="request.env._('Please fill in your details, choose the school, and place a pin on the map for your address.')"/>
                     <form action="/request-quote/submit" method="post" class="o_request_quote_form">
                         <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
                         <div class="row">
                             <div class="col-md-6 mb-3">
-                                <h3 class="h5 border-bottom pb-2">Parent / guardian</h3>
+                                <h3 class="h5 border-bottom pb-2" t-out="request.env._('Parent / guardian')"/>
                                 <div class="mb-2">
-                                    <label class="form-label" for="parent_first_name">First name</label>
+                                    <label class="form-label" for="parent_first_name" t-out="request.env._('First name')"/>
                                     <input id="parent_first_name" name="parent_first_name" type="text" class="form-control" required="required"
                                            t-att-value="form.get('parent_first_name')"/>
                                     <div t-if="errors.get('parent_first_name')" class="text-danger small" t-esc="errors.get('parent_first_name')"/>
                                 </div>
                                 <div class="mb-2">
-                                    <label class="form-label" for="parent_surname">Surname</label>
+                                    <label class="form-label" for="parent_surname" t-out="request.env._('Surname')"/>
                                     <input id="parent_surname" name="parent_surname" type="text" class="form-control" required="required"
                                            t-att-value="form.get('parent_surname')"/>
                                     <div t-if="errors.get('parent_surname')" class="text-danger small" t-esc="errors.get('parent_surname')"/>
                                 </div>
                                 <div class="mb-2">
-                                    <label class="form-label" for="phone">Phone</label>
+                                    <label class="form-label" for="phone" t-out="request.env._('Phone')"/>
                                     <input id="phone" name="phone" type="tel" class="form-control" required="required"
                                            t-att-value="form.get('phone')"/>
                                     <div t-if="errors.get('phone')" class="text-danger small" t-esc="errors.get('phone')"/>
                                 </div>
                                 <div class="mb-2">
-                                    <label class="form-label" for="email">Email</label>
+                                    <label class="form-label" for="email" t-out="request.env._('Email')"/>
                                     <input id="email" name="email" type="email" class="form-control" required="required"
                                            t-att-value="form.get('email')"/>
                                     <div t-if="errors.get('email')" class="text-danger small" t-esc="errors.get('email')"/>
                                 </div>
                             </div>
                             <div class="col-md-6 mb-3">
-                                <h3 class="h5 border-bottom pb-2">Student</h3>
+                                <h3 class="h5 border-bottom pb-2" t-out="request.env._('Student')"/>
                                 <div class="mb-2">
-                                    <label class="form-label" for="student_name">Student name</label>
+                                    <label class="form-label" for="student_name" t-out="request.env._('Student name')"/>
                                     <input id="student_name" name="student_name" type="text" class="form-control" required="required"
                                            t-att-value="form.get('student_name')"/>
                                     <div t-if="errors.get('student_name')" class="text-danger small" t-esc="errors.get('student_name')"/>
                                 </div>
                                 <div class="mb-2">
-                                    <label class="form-label d-block">Student gender</label>
+                                    <label class="form-label d-block" t-out="request.env._('Student gender')"/>
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="radio" name="student_gender" id="gender_m" value="male"
                                                t-att-checked="True if form.get('student_gender') == 'male' else None"/>
-                                        <label class="form-check-label" for="gender_m">Male</label>
+                                        <label class="form-check-label" for="gender_m" t-out="request.env._('Male')"/>
                                     </div>
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="radio" name="student_gender" id="gender_f" value="female"
                                                t-att-checked="True if form.get('student_gender') == 'female' else None"/>
-                                        <label class="form-check-label" for="gender_f">Female</label>
+                                        <label class="form-check-label" for="gender_f" t-out="request.env._('Female')"/>
                                     </div>
                                     <div t-if="errors.get('student_gender')" class="text-danger small" t-esc="errors.get('student_gender')"/>
                                 </div>
                                 <div class="mb-2">
-                                    <label class="form-label" for="student_dob">Date of birth</label>
+                                    <label class="form-label" for="student_dob" t-out="request.env._('Date of birth')"/>
                                     <input id="student_dob" name="student_dob" type="date" class="form-control" required="required"
                                            t-att-value="form.get('student_dob')"/>
                                     <div t-if="errors.get('student_dob')" class="text-danger small" t-esc="errors.get('student_dob')"/>
                                 </div>
                                 <div class="mb-2">
-                                    <label class="form-label" for="school_id">School</label>
+                                    <label class="form-label" for="school_id" t-out="request.env._('School')"/>
                                     <select id="school_id" name="school_id" class="form-select" required="required">
-                                        <option value="">— Select —</option>
+                                        <option value="" t-out="request.env._('— Select —')"/>
                                         <t t-foreach="schools" t-as="sch">
                                             <option t-att-value="sch.id"
                                                     t-att-selected="str(sch.id) == str(form.get('school_id') or '') or None">
@@ -84,34 +82,34 @@
                                 </div>
                             </div>
                         </div>
-                        <h3 class="h5 border-bottom pb-2 mt-2">Address</h3>
+                        <h3 class="h5 border-bottom pb-2 mt-2" t-out="request.env._('Address')"/>
                         <div class="row">
                             <div class="col-md-8 mb-2">
-                                <label class="form-label" for="street">Street</label>
+                                <label class="form-label" for="street" t-out="request.env._('Street')"/>
                                 <input id="street" name="street" type="text" class="form-control o_request_quote_street" required="required"
                                        t-att-value="form.get('street')"/>
                                 <div t-if="errors.get('street')" class="text-danger small" t-esc="errors.get('street')"/>
                             </div>
                             <div class="col-md-4 mb-2">
-                                <label class="form-label" for="street2">Street 2</label>
+                                <label class="form-label" for="street2" t-out="request.env._('Street 2')"/>
                                 <input id="street2" name="street2" type="text" class="form-control"
                                        t-att-value="form.get('street2')"/>
                             </div>
                             <div class="col-md-4 mb-2">
-                                <label class="form-label" for="zip">ZIP</label>
+                                <label class="form-label" for="zip" t-out="request.env._('ZIP')"/>
                                 <input id="zip" name="zip" type="text" class="form-control o_request_quote_zip"
                                        t-att-value="form.get('zip')"/>
                             </div>
                             <div class="col-md-4 mb-2">
-                                <label class="form-label" for="city">City</label>
+                                <label class="form-label" for="city" t-out="request.env._('City')"/>
                                 <input id="city" name="city" type="text" class="form-control o_request_quote_city" required="required"
                                        t-att-value="form.get('city')"/>
                                 <div t-if="errors.get('city')" class="text-danger small" t-esc="errors.get('city')"/>
                             </div>
                             <div class="col-md-4 mb-2">
-                                <label class="form-label" for="country_id">Country</label>
+                                <label class="form-label" for="country_id" t-out="request.env._('Country')"/>
                                 <select id="country_id" name="country_id" class="form-select">
-                                    <option value="">—</option>
+                                    <option value="" t-out="request.env._('—')"/>
                                     <t t-foreach="countries" t-as="co">
                                         <option t-att-value="co.id"
                                                 t-att-selected="str(co.id) == str(form.get('country_id') or '') or None">
@@ -123,8 +121,8 @@
                             </div>
                         </div>
                         <div class="mb-2">
-                            <label class="form-label">Location on map</label>
-                            <p class="small text-muted mb-1">Click the map to drop a pin (drag the pin to adjust).</p>
+                            <label class="form-label" t-out="request.env._('Location on map')"/>
+                            <p class="small text-muted mb-1" t-out="request.env._('Click the map to drop a pin (drag the pin to adjust).')"/>
                             <div id="o_request_quote_map" class="rounded border" style="height: 340px; z-index: 1;"></div>
                             <input type="hidden" name="partner_latitude" id="o_request_quote_lat" class="o_request_quote_lat"
                                    t-att-value="form.get('partner_latitude')"/>
@@ -132,7 +130,9 @@
                                    t-att-value="form.get('partner_longitude')"/>
                             <div t-if="errors.get('map')" class="text-danger small mt-1" t-esc="errors.get('map')"/>
                         </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-primary">
+                            <t t-out="request.env._('Submit')"/>
+                        </button>
                     </form>
                 </div>
             </div>
@@ -143,9 +143,11 @@
         <t t-call="website.layout">
             <div id="wrap">
                 <div class="container py-5 text-center">
-                    <h1>Thank you</h1>
-                    <p class="lead">Your request has been received. We will get back to you shortly.</p>
-                    <a href="/" class="btn btn-primary">Back to home</a>
+                    <h1 t-out="request.env._('Thank you')"/>
+                    <p class="lead" t-out="request.env._('Your request has been received. We will get back to you shortly.')"/>
+                    <a href="/" class="btn btn-primary">
+                        <t t-out="request.env._('Back to home')"/>
+                    </a>
                 </div>
             </div>
         </t>

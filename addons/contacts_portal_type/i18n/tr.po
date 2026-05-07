@@ -1,6 +1,3 @@
-# Translation of Odoo Server.
-# This file contains the translation of the following modules:
-# * contacts_portal_type
 #
 msgid ""
 msgstr ""
@@ -17,185 +14,931 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: contacts_portal_type
-msgid "Contacts Portal Contact Type"
-msgstr "İletişim Portal İletişim Türü"
-
-#. module: contacts_portal_type
-msgid "Portal contact type on partners"
-msgstr "İş ortaklarında portal iletişim türü"
-
-#. module: contacts_portal_type
-msgid "Sales/CRM"
-msgstr "Satış/CRM"
-
-#. module: contacts_portal_type
+#: model:ir.model.fields,field_description:contacts_portal_type.field_shuttle_tour__hostess_id
+#: model:ir.model.fields.selection,name:contacts_portal_type.selection__res_partner__portal_contact_type__hostess
 msgid "Hostess"
 msgstr "Hostes"
 
 #. module: contacts_portal_type
+#: model:ir.model.fields,help:contacts_portal_type.field_shuttle_tour__hostess_id
 msgid "Portal hostess who started this tour from the website."
 msgstr "Bu turu web sitesinden başlatan portal hostesidir."
 
 #. module: contacts_portal_type
+#. odoo-python
+#: code:addons/contacts_portal_type/controllers/portal.py:0
 msgid "User Dashboard"
 msgstr "Kullanıcı Paneli"
 
 #. module: contacts_portal_type
-msgid "This action is only available for portal users whose contact is set to Hostess."
-msgstr "Bu işlem yalnızca iletişim türü Hostes olarak ayarlanmış portal kullanıcıları için geçerlidir."
+#. odoo-python
+#: code:addons/contacts_portal_type/controllers/portal.py:0
+msgid ""
+"This action is only available for portal users whose contact is set to "
+"Hostess."
+msgstr ""
+"Bu işlem yalnızca iletişim türü Hostes olarak ayarlanmış portal "
+"kullanıcıları için geçerlidir."
 
 #. module: contacts_portal_type
+#. odoo-python
+#: code:addons/contacts_portal_type/controllers/portal.py:0
 msgid "Please sign in to continue."
 msgstr "Devam etmek için lütfen giriş yapın."
 
 #. module: contacts_portal_type
+#. odoo-python
+#: code:addons/contacts_portal_type/controllers/portal.py:0
 msgid "You already have an active tour. Finish it before starting a new one."
-msgstr "Zaten aktif bir turunuz var. Yeni tur başlatmadan önce mevcut turu bitirin."
+msgstr ""
+"Zaten aktif bir turunuz var. Yeni tur başlatmadan önce mevcut turu bitirin."
 
 #. module: contacts_portal_type
+#. odoo-python
+#: code:addons/contacts_portal_type/controllers/portal.py:0
 msgid "Invalid route or shuttle."
 msgstr "Geçersiz güzergâh veya servis."
 
 #. module: contacts_portal_type
+#. odoo-python
+#: code:addons/contacts_portal_type/controllers/portal.py:0
 msgid "The selected shuttle does not match the route."
 msgstr "Seçilen servis bu güzergâha ait değil."
 
 #. module: contacts_portal_type
+#. odoo-python
+#: code:addons/contacts_portal_type/controllers/portal.py:0
 msgid "Invalid tour or coordinates."
 msgstr "Geçersiz tur veya koordinatlar."
 
 #. module: contacts_portal_type
+#. odoo-python
+#: code:addons/contacts_portal_type/controllers/portal.py:0
 msgid "Tour not found or already finished."
 msgstr "Tur bulunamadı veya zaten tamamlandı."
 
 #. module: contacts_portal_type
+#. odoo-python
+#: code:addons/contacts_portal_type/controllers/portal.py:0
 msgid "Invalid tour."
 msgstr "Geçersiz tur."
 
 #. module: contacts_portal_type
+#. odoo-python
+#: code:addons/contacts_portal_type/controllers/portal.py:0
 msgid "Tour not found."
 msgstr "Tur bulunamadı."
 
 #. module: contacts_portal_type
+#. odoo-python
+#: code:addons/contacts_portal_type/controllers/portal.py:0
 msgid "Geolocation is not supported by this browser."
 msgstr "Bu tarayıcı konum hizmetini desteklemiyor."
 
 #. module: contacts_portal_type
+#. odoo-python
+#: code:addons/contacts_portal_type/controllers/portal.py:0
 msgid "Invalid response from server. Try refreshing the page."
 msgstr "Sunucudan geçersiz yanıt. Sayfayı yenilemeyi deneyin."
 
 #. module: contacts_portal_type
+#. odoo-python
+#: code:addons/contacts_portal_type/controllers/portal.py:0
 msgid "Request failed"
 msgstr "İstek başarısız"
 
 #. module: contacts_portal_type
-msgid "Request failed (%s). If the problem continues, sign out and sign in again."
+#. odoo-python
+#: code:addons/contacts_portal_type/controllers/portal.py:0
+msgid ""
+"Request failed (%s). If the problem continues, sign out and sign in again."
 msgstr "İstek başarısız (%s). Sorun sürerse oturumu kapatıp tekrar açın."
 
 #. module: contacts_portal_type
+#. odoo-python
+#: code:addons/contacts_portal_type/controllers/portal.py:0
 msgid "Unexpected response from server (not JSON). Try refreshing the page."
 msgstr "Sunucudan beklenmeyen yanıt (JSON değil). Sayfayı yenileyin."
 
 #. module: contacts_portal_type
+#. odoo-python
+#: code:addons/contacts_portal_type/controllers/portal.py:0
 msgid "Please select a route and a shuttle."
 msgstr "Lütfen bir güzergâh ve bir servis seçin."
 
 #. module: contacts_portal_type
+#. odoo-python
+#: code:addons/contacts_portal_type/controllers/portal.py:0
 msgid "Getting location…"
 msgstr "Konum alınıyor…"
 
 #. module: contacts_portal_type
+#. odoo-python
+#: code:addons/contacts_portal_type/controllers/portal.py:0
 msgid "No location; using a random point on the Anatolian side of Istanbul."
-msgstr "Konum yok; İstanbul Anadolu yakasında rastgele bir nokta kullanılıyor."
+msgstr ""
+"Konum yok; İstanbul Anadolu yakasında rastgele bir nokta kullanılıyor."
 
 #. module: contacts_portal_type
+#. odoo-python
+#: code:addons/contacts_portal_type/controllers/portal.py:0
 msgid "Tour %s started."
 msgstr "Tur %s başlatıldı."
 
 #. module: contacts_portal_type
+#. odoo-python
+#: code:addons/contacts_portal_type/controllers/portal.py:0
 msgid "Could not start tour. Try again."
 msgstr "Tur başlatılamadı. Tekrar deneyin."
 
 #. module: contacts_portal_type
+#. odoo-python
+#: code:addons/contacts_portal_type/controllers/portal.py:0
 msgid "Tour point added."
 msgstr "Tur noktası eklendi."
 
 #. module: contacts_portal_type
+#. odoo-python
+#: code:addons/contacts_portal_type/controllers/portal.py:0
 msgid "Could not add point."
 msgstr "Nokta eklenemedi."
 
 #. module: contacts_portal_type
+#. odoo-python
+#: code:addons/contacts_portal_type/controllers/portal.py:0
 msgid "Tour finished. Destination recorded."
 msgstr "Tur bitti. Varış kaydedildi."
 
 #. module: contacts_portal_type
+#. odoo-python
+#: code:addons/contacts_portal_type/controllers/portal.py:0
 msgid "Could not finish tour."
 msgstr "Tur bitirilemedi."
 
 #. module: contacts_portal_type
+#. odoo-python
+#: code:addons/contacts_portal_type/controllers/portal.py:0
 msgid "Notes saved."
 msgstr "Notlar kaydedildi."
 
 #. module: contacts_portal_type
+#. odoo-python
+#: code:addons/contacts_portal_type/controllers/portal.py:0
 msgid "Could not save notes."
 msgstr "Notlar kaydedilemedi."
 
 #. module: contacts_portal_type
+#. odoo-python
+#: code:addons/contacts_portal_type/controllers/portal.py:0
 msgid "Shuttle tour"
 msgstr "Servis turu"
 
 #. module: contacts_portal_type
+#. odoo-python
+#: code:addons/contacts_portal_type/controllers/portal.py:0
 msgid "Active tour:"
 msgstr "Aktif tur:"
 
 #. module: contacts_portal_type
+#. odoo-python
+#: code:addons/contacts_portal_type/controllers/portal.py:0
 msgid "No active tour. Select a route and shuttle, then start."
 msgstr "Aktif tur yok. Güzergâh ve servis seçin, ardından başlatın."
 
 #. module: contacts_portal_type
+#. odoo-python
+#: code:addons/contacts_portal_type/controllers/portal.py:0
+#: model:ir.model.fields,field_description:contacts_portal_type.field_res_partner__route_id
+#: model:ir.model.fields,field_description:contacts_portal_type.field_res_users__route_id
+#: model_terms:ir.ui.view,arch_db:contacts_portal_type.portal_page_role_parents
 msgid "Route"
 msgstr "Güzergâh"
 
 #. module: contacts_portal_type
+#. odoo-python
+#: code:addons/contacts_portal_type/controllers/portal.py:0
+#: model_terms:ir.ui.view,arch_db:contacts_portal_type.portal_page_role_parents
 msgid "Shuttle"
 msgstr "Servis"
 
 #. module: contacts_portal_type
+#. odoo-python
+#: code:addons/contacts_portal_type/controllers/portal.py:0
 msgid "Select route..."
 msgstr "Güzergâh seçin..."
 
 #. module: contacts_portal_type
+#. odoo-python
+#: code:addons/contacts_portal_type/controllers/portal.py:0
 msgid "Select shuttle..."
 msgstr "Servis seçin..."
 
 #. module: contacts_portal_type
+#. odoo-python
+#: code:addons/contacts_portal_type/controllers/portal.py:0
 msgid "Start Tour"
 msgstr "Turu Başlat"
 
 #. module: contacts_portal_type
+#. odoo-python
+#: code:addons/contacts_portal_type/controllers/portal.py:0
 msgid "Add Tour Point"
 msgstr "Tur Noktası Ekle"
 
 #. module: contacts_portal_type
+#. odoo-python
+#: code:addons/contacts_portal_type/controllers/portal.py:0
 msgid "Finish Tour"
 msgstr "Turu Bitir"
 
 #. module: contacts_portal_type
+#. odoo-python
+#: code:addons/contacts_portal_type/controllers/portal.py:0
 msgid "Tour notes"
 msgstr "Tur notları"
 
 #. module: contacts_portal_type
+#. odoo-python
+#: code:addons/contacts_portal_type/controllers/portal.py:0
 msgid "Save notes"
 msgstr "Notları kaydet"
 
 #. module: contacts_portal_type
-msgid "Hostess portal"
-msgstr "Hostes portalı"
-
-#. module: contacts_portal_type
+#. odoo-python
+#: code:addons/contacts_portal_type/controllers/portal.py:0
 msgid "Welcome %s"
 msgstr "Hoş geldiniz %s"
 
 #. module: contacts_portal_type
+#. odoo-python
+#: code:addons/contacts_portal_type/controllers/portal.py:0
+#: model:ir.actions.act_window,name:contacts_portal_type.action_contacts_parents
+#: model:ir.ui.menu,name:contacts_portal_type.menu_contacts_parents
 msgid "Parents"
 msgstr "Veliler"
+
+#. module: contacts_portal_type
+#: model_terms:ir.ui.view,arch_db:contacts_portal_type.portal_my_home_contact_type_welcome
+msgid "Request a quote"
+msgstr "Teklif talep et"
+
+#. module: contacts_portal_type
+#: model:ir.model.fields.selection,name:contacts_portal_type.selection__res_partner__portal_contact_type__student
+msgid "Student"
+msgstr "Öğrenci"
+
+#. module: contacts_portal_type
+#: model:ir.model.fields.selection,name:contacts_portal_type.selection__res_partner__gender__male
+msgid "Male"
+msgstr "Erkek"
+
+#. module: contacts_portal_type
+#: model:ir.model.fields.selection,name:contacts_portal_type.selection__res_partner__gender__female
+msgid "Female"
+msgstr "Kız"
+
+#. module: contacts_portal_type
+#: model:ir.model.fields,field_description:contacts_portal_type.field_res_partner__school_id
+#: model:ir.model.fields,field_description:contacts_portal_type.field_res_users__school_id
+#: model:ir.model.fields.selection,name:contacts_portal_type.selection__res_partner__contact_type__school
+#: model_terms:ir.ui.view,arch_db:contacts_portal_type.portal_page_role_parents
+msgid "School"
+msgstr "Okul"
+
+#. module: contacts_portal_type
+#. odoo-python
+#: code:addons/contacts_portal_type/models/res_partner.py:0
+#: model_terms:ir.ui.view,arch_db:contacts_portal_type.portal_page_role_parents
+#: model_terms:ir.ui.view,arch_db:contacts_portal_type.portal_page_role_student
+msgid "Address"
+msgstr "Adres"
+
+#. module: contacts_portal_type
+#: model:ir.model.fields,field_description:contacts_portal_type.field_res_partner__contact_type
+#: model:ir.model.fields,field_description:contacts_portal_type.field_res_users__contact_type
+msgid "Contact Type"
+msgstr "İletişim türü"
+
+#. module: contacts_portal_type
+#: model:ir.model.fields.selection,name:contacts_portal_type.selection__res_partner__contact_type__person
+msgid "Person"
+msgstr "Kişi"
+
+#. module: contacts_portal_type
+#: model:ir.model.fields.selection,name:contacts_portal_type.selection__res_partner__contact_type__company
+#: model_terms:ir.ui.view,arch_db:contacts_portal_type.view_partner_form_portal_contact_type
+msgid "Company"
+msgstr "Şirket"
+
+#. module: contacts_portal_type
+#: model:ir.model.fields.selection,name:contacts_portal_type.selection__res_partner__contact_type__factory
+msgid "Factory"
+msgstr "Fabrika"
+
+#. module: contacts_portal_type
+#: model:ir.model.fields,field_description:contacts_portal_type.field_res_partner__portal_contact_type
+#: model:ir.model.fields,field_description:contacts_portal_type.field_res_users__portal_contact_type
+#: model_terms:ir.ui.view,arch_db:contacts_portal_type.view_partner_form_portal_contact_type
+msgid "Portal Contact Type"
+msgstr "Portal iletişim türü"
+
+#. module: contacts_portal_type
+#: model:ir.model.fields.selection,name:contacts_portal_type.selection__res_partner__portal_contact_type__driver
+msgid "Driver"
+msgstr "Şoför"
+
+#. module: contacts_portal_type
+#: model:ir.model.fields,field_description:contacts_portal_type.field_res_partner__parent_partner_id
+#: model:ir.model.fields,field_description:contacts_portal_type.field_res_users__parent_partner_id
+#: model:ir.model.fields.selection,name:contacts_portal_type.selection__res_partner__portal_contact_type__parent
+msgid "Parent"
+msgstr "Veli"
+
+#. module: contacts_portal_type
+#: model:ir.model.fields.selection,name:contacts_portal_type.selection__res_partner__portal_contact_type__school_rep
+msgid "School Representative"
+msgstr "Okul temsilcisi"
+
+#. module: contacts_portal_type
+#: model:ir.model.fields.selection,name:contacts_portal_type.selection__res_partner__portal_contact_type__internal
+msgid "Internal User"
+msgstr "Dahili kullanıcı"
+
+#. module: contacts_portal_type
+#: model:ir.model.fields.selection,name:contacts_portal_type.selection__res_partner__portal_contact_type__vendor
+msgid "Vendor"
+msgstr "Tedarikçi"
+
+#. module: contacts_portal_type
+#: model:ir.model.fields.selection,name:contacts_portal_type.selection__res_partner__portal_contact_type__customer
+msgid "Customer"
+msgstr "Müşteri"
+
+#. module: contacts_portal_type
+#: model:ir.model.fields.selection,name:contacts_portal_type.selection__res_partner__portal_contact_type__factory_rep
+msgid "Factory Representative"
+msgstr "Fabrika temsilcisi"
+
+#. module: contacts_portal_type
+#: model:ir.model.fields.selection,name:contacts_portal_type.selection__res_partner__portal_contact_type__factory_employee
+msgid "Factory Employee"
+msgstr "Fabrika çalışanı"
+
+#. module: contacts_portal_type
+#: model:ir.model.fields,help:contacts_portal_type.field_res_partner__portal_contact_type
+#: model:ir.model.fields,help:contacts_portal_type.field_res_users__portal_contact_type
+msgid "Role of this contact when exposed on the portal."
+msgstr "Bu kişinin portaldaki rolü."
+
+#. module: contacts_portal_type
+#: model:ir.model.fields,field_description:contacts_portal_type.field_res_partner__date_of_birth
+#: model:ir.model.fields,field_description:contacts_portal_type.field_res_users__date_of_birth
+msgid "Date of Birth"
+msgstr "Doğum tarihi"
+
+#. module: contacts_portal_type
+#: model:ir.model.fields,field_description:contacts_portal_type.field_res_partner__gender
+#: model:ir.model.fields,field_description:contacts_portal_type.field_res_users__gender
+msgid "Gender"
+msgstr "Cinsiyet"
+
+#. module: contacts_portal_type
+#: model:ir.model.fields,field_description:contacts_portal_type.field_res_partner__dependants_ids
+#: model:ir.model.fields,field_description:contacts_portal_type.field_res_users__dependants_ids
+#: model_terms:ir.ui.view,arch_db:contacts_portal_type.view_partner_form_portal_contact_type
+msgid "Dependants"
+msgstr "Çocuklar"
+
+#. module: contacts_portal_type
+#: model:ir.model.fields,field_description:contacts_portal_type.field_res_partner__shift_hours_ids
+#: model:ir.model.fields,field_description:contacts_portal_type.field_res_users__shift_hours_ids
+#: model_terms:ir.ui.view,arch_db:contacts_portal_type.view_partner_form_portal_contact_type
+msgid "Shift Hours"
+msgstr "Vardiya saatleri"
+
+#. module: contacts_portal_type
+#: model:ir.model.fields,field_description:contacts_portal_type.field_res_partner__shift_hours_display_ids
+#: model:ir.model.fields,field_description:contacts_portal_type.field_res_users__shift_hours_display_ids
+msgid "Shift Hours (Display)"
+msgstr "Vardiya saatleri (görüntüleme)"
+
+#. module: contacts_portal_type
+#: model:ir.model.fields,field_description:contacts_portal_type.field_res_partner__is_handicapped
+#: model:ir.model.fields,field_description:contacts_portal_type.field_res_users__is_handicapped
+msgid "Handicapped"
+msgstr "Engelli"
+
+#. module: contacts_portal_type
+#: model:ir.model.fields,field_description:contacts_portal_type.field_res_partner__is_deaf
+#: model:ir.model.fields,field_description:contacts_portal_type.field_res_users__is_deaf
+msgid "Deaf"
+msgstr "İşitme engelli"
+
+#. module: contacts_portal_type
+#: model:ir.model.fields,field_description:contacts_portal_type.field_res_partner__is_blind
+#: model:ir.model.fields,field_description:contacts_portal_type.field_res_users__is_blind
+msgid "Blind"
+msgstr "Görme engelli"
+
+#. module: contacts_portal_type
+#: model:ir.model.fields,field_description:contacts_portal_type.field_res_partner__is_allergic
+#: model:ir.model.fields,field_description:contacts_portal_type.field_res_users__is_allergic
+msgid "Allergic"
+msgstr "Alerjik"
+
+#. module: contacts_portal_type
+#: model:ir.model.fields,field_description:contacts_portal_type.field_res_partner__route_name
+#: model:ir.model.fields,field_description:contacts_portal_type.field_res_users__route_name
+msgid "Route Name"
+msgstr "Güzergâh adı"
+
+#. module: contacts_portal_type
+#: model:ir.model.fields,field_description:contacts_portal_type.field_res_partner__route_shuttle_id
+#: model:ir.model.fields,field_description:contacts_portal_type.field_res_users__route_shuttle_id
+msgid "Assigned Shuttle"
+msgstr "Atanan servis"
+
+#. module: contacts_portal_type
+#: model:ir.model.fields,field_description:contacts_portal_type.field_res_partner__route_shuttle_plate
+#: model:ir.model.fields,field_description:contacts_portal_type.field_res_users__route_shuttle_plate
+msgid "Assigned Shuttle Plate"
+msgstr "Atanan servis plakası"
+
+#. module: contacts_portal_type
+#: model:ir.model.fields,field_description:contacts_portal_type.field_res_partner__route_shuttle_picture
+#: model:ir.model.fields,field_description:contacts_portal_type.field_res_users__route_shuttle_picture
+msgid "Assigned Shuttle Picture"
+msgstr "Atanan servis görseli"
+
+#. module: contacts_portal_type
+#: model:ir.model.fields,field_description:contacts_portal_type.field_res_partner__currency_id
+#: model:ir.model.fields,field_description:contacts_portal_type.field_res_users__currency_id
+msgid "Service Annual Fee Currency"
+msgstr "Yıllık servis ücreti para birimi"
+
+#. module: contacts_portal_type
+#: model:ir.model.fields,help:contacts_portal_type.field_res_partner__currency_id
+#: model:ir.model.fields,help:contacts_portal_type.field_res_users__currency_id
+msgid "Annual shuttle fee is denominated in Turkish Lira (TRY)."
+msgstr "Yıllık servis ücreti Türk Lirası (TRY) cinsindendir."
+
+#. module: contacts_portal_type
+#: model:ir.model.fields,field_description:contacts_portal_type.field_res_partner__annual_fee
+#: model:ir.model.fields,field_description:contacts_portal_type.field_res_users__annual_fee
+msgid "Service Annual Fee"
+msgstr "Yıllık servis ücreti"
+
+#. module: contacts_portal_type
+#: model:ir.model,name:contacts_portal_type.model_contacts_portal_type_shift_hours
+msgid "Contact Shift Hours"
+msgstr "İletişim vardiya saatleri"
+
+#. module: contacts_portal_type
+#: model:ir.model,name:contacts_portal_type.model_res_partner
+#: model:ir.model.fields,field_description:contacts_portal_type.field_contacts_portal_type_shift_hours__partner_id
+msgid "Contact"
+msgstr "İletişim"
+
+#. module: contacts_portal_type
+#: model:ir.model.fields,field_description:contacts_portal_type.field_contacts_portal_type_shift_hours__shift_type
+msgid "Shift Type"
+msgstr "Vardiya türü"
+
+#. module: contacts_portal_type
+#: model:ir.model.fields.selection,name:contacts_portal_type.selection__contacts_portal_type_shift_hours__shift_type__morning
+msgid "Morning"
+msgstr "Sabah"
+
+#. module: contacts_portal_type
+#: model:ir.model.fields.selection,name:contacts_portal_type.selection__contacts_portal_type_shift_hours__shift_type__afternoon
+msgid "Afternoon"
+msgstr "Öğleden sonra"
+
+#. module: contacts_portal_type
+#: model:ir.model.fields.selection,name:contacts_portal_type.selection__contacts_portal_type_shift_hours__shift_type__full_day
+msgid "Full Day"
+msgstr "Tam gün"
+
+#. module: contacts_portal_type
+#: model:ir.model.fields.selection,name:contacts_portal_type.selection__contacts_portal_type_shift_hours__shift_type__day_shift
+msgid "Day Shift"
+msgstr "Gündüz vardiyası"
+
+#. module: contacts_portal_type
+#: model:ir.model.fields.selection,name:contacts_portal_type.selection__contacts_portal_type_shift_hours__shift_type__shift_1
+msgid "Shift-1"
+msgstr "Vardiya-1"
+
+#. module: contacts_portal_type
+#: model:ir.model.fields.selection,name:contacts_portal_type.selection__contacts_portal_type_shift_hours__shift_type__shift_2
+msgid "Shift-2"
+msgstr "Vardiya-2"
+
+#. module: contacts_portal_type
+#: model:ir.model.fields.selection,name:contacts_portal_type.selection__contacts_portal_type_shift_hours__shift_type__shift_3
+msgid "Shift-3"
+msgstr "Vardiya-3"
+
+#. module: contacts_portal_type
+#: model:ir.model.fields,field_description:contacts_portal_type.field_contacts_portal_type_shift_hours__start_hour
+msgid "Start Hour"
+msgstr "Başlangıç saati"
+
+#. module: contacts_portal_type
+#: model:ir.model.fields,field_description:contacts_portal_type.field_contacts_portal_type_shift_hours__end_hour
+msgid "End Hour"
+msgstr "Bitiş saati"
+
+#. module: contacts_portal_type
+#: model:ir.model.fields,field_description:contacts_portal_type.field_contacts_portal_type_shift_hours__monday
+msgid "Monday"
+msgstr "Pazartesi"
+
+#. module: contacts_portal_type
+#: model:ir.model.fields,field_description:contacts_portal_type.field_contacts_portal_type_shift_hours__tuesday
+msgid "Tuesday"
+msgstr "Salı"
+
+#. module: contacts_portal_type
+#: model:ir.model.fields,field_description:contacts_portal_type.field_contacts_portal_type_shift_hours__wednesday
+msgid "Wednesday"
+msgstr "Çarşamba"
+
+#. module: contacts_portal_type
+#: model:ir.model.fields,field_description:contacts_portal_type.field_contacts_portal_type_shift_hours__thursday
+msgid "Thursday"
+msgstr "Perşembe"
+
+#. module: contacts_portal_type
+#: model:ir.model.fields,field_description:contacts_portal_type.field_contacts_portal_type_shift_hours__friday
+msgid "Friday"
+msgstr "Cuma"
+
+#. module: contacts_portal_type
+#: model:ir.model.fields,field_description:contacts_portal_type.field_contacts_portal_type_shift_hours__saturday
+msgid "Saturday"
+msgstr "Cumartesi"
+
+#. module: contacts_portal_type
+#: model:ir.model.fields,field_description:contacts_portal_type.field_contacts_portal_type_shift_hours__sunday
+msgid "Sunday"
+msgstr "Pazar"
+
+#. module: contacts_portal_type
+#: model_terms:ir.ui.view,arch_db:contacts_portal_type.view_partner_form_portal_contact_type
+msgid "Information"
+msgstr "Bilgiler"
+
+#. module: contacts_portal_type
+#: model_terms:ir.ui.view,arch_db:contacts_portal_type.view_partner_form_portal_contact_type
+msgid "Company Name..."
+msgstr "Şirket adı..."
+
+#. module: contacts_portal_type
+#: model_terms:ir.ui.view,arch_db:contacts_portal_type.view_partner_form_portal_contact_type
+msgid "e.g. Sales Director"
+msgstr "örn. Satış Müdürü"
+
+#. module: contacts_portal_type
+#: model:ir.actions.act_window,name:contacts_portal_type.action_contacts_students
+#: model:ir.ui.menu,name:contacts_portal_type.menu_contacts_students
+#: model_terms:ir.ui.view,arch_db:contacts_portal_type.portal_page_role_parents
+msgid "Students"
+msgstr "Öğrenciler"
+
+#. module: contacts_portal_type
+#: model:ir.actions.act_window,name:contacts_portal_type.action_contacts_schools
+#: model:ir.ui.menu,name:contacts_portal_type.menu_contacts_schools
+msgid "Schools"
+msgstr "Okullar"
+
+#. module: contacts_portal_type
+#: model:ir.actions.act_window,name:contacts_portal_type.action_contacts_factories
+#: model:ir.ui.menu,name:contacts_portal_type.menu_contacts_factories
+msgid "Factories"
+msgstr "Fabrikalar"
+
+#. module: contacts_portal_type
+#: model:ir.actions.act_window,name:contacts_portal_type.action_contacts_employees
+#: model:ir.ui.menu,name:contacts_portal_type.menu_contacts_employees
+msgid "Employees"
+msgstr "Çalışanlar"
+
+#. module: contacts_portal_type
+#: model_terms:ir.ui.view,arch_db:contacts_portal_type.portal_page_role_parents
+#: model_terms:ir.ui.view,arch_db:contacts_portal_type.portal_page_role_student
+msgid "<span class=\"text-muted\">Email:</span>"
+msgstr "<span class=\"text-muted\">E-posta:</span>"
+
+#. module: contacts_portal_type
+#: model_terms:ir.ui.view,arch_db:contacts_portal_type.portal_page_role_parents
+#: model_terms:ir.ui.view,arch_db:contacts_portal_type.portal_page_role_student
+msgid "<span class=\"text-muted\">Phone:</span>"
+msgstr "<span class=\"text-muted\">Telefon:</span>"
+
+#. module: contacts_portal_type
+#: model_terms:ir.ui.view,arch_db:contacts_portal_type.view_partner_form_portal_contact_type
+msgid "Alerjik"
+msgstr "Alerjik"
+
+#. module: contacts_portal_type
+#: model_terms:ir.ui.view,arch_db:contacts_portal_type.portal_my_home_contact_type_welcome
+msgid "Araç Filo Kiralama"
+msgstr "Araç Filo Kiralama"
+
+#. module: contacts_portal_type
+#: model:ir.model.fields,field_description:contacts_portal_type.field_res_partner__parent_avatar_128
+#: model:ir.model.fields,field_description:contacts_portal_type.field_res_partner__school_avatar_128
+#: model:ir.model.fields,field_description:contacts_portal_type.field_res_users__parent_avatar_128
+#: model:ir.model.fields,field_description:contacts_portal_type.field_res_users__school_avatar_128
+msgid "Avatar 128"
+msgstr "Avatar 128"
+
+#. module: contacts_portal_type
+#: model_terms:ir.ui.view,arch_db:contacts_portal_type.portal_my_home_contact_type_welcome
+msgid "Berkay TURİZM"
+msgstr "Berkay TURİZM"
+
+#. module: contacts_portal_type
+#. odoo-python
+#: code:addons/contacts_portal_type/controllers/request_quote.py:0
+msgid "City is required."
+msgstr "Şehir zorunludur."
+
+#. module: contacts_portal_type
+#. odoo-javascript
+#: code:addons/contacts_portal_type/static/src/widgets/partner_location_map/partner_location_map_widget.js:0
+msgid ""
+"Click the map to set the location. Drag the pin to fine-tune. Editing the "
+"address will update the pin."
+msgstr ""
+"Konumu belirlemek için haritaya tıklayın. Hassas ayar için işaretçiyi "
+"sürükleyin. Adresi düzenlemek işaretçiyi günceller."
+
+#. module: contacts_portal_type
+#: model:ir.model.fields,field_description:contacts_portal_type.field_contacts_portal_type_shift_hours__create_uid
+msgid "Created by"
+msgstr "Oluşturan"
+
+#. module: contacts_portal_type
+#: model:ir.model.fields,field_description:contacts_portal_type.field_contacts_portal_type_shift_hours__create_date
+msgid "Created on"
+msgstr "Oluşturma tarihi"
+
+#. module: contacts_portal_type
+#. odoo-python
+#: code:addons/contacts_portal_type/controllers/request_quote.py:0
+msgid "Date of birth cannot be in the future."
+msgstr "Doğum tarihi gelecekte olamaz."
+
+#. module: contacts_portal_type
+#: model_terms:ir.ui.view,arch_db:contacts_portal_type.portal_my_home_contact_type_welcome
+msgid "Devamını Oku.."
+msgstr "Devamını Oku.."
+
+#. module: contacts_portal_type
+#: model:ir.model.fields,field_description:contacts_portal_type.field_contacts_portal_type_shift_hours__display_name
+#: model:ir.model.fields,field_description:contacts_portal_type.field_res_partner__display_name
+#: model:ir.model.fields,field_description:contacts_portal_type.field_shuttle_tour__display_name
+msgid "Display Name"
+msgstr "Görünen ad"
+
+#. module: contacts_portal_type
+#. odoo-python
+#: code:addons/contacts_portal_type/controllers/request_quote.py:0
+msgid "Email is required."
+msgstr "E-posta zorunludur."
+
+#. module: contacts_portal_type
+#: model_terms:ir.ui.view,arch_db:contacts_portal_type.view_partner_form_portal_contact_type
+msgid "Engelli"
+msgstr "Engelli"
+
+#. module: contacts_portal_type
+#. odoo-python
+#: code:addons/contacts_portal_type/controllers/request_quote.py:0
+msgid "First name is required."
+msgstr "Ad zorunludur."
+
+#. module: contacts_portal_type
+#: model_terms:ir.ui.view,arch_db:contacts_portal_type.view_partner_form_portal_contact_type
+msgid "Görme engelli"
+msgstr "Görme engelli"
+
+#. module: contacts_portal_type
+#: model_terms:ir.ui.view,arch_db:contacts_portal_type.portal_my_home_contact_type_welcome
+msgid "Güvenle Taşıyoruz"
+msgstr "Güvenle Taşıyoruz"
+
+#. module: contacts_portal_type
+#: model_terms:ir.ui.view,arch_db:contacts_portal_type.portal_my_home_contact_type_welcome
+msgid "Hakkımızda"
+msgstr "Hakkımızda"
+
+#. module: contacts_portal_type
+#: model_terms:ir.ui.view,arch_db:contacts_portal_type.portal_my_home_contact_type_welcome
+msgid "Havaalanı Transferi"
+msgstr "Havaalanı Transferi"
+
+#. module: contacts_portal_type
+#: model_terms:ir.ui.view,arch_db:contacts_portal_type.portal_my_home_contact_type_welcome
+msgid ""
+"Hizmet verdiğimiz ve vereceğimiz kurumların beklentilerini tespit ederek "
+"çağın gereklerine uygun servis araçları ile hizmet vermekteyiz. Olası bir "
+"probleme karşın her türlü fikir ve görüşlere açık bir şekilde kalıcı ve "
+"dakik çözümler üretmek her zaman ilkelerimiz arasında yer almıştır."
+msgstr ""
+"Hizmet verdiğimiz ve vereceğimiz kurumların beklentilerini tespit ederek "
+"çağın gereklerine uygun servis araçları ile hizmet vermekteyiz. Olası bir "
+"probleme karşın her türlü fikir ve görüşlere açık bir şekilde kalıcı ve "
+"dakik çözümler üretmek her zaman ilkelerimiz arasında yer almıştır."
+
+#. module: contacts_portal_type
+#: model_terms:ir.ui.view,arch_db:contacts_portal_type.portal_my_home_contact_type_welcome
+msgid "Hizmetlerimiz"
+msgstr ""
+
+#. module: contacts_portal_type
+#: model:ir.model.fields,field_description:contacts_portal_type.field_contacts_portal_type_shift_hours__id
+#: model:ir.model.fields,field_description:contacts_portal_type.field_res_partner__id
+#: model:ir.model.fields,field_description:contacts_portal_type.field_shuttle_tour__id
+msgid "ID"
+msgstr "Kimlik"
+
+#. module: contacts_portal_type
+#. odoo-python
+#: code:addons/contacts_portal_type/controllers/request_quote.py:0
+msgid "Invalid country."
+msgstr "Geçersiz ülke."
+
+#. module: contacts_portal_type
+#. odoo-python
+#: code:addons/contacts_portal_type/controllers/request_quote.py:0
+msgid "Invalid map coordinates."
+msgstr "Geçersiz harita koordinatları."
+
+#. module: contacts_portal_type
+#. odoo-python
+#: code:addons/contacts_portal_type/controllers/request_quote.py:0
+msgid "Invalid school."
+msgstr "Geçersiz okul."
+
+#. module: contacts_portal_type
+#: model:ir.model.fields,field_description:contacts_portal_type.field_contacts_portal_type_shift_hours__write_uid
+msgid "Last Updated by"
+msgstr "Son güncelleyen"
+
+#. module: contacts_portal_type
+#: model:ir.model.fields,field_description:contacts_portal_type.field_contacts_portal_type_shift_hours__write_date
+msgid "Last Updated on"
+msgstr "Son güncellenme tarihi"
+
+#. module: contacts_portal_type
+#. odoo-javascript
+#: code:addons/contacts_portal_type/static/src/widgets/partner_location_map/partner_location_map_widget.js:0
+msgid "Location (read-only)."
+msgstr "Konum (salt okunur)."
+
+#. module: contacts_portal_type
+#: model_terms:ir.ui.view,arch_db:contacts_portal_type.portal_page_role_parents
+#: model_terms:ir.ui.view,arch_db:contacts_portal_type.portal_page_role_student
+msgid "Map"
+msgstr "Harita"
+
+#. module: contacts_portal_type
+#: model_terms:ir.ui.view,arch_db:contacts_portal_type.portal_page_role_parents
+#: model_terms:ir.ui.view,arch_db:contacts_portal_type.portal_page_role_student
+msgid "No address set."
+msgstr "Adres tanımlı değil."
+
+#. module: contacts_portal_type
+#: model_terms:ir.ui.view,arch_db:contacts_portal_type.portal_page_role_parents
+msgid "No students linked to this parent."
+msgstr "Bu veliye bağlı öğrenci yok."
+
+#. module: contacts_portal_type
+#. odoo-python
+#: code:addons/contacts_portal_type/controllers/portal.py:0
+msgid "Notes"
+msgstr "Notlar"
+
+#. module: contacts_portal_type
+#: model_terms:ir.ui.view,arch_db:contacts_portal_type.portal_my_home_contact_type_welcome
+msgid "Personel Taşımacılığı"
+msgstr "Personel Taşımacılığı"
+
+#. module: contacts_portal_type
+#. odoo-python
+#: code:addons/contacts_portal_type/controllers/request_quote.py:0
+msgid "Phone is required."
+msgstr "Telefon zorunludur."
+
+#. module: contacts_portal_type
+#. odoo-python
+#: code:addons/contacts_portal_type/controllers/request_quote.py:0
+msgid "Please correct the errors below."
+msgstr "Lütfen aşağıdaki hataları düzeltin."
+
+#. module: contacts_portal_type
+#. odoo-python
+#: code:addons/contacts_portal_type/controllers/request_quote.py:0
+msgid "Please enter a valid email address."
+msgstr "Lütfen geçerli bir e-posta adresi girin."
+
+#. module: contacts_portal_type
+#. odoo-python
+#: code:addons/contacts_portal_type/controllers/request_quote.py:0
+msgid "Please place a pin on the map for your address."
+msgstr "Adresiniz için haritada bir konum işaretleyin."
+
+#. module: contacts_portal_type
+#. odoo-python
+#: code:addons/contacts_portal_type/controllers/request_quote.py:0
+msgid "School is required."
+msgstr "Okul zorunludur."
+
+#. module: contacts_portal_type
+#. odoo-python
+#: code:addons/contacts_portal_type/controllers/portal.py:0
+msgid "Servis Soförleri Portalı"
+msgstr "Servis Soförleri Portalı"
+
+#. module: contacts_portal_type
+#: model:ir.model,name:contacts_portal_type.model_shuttle_tour
+msgid "Shuttle Tour"
+msgstr "Shuttle turu"
+
+#. module: contacts_portal_type
+#. odoo-python
+#: code:addons/contacts_portal_type/controllers/request_quote.py:0
+msgid "Street is required."
+msgstr "Sokak adresi zorunludur."
+
+#. module: contacts_portal_type
+#. odoo-python
+#: code:addons/contacts_portal_type/controllers/request_quote.py:0
+msgid "Student date of birth is required."
+msgstr "Öğrencinin doğum tarihi zorunludur."
+
+#. module: contacts_portal_type
+#. odoo-python
+#: code:addons/contacts_portal_type/controllers/request_quote.py:0
+msgid "Student gender is required."
+msgstr "Öğrenci cinsiyeti zorunludur."
+
+#. module: contacts_portal_type
+#. odoo-python
+#: code:addons/contacts_portal_type/controllers/request_quote.py:0
+msgid "Student name is required."
+msgstr "Öğrenci adı zorunludur."
+
+#. module: contacts_portal_type
+#. odoo-python
+#: code:addons/contacts_portal_type/controllers/request_quote.py:0
+msgid "Surname is required."
+msgstr "Soyad zorunludur."
+
+#. module: contacts_portal_type
+#: model_terms:ir.ui.view,arch_db:contacts_portal_type.portal_my_home_contact_type_welcome
+msgid "Telefon: 0 216 759 45 50 — Email: info@berkayturizm.com"
+msgstr "Telefon: 0 216 759 45 50 — Email: info@berkayturizm.com"
+
+#. module: contacts_portal_type
+#. odoo-python
+#: code:addons/contacts_portal_type/controllers/portal.py:0
+msgid "Tur Başlat"
+msgstr "Tur Başlat"
+
+#. module: contacts_portal_type
+#: model_terms:ir.ui.view,arch_db:contacts_portal_type.portal_my_home_contact_type_welcome
+msgid "VIP Transfer"
+msgstr "VIP Transfer"
+
+#. module: contacts_portal_type
+#. odoo-python
+#: code:addons/contacts_portal_type/controllers/request_quote.py:0
+msgid ""
+"We could not submit your request. Please try again later or contact us."
+msgstr ""
+"Talebinizi gönderemedik. Lütfen daha sonra tekrar deneyin veya bize ulaşın."
+
+#. module: contacts_portal_type
+#. odoo-python
+#: code:addons/contacts_portal_type/controllers/portal.py:0
+msgid "Yeni Öğrenci Kaydı"
+msgstr "Yeni Öğrenci Kaydı"
+
+#. module: contacts_portal_type
+#: model_terms:ir.ui.view,arch_db:contacts_portal_type.portal_my_home_contact_type_welcome
+msgid "Öğrenci Taşımacılığı"
+msgstr "Öğrenci Taşımacılığı"
+
+#. module: contacts_portal_type
+#: model_terms:ir.ui.view,arch_db:contacts_portal_type.portal_my_home_contact_type_welcome
+msgid "İletişim"
+msgstr "İletişim"
+
+#. module: contacts_portal_type
+#: model_terms:ir.ui.view,arch_db:contacts_portal_type.view_partner_form_portal_contact_type
+msgid "İşitme engelli"
+msgstr "İşitme engelli"

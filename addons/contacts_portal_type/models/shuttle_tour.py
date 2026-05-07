@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from odoo import _, fields, models
+from odoo import fields, models
 
 
 class ShuttleTour(models.Model):
@@ -10,5 +10,5 @@ class ShuttleTour(models.Model):
         string='Hostess',
         ondelete='set null',
         index=True,
-        help=_('Portal hostess who started this tour from the website.'),
+        help='Portal hostess who started this tour from the website.',
     )

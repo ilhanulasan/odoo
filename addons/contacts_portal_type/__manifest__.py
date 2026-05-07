@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     'name': 'Contacts Portal Contact Type',
-    'version': '19.0.1.0.4',
+    'version': '19.0.1.0.6',
     'category': 'Sales/CRM',
     'summary': 'Portal contact type on partners',
     'depends': [

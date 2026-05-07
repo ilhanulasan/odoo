@@ -54,7 +54,7 @@
                 </span>
                 <div class="o_address_format d-flex align-items-center gap-2 mt-1" invisible="portal_contact_type not in ('student','factory_employee') or not route_id">
                     <field name="currency_id" invisible="1"/>
-                    <field name="annual_fee" class="flex-grow-1"/>
+                    <field name="annual_fee" class="flex-grow-1" widget="float"/>
                 </div>
             </xpath>
 

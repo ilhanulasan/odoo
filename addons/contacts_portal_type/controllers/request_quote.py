@@ -157,6 +157,16 @@ class RequestQuoteController(http.Controller):
 
         parent_name = f"{form['parent_first_name']} {form['parent_surname']}".strip()
 
+        address_vals = {
+            'street': form['street'],
+            'street2': form['street2'] or False,
+            'city': form['city'],
+            'zip': form['zip'] or False,
+            'country_id': country_id_int or False,
+            'partner_latitude': lat,
+            'partner_longitude': lng,
+        }
+
         try:
             parent = Partner.create({
                 'name': parent_name,
@@ -165,13 +175,7 @@ class RequestQuoteController(http.Controller):
                 'is_company': False,
                 'contact_type': 'person',
                 'portal_contact_type': 'parent',
-                'street': form['street'],
-                'street2': form['street2'] or False,
-                'city': form['city'],
-                'zip': form['zip'] or False,
-                'country_id': country_id_int or False,
-                'partner_latitude': lat,
-                'partner_longitude': lng,
+                **address_vals,
             })
             student = Partner.create({
                 'name': form['student_name'],
@@ -182,6 +186,7 @@ class RequestQuoteController(http.Controller):
                 'date_of_birth': student_dob,
                 'school_id': school_id_int,
                 'parent_partner_id': parent.id,
+                **address_vals,
             })
             order = env['sale.order'].sudo().create({
                 'partner_id': parent.id,
